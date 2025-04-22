@@ -3,10 +3,8 @@
 
 button {
     width: 100%;
-    background-color: #FBAD37;
     text-align: center;
     padding: 1rem;
-    color: #1A1A1A;
     border-radius: 5rem;
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
@@ -14,17 +12,35 @@ button {
     font-style: normal;
     font-size: 1rem;
     border: none;
+    letter-spacing: -0.48px;
 
+
+}
+
+.black {
+    background-color: #1A1A1A;
+    color: white;
+}
+
+.yellow{
+    background-color: #FBAD37;
+    color: #1A1A1A;
+
+    
     &:active{
         background-color: #D9902F;
         cursor: pointer;
     }
-
 }
 
 @media (min-width:769px) {
-    button:hover{
-        background-color: #FDDC87;
+    .yellow:hover{
+        background-color: #f8b65a;
+        cursor: pointer;
+    }
+
+    .black:hover{
+        background-color: #2e2e2e;
         cursor: pointer;
     }
     
