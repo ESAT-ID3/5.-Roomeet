@@ -1,0 +1,22 @@
+.nav-header {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    padding-block: 2rem;
+    align-items:  center;
+
+    
+}
+
+
+.nav-header img {
+    width: 8rem;
+    object-fit: contain;
+}
+
+.nav_icons {
+    display: flex;
+    gap: 1rem
+}

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.user_card {
+    height: 100%;
+    width: auto;
+    min-width: 310px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-inline: 1rem;
+    font-family: Outfit;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+    margin-inline: 2rem;
+}
+
+.user_description {
+    width: 100%;
+    background-color: rgb(176, 176, 176);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.user_title {
+    width: 100%;
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+
+.user_info {
+    width: 100%;
+    color: white;
+    font-family: Outfit;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.user_tags {
+    display: flex;
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; 
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    display: flex;
+    padding: 3px 10px 4px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border-radius: 999px;
+    background: rgba(230, 230, 230, 0.70);
+}
+
+.swipe_buttons {
+    display: flex;
+    width: 100%;                 /* ocupa todo el ancho disponible */
+    justify-content: space-between;
+    max-width: 50rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem;                 /* opcional: separación entre botones */
+    box-sizing: border-box;      /* respeta padding/border */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.purple_btn,
+.red_btn,
+.blue_btn,
+.yellow_btn {
+    width: 2.5rem;               /* mismo ancho */
+    height: 2.5rem;              /* mismo alto */
+    border-radius: 50%;        /* lo hace circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid currentColor;
+    padding: 0;                /* evita que el contenido agrande el botón */
+    box-sizing: border-box;
+}
+
+.purple_btn {
+    border: 1px solid #7B64D4;
+}
+
+.red_btn {
+    width: 3.5rem;              
+    height: 3.5rem;
+    border: 1px solid #F74B4B;
+}
+
+.blue_btn {
+    border: 1px solid #62BAF3;
+}
+
+.yellow_btn {
+    width: 3.5rem;              
+    height: 3.5rem;
+    border: 1px solid #FBAD37;
+}
+

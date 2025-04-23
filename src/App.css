@@ -1,0 +1,7 @@
+.main-container {
+    height: 100vh; /* 100% del alto de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
