@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body, p {
+    margin: 0;
+    padding: 0;
+}
+
+.review_container_profile{
+    position: relative;
+    margin-top: 10rem;
+}
+
+.review_container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 16px;
+    background: var(--White-White-200, #F2F2F2);
+    box-shadow: 3px 29px 62px 0px rgba(0, 0, 0, 0.25);
+    padding: 1.5rem;
+}
+
+.review__text p {
+    color: #000;
+    font-family: Outfit;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 18px */
+}
+
+.review__user_title {
+    color: #000;
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.review__user_subtitle {
+    color: #505050;
+    font-family: Outfit;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.review__stars {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.review__user{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    align-self: stretch;
+}
+
+.review__profile {
+    width: 81px;
+    height: 81px;
+    position: absolute;
+    left: 25px;
+    top: -40px;
+    border-radius: 81px;
+    background: url(<path-to-image>) lightgray 0px -0.482px / 100% 101.19% no-repeat;
+}

@@ -7,6 +7,11 @@ import { PicturesMatch } from './components/pictures-match/PicturesMatch'
 import { ChatMsg } from './components/chat-msg/ChatMsg'
 import { StarterPlan } from './components/plans/StarterPlan'
 import { PremiumPlan } from './components/plans/PremiumPlan'
+import { PersonalDataTag } from './components/edit-profile/personal-data-tag/PersonalDataTag'
+import { UserTag } from './components/edit-profile/user-tags/UserTag'
+import { ProfilePicture } from './components/edit-profile/profile-picture/ProfilePicture'
+import { LandingReview } from './components/landing/landing-review/LandingREview'
+import { LandingFeatures } from './components/landing/landing-features/LandingFeatures'
 
 
 
@@ -14,8 +19,7 @@ function App() {
 
   return (
     <>
-      <StarterPlan/>
-      <PremiumPlan/>
+      <LandingFeatures/>
     </>
   );
 }
