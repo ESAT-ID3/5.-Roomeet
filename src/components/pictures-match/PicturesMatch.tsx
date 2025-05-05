@@ -25,7 +25,7 @@ export const PicturesMatch = () => {
           }}
         ></div>
         <div className="house">
-          <Icons name="match" size="48" color="#202020" />
+          <Icons name="match" size="32" color="#202020" />
         </div>
       </div>
     );

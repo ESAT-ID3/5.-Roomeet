@@ -4,7 +4,7 @@
 button {
     width: 100%;
     text-align: center;
-    padding: 1rem;
+    padding-block: 0.7rem;
     border-radius: 5rem;
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;

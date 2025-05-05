@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body, p {
+    margin: 0;
+    padding: 0;
+}
+
+.input__flex {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.input__flex {
+    color: #4D4D4D;
+    font-family: Outfit;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.16px;
+}
+
+.input__box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: 0.3rem;
+    padding-inline: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #A6A6A6;
+    gap: 0.5rem;
+}
+
+input {
+    border: none;
+    width: 100%;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    outline: none;
+}
+
+input:active{
+        border: none;
+}

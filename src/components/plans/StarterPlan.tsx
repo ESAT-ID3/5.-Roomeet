@@ -1,6 +1,6 @@
 import "./StarterPlan.css"
 import { Icons } from "../icons/Icons";
-import { Button } from "../yellow-button/Button";
+import { Button } from "../button/Button";
 
 export const StarterPlan = () => {
 

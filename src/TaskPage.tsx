@@ -12,10 +12,6 @@ import { UserTag } from './components/edit-profile/user-tags/UserTag'
 import { ProfilePicture } from './components/edit-profile/profile-picture/ProfilePicture'
 import { LandingReview } from './components/landing/landing-review/LandingREview'
 import { LandingFeatures } from './components/landing/landing-features/LandingFeatures'
-import { NavLink } from 'react-router'
-import { Input } from './components/input/input'
-import { Icons } from "./components/icons/Icons";
-import { Social } from './components/social/social'
 
 
 
@@ -23,8 +19,8 @@ function App() {
 
   return (
     <>
-      <Input name="Nombre"/>
-      <Social name="google" />
+      <ProfilePicture/>
+      <NavLink to="/login">Login</NavLink>
     </>
   );
 }
