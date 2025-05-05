@@ -16,6 +16,9 @@ import { NavLink } from 'react-router'
 import { Input } from './components/input/input'
 import { Icons } from "./components/icons/Icons";
 import { Social } from './components/social/social'
+import { DeskNa } from './components/desktop-nav/DeskNav'
+import { DeskFooter } from './components/footer/DeskFooter'
+
 
 
 
@@ -23,8 +26,8 @@ function App() {
 
   return (
     <>
-      <Input name="Nombre"/>
-      <Social name="google" />
+
+      <DeskFooter/>
     </>
   );
 }

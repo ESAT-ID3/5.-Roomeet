@@ -1,0 +1,15 @@
+.footer {
+    background-color: #000; /* negro */
+    color: white;           /* letras blancas */
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
