@@ -14,6 +14,7 @@ import { Profile } from './pages/profile/Profile.tsx';
 import { Register } from './pages/register/Register.tsx';
 import { SeenProfiles } from './pages/seenProfiles/SeenProfiles.tsx';
 import { Swipe } from './pages/swipe/Swipe.tsx';
+import { Match } from './pages/match/match.tsx';
 
 
 
@@ -34,6 +35,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/register' element={<Register/>} />
       <Route path='/seenProfiles' element={<SeenProfiles/>} />
       <Route path='/swipe' element={<Swipe/>} />
+      <Route path='/match' element={<Match/>} /> {/* Provisional hasta que sepamos que hacer */ }
     </Routes>
     </BrowserRouter>
   </StrictMode>,
