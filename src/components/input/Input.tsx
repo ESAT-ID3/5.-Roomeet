@@ -10,7 +10,7 @@ export const Input = ({name, icon1, icon2}) => {
                 <div className="input__box">
                     <Icons name={icon1} size="36" color="#202020" viewBox="0 0 24 24"/>
                     <input type="text" />
-                    <Icons name={icon2} size="36" color="#202020" viewBox="0 0 24 24"/>
+                    {icon2 && <Icons name={icon2} size="36" color="#202020" viewBox="0 0 24 24"/>} {/*De esta forma sino le pasamos la propiedad del icon2, React ignorará esta línea y es como si este div no existiera*/}
                 </div>
             </div>
         </div>
