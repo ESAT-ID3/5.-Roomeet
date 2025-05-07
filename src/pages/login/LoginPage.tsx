@@ -32,11 +32,13 @@ export const LoginPage = () => {
                 </div>
             </div>
             <div className="login__page_footer_container">
-                <div>
-                <h3>¿Aún no tienes cuenta?</h3>
+                <div className="login__page_footer_container_mobile">
+                        <span></span>
+                        <h3>¿Aún no tienes cuenta?</h3>
+                        <span></span>
+                </div>
                 <h4>¡Únete a miles de Roomeets más en la búsqueda del compañero de piso perfecto!</h4>
                 <Button text="Regístrate" color="black"></Button>
-                </div>
             </div>
         </div>
     );

@@ -1,10 +1,41 @@
 import "./Register.css"
 
+import { Button } from "../../components/button/Button";
+import { Icons } from "../../components/icons/Icons";
+import { NavLink } from 'react-router'
+import { Input } from "../../components/input/input";
+import { Social } from "../../components/social/social";
+
 export const Register = () => {
 
     return (
-        <div>
-           
+        <div className="register__page__container">
+            <div className="register__page">
+                <div className="register__container">
+                    <h1>Regístrate</h1>
+                    <h2>Ponte cómodo, ¡estás en tu casa!</h2>
+                    <Input name="Nombre" icon1="user" size="24" viewBox="0 0 24 24"/>
+                    <Input name="Email" icon1="email" viewBox="0 0 20 16" size="24"/>
+                    <Input name="Contraseña" icon1="lock" icon2="eye" size="24" viewBox="0 0 24 24"/>
+                    <Button text="Continuar"></Button>
+                    <p className="center register__page_text">o inicia sesión con</p>
+                    <div className="register__social">
+                        <Social name="google"/>
+                        <Social name="facebook"/>
+                        <Social name="apple"/>
+                    </div>
+                    <p className="center register__page_text register__page_text--small">Creandote una cuenta en Roomet aceptas la política de privacidad y términos y condiciones</p>
+                </div>
+            </div>
+            <div className="register__page_footer_container">
+                <div className="register__page_footer_container_mobile">
+                    <span></span>
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <span></span>
+                </div>
+                <h4>¡Únete a miles de Roomeets más en la búsqueda del compañero de piso perfecto!</h4>
+                <Button text="Inicia sesión" color="black"></Button>
+            </div>
         </div>
     );
 };
