@@ -1,0 +1,31 @@
+.carroussel_matches__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carroussel_matches__container p{
+color: #000;
+font-family: Outfit;
+font-size: 1.4rem;
+font-style: normal;
+font-weight: 500;
+line-height: 115%; /* 20.7px */
+letter-spacing: -0.54px;
+}
+
+.carroussel_matches__pictures {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;  /* o auto */
+    white-space: nowrap; /* evita que los hijos bajen de línea */
+}
+
+
+.carroussel_matches__picture {
+    width: 5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-size: cover;
+}

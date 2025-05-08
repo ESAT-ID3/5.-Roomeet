@@ -19,6 +19,8 @@ import { Social } from './components/social/social'
 import { DeskNa } from './components/desktop-nav/DeskNav'
 import { DeskFooter } from './components/footer/DeskFooter'
 import { BubbleChat } from './components/bubble-chat/BubbleChat'
+import { HeaderChat } from './components/header-chat/HeaderChat'
+import { CarrouselMatches } from './components/carrousel-matches/CarrouselMatches'
 
 
 
@@ -28,7 +30,7 @@ function App() {
   return (
     <>
 
-      <BubbleChat hour="true"/>
+      <CarrouselMatches pic1="https://upload.wikimedia.org/wikipedia/commons/0/0c/E-girl.png"/>
     </>
   );
 }

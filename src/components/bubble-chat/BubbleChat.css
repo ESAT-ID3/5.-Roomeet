@@ -16,7 +16,7 @@ body{
     gap: 0.3rem;
 }
 
-.bubble {
+.bubble_yellow {
     background-color: #FCC45F;
     border-radius: 17px 17px 4px 17px;
     display: inline-block;
@@ -26,7 +26,7 @@ body{
     white-space: normal;
 }
 
-.bubble p{
+.bubble_yellow p{
     color: #070707;
     font-family: "DM Sans";
     font-size: 16px;
@@ -44,4 +44,28 @@ font-style: normal;
 font-weight: 500;
 line-height: normal;
 text-align: end;
+}
+
+.bubble_grey {
+    background-color: #E6E6E6;
+    border-radius: 17px 17px 17px 4px;
+    display: inline-block;
+    padding: 6px 12px;
+    max-width: 50%;
+    word-wrap: break-word;  /* Para cortar palabras largas si es necesario */
+    white-space: normal;
+}
+
+.bubble_grey p{
+    color: #070707;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+}
+
+.left{
+    align-items: flex-start;
 }

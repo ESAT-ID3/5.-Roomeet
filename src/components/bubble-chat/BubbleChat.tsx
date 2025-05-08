@@ -1,12 +1,12 @@
 import { div } from "framer-motion/client"
 import "./BubbleChat.css"
 
-export const BubbleChat = ({hour}) => {
+export const BubbleChat = ({hour, color, text}) => {
 
     return (
-    <div className="bubble_container">
-        <div className="bubble">
-            <p>Placegfdgdfgdfdgdfgdfdgdfgfholder</p>
+    <div className={`bubble_container ${color ==="grey" ? 'left' : ''}`}>
+        <div className={`${color ==="grey" ? 'bubble_grey' : 'bubble_yellow'}`}>
+            <p>{text}</p>
         </div>
         {hour && <p className="bubble_time">00:00</p>}
     </div>
