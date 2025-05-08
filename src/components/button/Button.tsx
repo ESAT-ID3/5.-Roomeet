@@ -5,11 +5,11 @@ interface ButtonType {
   color?: "yellow" | "black" /*El ? significa que no es obligatorio ponerle un color*/
 }
 
-export const Button = ({text,color="yellow"}:ButtonType) => {
+export const Button = ({text,color="yellow", onClick }:ButtonType) => {
 
   return (
     <>
-      <button className={color}>{text}</button>
+      <button onClick={onClick} className={color}>{text}</button>
     </>
   )
 }

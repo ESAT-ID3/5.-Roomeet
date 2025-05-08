@@ -6,7 +6,7 @@ import { NavLink } from 'react-router'
 import { Input } from "../../components/input/input";
 import { Social } from "../../components/social/social";
 
-export const Register = () => {
+export const Register = ({ onSwitch }) => {
 
     return (
         <div className="register__page__container">
@@ -34,7 +34,7 @@ export const Register = () => {
                     <span></span>
                 </div>
                 <h4>¡Únete a miles de Roomeets más en la búsqueda del compañero de piso perfecto!</h4>
-                <Button text="Inicia sesión" color="black"></Button>
+                <Button text="Inicia sesión" color="black" onClick={onSwitch}></Button>
             </div>
         </div>
     );

@@ -6,7 +6,8 @@ import { NavLink } from 'react-router'
 import { Input } from "../../components/input/input";
 import { Social } from "../../components/social/social";
 
-export const LoginPage = () => {
+export const LoginPage = ({ onSwitch }) => {
+    
 
     return (
         <div className="login__page__container">
@@ -38,7 +39,14 @@ export const LoginPage = () => {
                         <span></span>
                 </div>
                 <h4>¡Únete a miles de Roomeets más en la búsqueda del compañero de piso perfecto!</h4>
-                <Button text="Regístrate" color="black"></Button>
+                <Button
+  text="Regístrate"
+  color="black"
+  onClick={() => {
+    console.log("Click en Regístrate");
+    onSwitch();
+  }}
+/>
             </div>
         </div>
     );

@@ -18,6 +18,7 @@ import { Icons } from "./components/icons/Icons";
 import { Social } from './components/social/social'
 import { DeskNa } from './components/desktop-nav/DeskNav'
 import { DeskFooter } from './components/footer/DeskFooter'
+import { BubbleChat } from './components/bubble-chat/BubbleChat'
 
 
 
@@ -27,7 +28,7 @@ function App() {
   return (
     <>
 
-      <DeskFooter/>
+      <BubbleChat hour="true"/>
     </>
   );
 }
