@@ -16,6 +16,7 @@ import { SeenProfiles } from './pages/seenProfiles/SeenProfiles.tsx';
 import { Swipe } from './pages/swipe/Swipe.tsx';
 import { Match } from './pages/match/match.tsx';
 import { AuthSlider } from './pages/auth-slider/AuthSlider.tsx';
+import { Settings } from './pages/settings/Settings.tsx';
 
 
 
@@ -38,6 +39,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/seenProfiles' element={<SeenProfiles/>} />
       <Route path='/swipe' element={<Swipe/>} />
       <Route path='/match' element={<Match/>} /> {/* Provisional hasta que sepamos que hacer */ }
+      <Route path='/settings' element={<Settings/>} />
     </Routes>
     </BrowserRouter>
   </StrictMode>,

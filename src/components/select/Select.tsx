@@ -1,17 +1,15 @@
 import "./Select.css"
-import { Icons } from "../icons/Icons";
 
-export const Select = ({title}) => {
+export const Select = ({title, options = []}) => {
 
     return (
         <div className="select__container">
-            <p>Género</p>
+            <p>{title}</p>
             <div className="select__flex">
                 <select name="Genero">
-                    <option value="">Hombre</option>
-                    <option value="">Mujer</option>
-                    <option value="">Otro</option>
-                    <option value="">Prefiero no decirlo</option>
+                {options.map((opt, i) => (
+            <option key={i} value={opt}>{opt}</option>
+          ))}
                 </select>
             </div>
         </div>

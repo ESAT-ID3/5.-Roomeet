@@ -31,7 +31,7 @@ function App() {
   return (
     <>
 
-      <Select/>
+      <Select title ="Género" options ={["Hombre", "Mujer", "Otro", "Prefiero no decirlo"]}/>
     </>
   );
 }
