@@ -27,6 +27,7 @@ body, p {
 
 .input__box {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     padding-block: 0.3rem;
@@ -35,6 +36,30 @@ body, p {
     border: 0.1rem solid #A6A6A6;
     gap: 0.5rem;
 }
+
+.input__box > p {
+    color: #E5E5E5;
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.type2{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: 0.3rem;
+    padding-inline: 0.5rem;
+    border-radius: 2rem;
+    border: 0.1rem solid #A6A6A6;
+    gap: 0.5rem;
+
+}
+
+
+
 
 input {
     border: none;

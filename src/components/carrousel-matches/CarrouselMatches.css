@@ -1,10 +1,10 @@
 .carroussel_matches__container{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-.carroussel_matches__container p{
+.carroussel_matches__container > p{
 color: #000;
 font-family: Outfit;
 font-size: 1.4rem;
@@ -18,7 +18,19 @@ letter-spacing: -0.54px;
     display: flex;
     flex-direction: row;
     overflow-x: scroll;  /* o auto */
-    white-space: nowrap; /* evita que los hijos bajen de línea */
+    gap: 2rem;
+    scrollbar-width: none; /* Ocultar la barra de desplazamiento para Firefox */
+}
+
+.carroussel_matches__pictures > p{
+    color: var(--White-White-800, #A6A6A6);
+    text-align: center;
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+    margin: auto;
 }
 
 
@@ -28,4 +40,10 @@ letter-spacing: -0.54px;
     background-repeat: no-repeat;
     border-radius: 50%;
     background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.carroussel_matches__pictures::-webkit-scrollbar {
+    display: none; /* Para que la barra del carroussel no aparezca Chrome, Safari y Edge */
 }

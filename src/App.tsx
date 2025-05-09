@@ -21,6 +21,7 @@ import { DeskFooter } from './components/footer/DeskFooter'
 import { BubbleChat } from './components/bubble-chat/BubbleChat'
 import { HeaderChat } from './components/header-chat/HeaderChat'
 import { CarrouselMatches } from './components/carrousel-matches/CarrouselMatches'
+import { Select } from './components/select/Select'
 
 
 
@@ -30,7 +31,7 @@ function App() {
   return (
     <>
 
-      <CarrouselMatches pic1="https://upload.wikimedia.org/wikipedia/commons/0/0c/E-girl.png"/>
+      <Select/>
     </>
   );
 }
