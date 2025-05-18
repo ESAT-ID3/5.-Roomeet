@@ -1,0 +1,101 @@
+/* Reader Component */
+.reader {
+    background-color: #ffffff; /* Fondo blanco */
+    display: flex;
+    justify-content: space-between;
+    padding: 62px 181px 37px 82px; /* Padding especificado */
+    align-items: center;
+  }
+  
+  /* Contenedor del logo */
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  /* Estilos del logo */
+  .logo {
+    width: 256px;
+    height: 71.024px;
+    object-fit: contain; /* Asegura que la imagen se ajuste correctamente */
+    aspect-ratio: 256 / 71.02;
+  }
+  
+  /* Contenedor de botones */
+  .buttons-container {
+    display: flex;
+    gap: 59px; /* Espacio entre los botones */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+  
+  /* Botones sin fondo */
+  .contact-button,
+  /* Botón "Preguntas frecuentes" */
+.faq-button {
+    background: none;
+    color: var(--Black-Black-500, #202020); /* Color de texto */
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.16px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  }
+  
+  
+  /* Botón "Log in" */
+  .login-button {
+    background: var(--Black-Black-500, #202020); /* Fondo negro */
+    color: var(--White-White-200, #F2F2F2); /* Texto blanco */
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    letter-spacing: -0.48px;
+    padding: 11px 15px;
+    border-radius: 999px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  /* Efecto al hacer hover en los botones */
+  .contact-button:hover,
+  .faq-button:hover {
+    text-decoration: underline;
+  }
+  
+  .login-button:hover {
+    background: #333333; /* Un poco más oscuro al hacer hover */
+  }
+  
+  /* Media query para pantallas pequeñas (móviles) */
+  @media (max-width: 768px) {
+    .buttons-container {
+      gap: 0;
+      flex-direction: column; /* Los botones se apilan en columnas */
+      align-items: flex-start; /* Alineación de los botones a la izquierda */
+    }
+  
+    /* Ocultar botones en pantallas pequeñas */
+    .contact-button,
+    .faq-button,
+    .login-button {
+      display: none;
+    }
+  
+    /* Mostrar solo el icono del menú en pantallas pequeñas */
+    .menu-icon {
+      display: block; /* Asegura que el SVG se vea en pantallas pequeñas */
+      cursor: pointer;
+    }
+  }
+  

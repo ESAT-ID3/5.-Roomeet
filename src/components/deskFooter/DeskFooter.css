@@ -1,0 +1,82 @@
+/* Estilos generales para escritorio */
+.footer {
+  background-color: var(--Black-Black-300, #333); /* Color de fondo actualizado */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 75px;
+  margin-top: auto; /* Asegura que el footer se coloque al final */
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 33%; /* Asegura que las columnas se distribuyan de manera simétrica */
+}
+
+.footer-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+
+.footer-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+
+.footer-small-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.13px;
+}
+
+/* Ajustar la segunda columna para que "y Cookies" esté en la siguiente línea */
+.footer-column p.footer-text:nth-child(2) {
+  white-space: normal;
+  word-wrap: break-word; /* Asegura que "y Cookies" pase a la siguiente línea */
+}
+
+/* Justificar el texto en la tercera columna */
+.footer-column:last-child {
+  text-align: right; /* Justifica a la derecha la tercera columna */
+}
+
+/* Asegura que el footer quede al final si el contenido es corto */
+body, html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Asegura que el contenido principal ocupe todo el espacio disponible */
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  .footer {
+      padding: 50px 33px; /* Reduce el padding lateral para dispositivos pequeños */
+      flex-direction: column; /* Cambia a una columna */
+      gap: 1.5rem; /* Añade un espacio entre los bloques */
+  }
+
+  .footer-column {
+      max-width: 100%; /* Cada bloque ocupa el 100% */
+  }
+
+  .footer-column:last-child {
+      text-align: left; /* Alinea el texto a la izquierda en dispositivos móviles */
+  }
+}

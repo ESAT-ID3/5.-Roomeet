@@ -17,7 +17,7 @@ import { Swipe } from './pages/swipe/Swipe.tsx';
 import { Match } from './pages/match/match.tsx';
 import { AuthSlider } from './pages/auth-slider/AuthSlider.tsx';
 import { Settings } from './pages/settings/Settings.tsx';
-
+import { ChatsPage } from './pages/chatsPage/chatsPage.tsx';
 
 
 
@@ -40,6 +40,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/swipe' element={<Swipe/>} />
       <Route path='/match' element={<Match/>} /> {/* Provisional hasta que sepamos que hacer */ }
       <Route path='/settings' element={<Settings/>} />
+      <Route path='/chats' element={<ChatsPage/>} />
     </Routes>
     </BrowserRouter>
   </StrictMode>,

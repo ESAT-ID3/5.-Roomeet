@@ -1,0 +1,53 @@
+/* ChatInput.css */
+.chat-input-layout {
+    display: flex;
+    height: 36px;
+    padding: 7px 12px;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 18px;
+    border: 1px solid #E5E5E5;
+  }
+  
+  .chat-input-text {
+    flex: 1 0 0;
+    border: none;
+    outline: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #202020; /* color de texto normal */
+    background: transparent;
+    line-height: normal;
+    ::placeholder {
+      color: #E5E5E5;
+    }
+  }
+  
+  .chat-input-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 480px) {
+    .chat-input-layout {
+      height: 32px;
+      padding: 6px 10px;
+      border-radius: 14px;
+    }
+  
+    .chat-input-text {
+      font-size: 14px;
+    }
+  
+    .chat-input-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  

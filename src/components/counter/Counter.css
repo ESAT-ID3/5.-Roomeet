@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-family: "Outfit", sans-serif;
+}
+
+.counter-button {
+  width: 48px;
+  height: 48px;
+  background-color: #f4a000;
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.counter-button:hover {
+  background-color: #d98e00;
+}
+
+.counter-value {
+  width: 64px;
+  height: 64px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #f4a000;
+  border-radius: 16px;
+  background-color: white;
+}

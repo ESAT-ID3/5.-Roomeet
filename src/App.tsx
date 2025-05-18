@@ -17,11 +17,18 @@ import { Input } from './components/input/input'
 import { Icons } from "./components/icons/Icons";
 import { Social } from './components/social/social'
 import { DeskNa } from './components/desktop-nav/DeskNav'
-import { DeskFooter } from './components/footer/DeskFooter'
 import { BubbleChat } from './components/bubble-chat/BubbleChat'
 import { HeaderChat } from './components/header-chat/HeaderChat'
 import { CarrouselMatches } from './components/carrousel-matches/CarrouselMatches'
 import { Select } from './components/select/Select'
+import { ChatInput } from './components/chatInput/ChatInput.tsx';
+import { Counter } from './components/counter/Counter.tsx'
+import { ItemToCheck } from './components/itemToCheck/ItemToCheck.tsx' //No sé si es necesario hacerlo un componente, se podrían cambiar las propiedades de un checkbox normal con CSS
+import { MinMaxInput } from './components/minMaxInput/MinMaxInput.tsx'
+import { TextToogle } from './components/textToogle/TextToogle.tsx' //No sé si hace falta hacer un componente o si es mejor coger ya un toggle predefinido
+import { ToogleAnualMensual } from './components/toogleAnualMensual/ToogleAnualMensual.tsx' //Corregir que al eleginar Anual, el blob se sale
+import { DeskFooter } from './components/deskFooter/DeskFooter'
+import { NavLanding } from './components/navLanding/nav-superior-landing/NavLanding.tsx'
 
 
 
@@ -31,7 +38,7 @@ function App() {
   return (
     <>
 
-      <Select title ="Género" options ={["Hombre", "Mujer", "Otro", "Prefiero no decirlo"]}/>
+      <NavLanding/>
     </>
   );
 }

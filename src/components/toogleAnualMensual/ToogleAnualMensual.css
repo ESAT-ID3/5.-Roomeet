@@ -1,0 +1,50 @@
+.toggle-wrapper {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.toggle-container {
+  position: relative;
+  display: flex;
+  background-color: #d4d4d4; /* gris claro */
+  border-radius: 9999px;
+  padding: 7px; /* antes 6px */
+  transition: all 0.3s ease;
+}
+
+.toggle-button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 13px 0; /* antes 12px */
+  font-size: 15px; /* antes 14px */
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s ease;
+}
+
+.toggle-button.active {
+  color: #111827;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 7px;    /* antes 6px */
+  bottom: 7px; /* antes 6px */
+  width: 50%;
+  background-color: white;
+  border-radius: 9999px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.toggle-slider.left {
+  left: 7px; /* igual que el padding */
+}
+
+.toggle-slider.right {
+  left: 50%;
+}
