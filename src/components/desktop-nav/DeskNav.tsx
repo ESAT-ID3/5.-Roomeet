@@ -41,7 +41,7 @@ export const DeskNav = () => {
 
 
   return (
-    <div className="nav">
+    <div className="desk_nav">
       <div className="icons-top">
         {iconsTop.map((icon, index) => (
           <svg

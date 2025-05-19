@@ -6,7 +6,8 @@
     border-radius: 999px;
     padding: 12px 16px;
     background-color: white;
-    width: 100%;
+    width: 90%;
+    height: 3rem;
     max-width: 800px;
     margin: 0 auto; /* Centrado horizontal */
     box-sizing: border-box;
@@ -15,10 +16,13 @@
   .searchbar-icon {
     flex-shrink: 0;
     margin-right: 12px;
+    display: flex;
+    align-items: center;
   }
   
   .searchbar-container input {
     flex-grow: 1;
+
     border: none;
     outline: none;
     font-size: 16px;

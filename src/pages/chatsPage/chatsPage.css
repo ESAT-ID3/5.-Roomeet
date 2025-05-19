@@ -1,0 +1,13 @@
+.chats-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    background-color: white;
+}
+
+@media screen and (width < 1500px){
+    .chats-page{
+        display: none;
+    }
+}

@@ -16,7 +16,7 @@ import { NavLink } from 'react-router'
 import { Input } from './components/input/input'
 import { Icons } from "./components/icons/Icons";
 import { Social } from './components/social/social'
-import { DeskNa } from './components/desktop-nav/DeskNav'
+import { DeskNav } from './components/desktop-nav/DeskNav' //Falta hacerlo funcional
 import { BubbleChat } from './components/bubble-chat/BubbleChat'
 import { HeaderChat } from './components/header-chat/HeaderChat'
 import { CarrouselMatches } from './components/carrousel-matches/CarrouselMatches'
@@ -29,6 +29,7 @@ import { TextToogle } from './components/textToogle/TextToogle.tsx' //No sé si 
 import { ToogleAnualMensual } from './components/toogleAnualMensual/ToogleAnualMensual.tsx' //Corregir que al eleginar Anual, el blob se sale
 import { DeskFooter } from './components/deskFooter/DeskFooter'
 import { NavLanding } from './components/navLanding/nav-superior-landing/NavLanding.tsx'
+import { Ads } from './components/ads/Ads.tsx'
 
 
 
@@ -38,7 +39,7 @@ function App() {
   return (
     <>
 
-      <NavLanding/>
+    <Ads/>
     </>
   );
 }

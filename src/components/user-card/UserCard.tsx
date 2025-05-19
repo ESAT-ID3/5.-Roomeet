@@ -52,6 +52,7 @@ export const UserCard = ({name,age,info}:UserType) => {
                 </svg>
                 </button>
             </div>
+            
         
       </div>
 

@@ -1,9 +1,15 @@
+*{
+  box-sizing: border-box;
+}
+
 .chat-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px;
     font-family: "Outfit", sans-serif;
+    width: 100%;
+    padding-inline: 1.5rem;
   }
   
   .title {

@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+*{
+    box-sizing: border-box;
+}
+
 
 .user_card {
-    min-height: 30rem;
-    max-height: 40rem;
     flex: 1;
-    width: auto;
-    min-width: 310px;
+    min-width: 20rem;
     background-image: 
     linear-gradient(to top, rgba(0,0,0,0.8), transparent),
     url(https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=);    /* Mantiene proporciones */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border: 3px solid white;
     border-radius: 10px;
     box-sizing: border-box;
     padding-inline: 1rem;
@@ -27,7 +29,9 @@
     justify-content: flex-end;
     align-items: center;
     gap: 1.5rem;
+    margin: auto;
     margin-inline: 2rem;
+
 }
 
 .user_description {
@@ -77,9 +81,10 @@
 
 .swipe_buttons {
     display: flex;
-    width: 100%;                 /* ocupa todo el ancho disponible */
+    width: 80%;                 /* ocupa todo el ancho disponible */
     justify-content: space-between;
-    max-width: 50rem;
+    min-width: 20rem;
+    max-width: 30rem;
     flex-wrap: nowrap;
     gap: 0.5rem;                 /* opcional: separación entre botones */
     box-sizing: border-box;      /* respeta padding/border */
