@@ -9,14 +9,14 @@ body {
     padding: 0;
 }
 
-.ads__container{
+.ads__container2{
     display: flex;
     flex-direction: column;
     padding: 3rem;
     background-color: white;
 }
 
-.ads__container p{
+.ads__container2 p{
     color:rgb(137, 137, 137);
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
@@ -37,8 +37,10 @@ body {
     height: 80vh;
 }
 
+
+
 @media screen and (width < 1500px){
-    .ads__container{
+    .ads__container2{
         display: none;
     }
 }
