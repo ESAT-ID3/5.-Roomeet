@@ -31,7 +31,6 @@
 
 .ad{
     display: flex;
-    width: 100vw;
     flex-direction: row;
     justify-content: flex-end;
 }
@@ -40,11 +39,15 @@
     display: none;
 }
 
-@media screen and (width < 1500px){
+@media screen and (width < 1000px){
     .swipe__screen_container{
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+}
+
+.user_card {
+    margin-inline: 1rem;
 }
 
 .blur__container{

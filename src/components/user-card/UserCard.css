@@ -30,7 +30,9 @@
     align-items: center;
     gap: 1.5rem;
     margin: auto;
-    margin-inline: 2rem;
+    margin-inline: 5rem;
+    min-width: 10rem;
+    height: 80%;
 
 }
 
@@ -82,14 +84,14 @@
 .swipe_buttons {
     display: flex;
     width: 80%;                 /* ocupa todo el ancho disponible */
-    justify-content: space-between;
+    justify-content: space-around;
     min-width: 20rem;
     max-width: 30rem;
     flex-wrap: nowrap;
-    gap: 0.5rem;                 /* opcional: separación entre botones */
     box-sizing: border-box;      /* respeta padding/border */
     align-items: center;
     margin-bottom: 1rem;
+    padding-inline: 1rem;
 }
 
 .purple_btn,
@@ -128,3 +130,26 @@
     border: 1px solid #FBAD37;
 }
 
+@media screen and (width < 1000px){
+
+.user_card {
+  /* ancho fluido: nunca menos de 20rem, crecerá hasta 80% del contenedor, y como máximo 60rem */
+
+  /* elimina margin-inline, max-width fijo o margen auto */
+  /* si quieres separación vertical, usa margin-block: */
+  margin-inline: 2rem;
+
+  /* si en cambio prefieres un ancho relativo sin clamp, podrías usar:
+  width: 90%;
+  max-width: 50rem;
+  */
+  
+  /* resto de estilos */
+  height: auto;    /* o un % si lo necesitas */
+  /* flex: none;  no hace falta salvo que quieras anular el flex-shrink/grow */
+}
+
+.swipe_buttons {
+    gap: 0.1rem; 
+}
+}

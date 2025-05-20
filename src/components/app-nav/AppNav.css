@@ -1,6 +1,5 @@
 .nav {
     display: none;
-    margin-top: 3rem;
     box-sizing: border-box;
     width: auto;
     background-color: #202020;
@@ -8,9 +7,10 @@
     justify-content: space-around;
     padding-inline: 1rem;
     padding-block: 1rem;
+    margin-top: 1rem;
 }
 
-@media screen and (width < 1500px){
+@media screen and (width < 1000px){
     .nav {
         display: flex;
     }

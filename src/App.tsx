@@ -8,7 +8,7 @@ import { ChatMsg } from './components/chat-msg/ChatMsg'
 import { StarterPlan } from './components/plans/StarterPlan'
 import { PremiumPlan } from './components/plans/PremiumPlan'
 import { PersonalDataTag } from './components/edit-profile/personal-data-tag/PersonalDataTag'
-import { UserTag } from './components/edit-profile/user-tags/UserTag'
+import { UserTagEdit } from './components/edit-profile/user-tags-edit/UserTagEdit.tsx'
 import { ProfilePicture } from './components/edit-profile/profile-picture/ProfilePicture'
 import { LandingReview } from './components/landing/landing-review/LandingREview'
 import { LandingFeatures } from './components/landing/landing-features/LandingFeatures'
@@ -26,10 +26,11 @@ import { Counter } from './components/counter/Counter.tsx'
 import { ItemToCheck } from './components/itemToCheck/ItemToCheck.tsx' //No sé si es necesario hacerlo un componente, se podrían cambiar las propiedades de un checkbox normal con CSS
 import { MinMaxInput } from './components/minMaxInput/MinMaxInput.tsx'
 import { TextToogle } from './components/textToogle/TextToogle.tsx' //No sé si hace falta hacer un componente o si es mejor coger ya un toggle predefinido
-import { ToogleAnualMensual } from './components/toogleAnualMensual/ToogleAnualMensual.tsx' //Corregir que al eleginar Anual, el blob se sale
+import { ToogleAnualMensual } from './components/toogle-anual-mensual/ToogleAnualMensual.tsx' //Corregir que al eleginar Anual, el blob se sale
 import { DeskFooter } from './components/deskFooter/DeskFooter'
 import { NavLanding } from './components/navLanding/nav-superior-landing/NavLanding.tsx'
 import { Ads } from './components/ads/Ads.tsx'
+import { UserTag } from './components/edit-profile/user-tags/UserTag.tsx'
 
 
 
@@ -39,7 +40,7 @@ function App() {
   return (
     <>
 
-    <Ads/>
+    <UserTag/>
     </>
   );
 }

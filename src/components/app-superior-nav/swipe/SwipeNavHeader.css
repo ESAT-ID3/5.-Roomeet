@@ -4,7 +4,8 @@
     display: flex;
     justify-content: space-between;
     padding-inline: 2rem;
-    padding-block: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 5rem;
     align-items:  center;
 
     

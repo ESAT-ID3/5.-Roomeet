@@ -35,7 +35,7 @@ body{
     gap:1.5rem
 }
 
-@media screen and (width < 1500px){
+@media screen and (width < 1000px){
     .desk_nav{
         display: none;
     }
