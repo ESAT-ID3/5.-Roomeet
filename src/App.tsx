@@ -30,6 +30,7 @@ import { ToogleAnualMensual } from './components/toogleAnualMensual/ToogleAnualM
 import { DeskFooter } from './components/deskFooter/DeskFooter'
 import { NavLanding } from './components/navLanding/nav-superior-landing/NavLanding.tsx'
 import { Ads } from './components/ads/Ads.tsx'
+import { ImageGridUploader } from './components/profile-grid/ImageGridUploader.tsx'
 
 
 
@@ -39,7 +40,7 @@ function App() {
   return (
     <>
 
-    <Ads/>
+    <ImageGridUploader/>
     </>
   );
 }
