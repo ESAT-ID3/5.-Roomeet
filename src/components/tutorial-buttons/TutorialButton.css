@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.tutorial_button_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+    background-color: #e6e6e6;
+    font-family: Outfit;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 400;
+    margin: auto;
+    padding: 1.2rem;
+    width: fit-content; /* 🔸 Clave para que se ajuste al contenido */
+    border-radius: 0.7rem;
+}
+
+.tutorial_button__icon_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.4rem;
+    border: 1.5px solid #4d4d4d;
+}
+
+.tutorial_button__space{
+    height: 2rem;
+    width: 6rem;
+    border-radius: 0.4rem;
+    border: 1.5px solid #4d4d4d;
+}
+

@@ -18,6 +18,7 @@ import { Match } from './pages/match/match.tsx';
 import { AuthSlider } from './pages/auth-slider/AuthSlider.tsx';
 import { Settings } from './pages/settings/Settings.tsx';
 import { ChatsPage } from './pages/chatsPage/chatsPage.tsx';
+import { ProfilePreview } from './pages/profile-preview/ProfilePreview.tsx';
 
 
 
@@ -34,6 +35,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/premium' element={<Premium/>} />
       <Route path='/privacyPolitics' element={<PrivacyPolitics/>} />
       <Route path='/profile' element={<Profile/>} />
+      <Route path='/profile_preview' element={<ProfilePreview/>} />
       <Route path='/register' element={<Register/>} />
       <Route path='/loginanimation' element={<AuthSlider/>} />
       <Route path='/seenProfiles' element={<SeenProfiles/>} />

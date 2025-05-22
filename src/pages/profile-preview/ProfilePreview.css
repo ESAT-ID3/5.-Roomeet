@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#root{
+    width: 100vw;
+    margin: 0;
+}
+
+.profile_preview__container{
+    width: 100%;
+    display: flex;
+
+}
+
+.profile_preview__card_container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.profile_preview__user_info_container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+}
+
+.profile_preview__user_info_container p {
+    color: #000;
+    font-family: Outfit;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 115%; /* 20.7px */
+    letter-spacing: -0.54px;
+    
+}
+
+.profile_preview__personal_data{
+    display: flex;
+    gap: 1rem;
+}
+
+.profile_preview__personal_data__column{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 1rem;
+}

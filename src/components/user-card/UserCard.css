@@ -6,8 +6,7 @@
 
 
 .user_card {
-    flex: 1;
-    min-width: 20rem;
+
     background-image: 
     linear-gradient(to top, rgba(0,0,0,0.8), transparent),
     url(https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=);    /* Mantiene proporciones */
@@ -31,7 +30,6 @@
     gap: 1.5rem;
     margin: auto;
     margin-inline: 5rem;
-    min-width: 10rem;
     height: 80%;
 
 }

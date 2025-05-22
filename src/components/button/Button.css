@@ -38,6 +38,18 @@ button {
     }
 }
 
+.disabled{
+    background-color: #f5f5f5;
+    color: #bfbfbf;
+}
+
+.general_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
 @media (min-width:769px) {
     .yellow:hover{
         background-color: #f8b65a;

@@ -31,6 +31,8 @@ import { DeskFooter } from './components/deskFooter/DeskFooter'
 import { NavLanding } from './components/navLanding/nav-superior-landing/NavLanding.tsx'
 import { Ads } from './components/ads/Ads.tsx'
 import { UserTag } from './components/edit-profile/user-tags/UserTag.tsx'
+import { FlatGrid } from './components/flat-grid/FlatGrid.tsx'
+import { TutorialButton } from './components/tutorial-buttons/TutorialButton.tsx'
 
 
 
@@ -40,7 +42,7 @@ function App() {
   return (
     <>
 
-    <UserTag/>
+    <TutorialButton icon="arrow_down" text="Dislike"/>
     </>
   );
 }
