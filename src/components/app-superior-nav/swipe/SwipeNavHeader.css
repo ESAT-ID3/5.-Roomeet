@@ -3,7 +3,6 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    padding-inline: 2rem;
     padding-bottom: 1rem;
     padding-top: 5rem;
     align-items:  center;
@@ -19,5 +18,9 @@
 .nav_icons {
     display: flex;
     gap: 1rem
+}
+
+.margin-inline {
+    margin-inline: 5rem;
 }
 
