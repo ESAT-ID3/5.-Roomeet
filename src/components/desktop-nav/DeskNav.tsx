@@ -61,24 +61,7 @@ export const DeskNav = () => {
         ))}
       </div>
 
-      <div className="icons-bottom">
-        {iconsBottom.map((icon, index) => (
-          <svg
-            key={index}
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            viewBox={icon.viewBox}
-            onClick={() => handleClick(index)}
-            style={{ cursor: "pointer" }}
-          >
-            <path
-              d={icon.d}
-              fill={activeIndex === index ? "#FDDC87" : "#D9D9D9"}
-            />
-          </svg>
-        ))}
-      </div>
+      
     </div>
   );
 };

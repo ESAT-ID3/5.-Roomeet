@@ -33,6 +33,8 @@ import { Ads } from './components/ads/Ads.tsx'
 import { UserTag } from './components/edit-profile/user-tags/UserTag.tsx'
 import { FlatGrid } from './components/flat-grid/FlatGrid.tsx'
 import { TutorialButton } from './components/tutorial-buttons/TutorialButton.tsx'
+import { EditPreview } from './components/edit-preview/EditPreview.tsx'
+import { RoomCard } from './components/room-card/RoomCard.tsx'
 
 
 

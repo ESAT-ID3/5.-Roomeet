@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import './index.css'
 import App from './App.tsx'
 import { LoginPage } from './pages/login/LoginPage.tsx';
-import { Contact } from './pages/contact/Contact.tsx';
 import { FAQ } from './pages/faq/FAQ.tsx';
 import { Landing } from './pages/landing/Landing.tsx';
 import { NotFound } from './pages/notFound/NotFound.tsx';
@@ -19,6 +18,7 @@ import { AuthSlider } from './pages/auth-slider/AuthSlider.tsx';
 import { Settings } from './pages/settings/Settings.tsx';
 import { ChatsPage } from './pages/chatsPage/chatsPage.tsx';
 import { ProfilePreview } from './pages/profile-preview/ProfilePreview.tsx';
+import { Contact } from './pages/contact/Contact.tsx';
 
 
 
