@@ -9,6 +9,9 @@ import { PersonalDataTag } from "../../components/edit-profile/personal-data-tag
 import { UserTag } from "../../components/edit-profile/user-tags/UserTag";
 import { Select } from "../../components/select/Select";
 import { DeskFooter } from "../../components/deskFooter/DeskFooter";
+import { EditPreview } from "../../components/edit-preview/EditPreview";
+import { ImageGridUploader } from "../../components/profile-grid/ImageGridUploader";
+
 
 export const ProfilePreview = () => {
 
@@ -17,7 +20,9 @@ export const ProfilePreview = () => {
     <div className="profile_preview__container">
         <DeskNav/>
         <div className="profile_preview__card_container">
-        <SwipeNavHeader className="bruh" icon1="shield" icon2="gear"/>
+        <SwipeNavHeader icon1="shield" icon2="gear"/>
+        <EditPreview/>
+        <ImageGridUploader/>
         <UserCard name="María" age="23"/> 
         </div>
         <div className="profile_preview__user_info_container">
@@ -100,7 +105,8 @@ export const ProfilePreview = () => {
             </div> {/*¿Qué costumbres y hábitos deberían saber de ti a la hora de convivir con otras personas? */}
             <p className="profile_preview__user_info_title">¿Qué buscas en una persona con la que compartir piso?</p>
             <div className="profile_preview__identity">
-                <textarea placeholder="Ej: Alguien respetuoso con los espacios comunes, que le guste charlar de vez en cuando y que se implique en mantener el piso bien."></textarea>
+                <textarea placeholder="Ej: Alguien respetuoso con los espacios comunes, que le guste charlar de vez en cuando y que se implique en mantener el piso bien."
+                ></textarea>
                 <p className="textarea__counter">0/500</p>
             </div> {/*¿Qué buscas en una persona con la que compartir piso? */}
             <p className="profile_preview__user_info_title">¿Tienes alguna rutina o necesidad especial que te gustaría que respetaran?</p>
@@ -108,6 +114,7 @@ export const ProfilePreview = () => {
                 <textarea placeholder="Ej: Me levanto muy temprano por trabajo, así que suelo irme a dormir pronto. Me gusta tener la cocina recogida por la noche."></textarea>
                 <p className="textarea__counter">0/500</p>
             </div> {/*¿Tienes alguna rutina o necesidad especial que te gustaría que respetaran? */}
+            
             <Button text="Guardar cambios" />
     </div>
         

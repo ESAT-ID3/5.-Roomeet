@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './ImageGridUploader.css'; // Asegúrate de que la ruta coincida con tu proyecto
 import { Button } from '../button/Button';
 import image from "../../assets/images/img_placeholder_default.png"
+import fallbackImg from "../../assets/images/fallback.png";
 
 const MAX_IMAGES = 9;
 
@@ -39,6 +40,10 @@ export const ImageGridUploader: React.FC = () => {
             <img
               src={img || 'https://via.placeholder.com/112x112?text=Imagen'}
               alt={`imagen-${index}`}
+              onError={(e) => {
+      e.currentTarget.src = fallbackImg;
+      e.currentTarget.onerror = null;
+  }}
             />
 
             {img ? (

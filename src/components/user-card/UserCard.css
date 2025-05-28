@@ -18,7 +18,7 @@
     box-sizing: border-box;
     padding-inline: 1rem;
     font-family: Outfit;
-    font-size: 36px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -28,9 +28,10 @@
     justify-content: flex-end;
     align-items: center;
     gap: 1.5rem;
-    margin: auto;
-    margin-inline: 5rem;
     height: 80%;
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 80%;
 
 }
 

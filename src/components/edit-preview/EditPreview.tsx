@@ -7,7 +7,7 @@ export const EditPreview: React.FC = () => {
   return (
     <div className="toggle-container">
       <button
-        className={`toggle-button ${active === 'edit' ? 'active' : ''}`}
+        className={`toggle-button edit_preview__separator ${active === 'edit' ? 'active' : ''}`}
         onClick={() => setActive('edit')}
       >
         Edit
