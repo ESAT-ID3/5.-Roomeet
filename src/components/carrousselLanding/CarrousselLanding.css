@@ -1,0 +1,26 @@
+/* MobileCarousel.css */
+.carousel-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: none;
+}
+
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.carousel-image {
+  flex: 0 0 auto;
+  width: 25vw;
+  height: 70vh;
+  margin: 0 1vw;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
