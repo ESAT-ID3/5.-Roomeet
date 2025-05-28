@@ -10,9 +10,9 @@ interface ButtonType {
 export const Button = ({text,color="yellow", onClick, icon }:ButtonType) => {
 
   return (
-    <div>
+    <div style={{ width: "100%" }}>
     
-      <button onClick={onClick} className={`${color} general_button`}>
+      <button onClick={onClick} className={`${color} general_button button`}>
         {icon === "yes" && color === "disabled" && <Icons name="block" color="#BFBFBF" viewBox="0 0 25 24"/>}
         {icon === "yes" && color === "red" && <Icons name="block" color="white" viewBox="0 0 25 24"/>}
         {text}
