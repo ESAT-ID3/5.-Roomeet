@@ -81,3 +81,14 @@ textarea{
     font-style: normal;
     font-weight: 400;
 }
+
+.profile_preview__user_info_text{
+    color: var(--Black-Black-500, #202020);
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+    width: 80%;
+}
+
