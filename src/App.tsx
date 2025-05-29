@@ -35,18 +35,19 @@ import { FlatGrid } from './components/flat-grid/FlatGrid.tsx'
 import { TutorialButton } from './components/tutorial-buttons/TutorialButton.tsx'
 import { EditPreview } from './components/edit-preview/EditPreview.tsx'
 import { RoomCard } from './components/room-card/RoomCard.tsx'
+  import React from 'react';
 
+  import { ToastContainer, toast } from 'react-toastify';
+  
+  function App(){
+    const notify = () => toast("Wow so easy!");
 
-
-
-function App() {
-
-  return (
-    <>
-
-    <TutorialButton icon="arrow_down" text="Dislike"/>
-    </>
-  );
-}
+    return (
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+      </div>
+    );
+  }
 
 export default App

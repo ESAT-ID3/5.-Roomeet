@@ -238,8 +238,10 @@ const handleSubmit = () => {
                 handleSubmit();
                 notify();
              }} text="Guardar cambios" />}
+             <ToastContainer />
             {mostrarC && <Button text="Bloquear perfil" color="disabled" icon="yes"/>}
             {mostrarC && <Button text="Denunciar perfil" color="disabled" icon="report"/>}
+            
             
     </div>
         
