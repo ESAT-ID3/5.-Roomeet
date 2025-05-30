@@ -1,6 +1,44 @@
 import "./icons.css" //Está pendiente centrar la lupa que no sé cómo
+import React from 'react';
 
-const icons = {
+interface IconProps {
+  name: IconName;
+  size?: string;
+  color?: string;
+  viewBox?: string;
+}
+
+export type IconName =
+  | "home"
+  | "user"
+  | "settings"
+  | "shield"
+  | "gear"
+  | "search"
+  | "match"
+  | "check"
+  | "blue_check"
+  | "gender"
+  | "cross"
+  | "edit"
+  | "star"
+  | "lock"
+  | "google"
+  | "facebook"
+  | "apple"
+  | "eye"
+  | "toggle"
+  | "email"
+  | "chevron"
+  | "dots"
+  | "send"
+  | "block"
+  | "arrow_left"
+  | "arrow_down"
+  | "arrow_right"
+  | "report";
+
+const icons: Record<IconName, React.ReactElement> = {
     home: (
       <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
     ),
@@ -88,10 +126,8 @@ const icons = {
     
   };
   
-  export const Icons = ({ name, size="24", color = "#000", viewBox ='0 0 32 30'}) => {
-    return (
-      <svg width={size} height={size} fill={color} viewBox={viewBox}>
-        {icons[name]}
-      </svg>
-    );
-  };
+  export const Icons = ({ name, size = "24", color = "#000", viewBox = "0 0 32 30" }: IconProps) => (
+  <svg width={size} height={size} fill={color} viewBox={viewBox}>
+    {icons[name]}
+  </svg>
+);

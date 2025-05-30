@@ -1,5 +1,4 @@
 import "./LandingFeatures.css"
-import { Icons } from "../../icons/Icons";
 
 export const LandingFeatures = () => {
 

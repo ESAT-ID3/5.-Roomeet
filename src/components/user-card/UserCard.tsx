@@ -2,8 +2,8 @@ import "./UserCard.css"
 
 interface UserType {
     name: string,
-    age: number,
-    info: string
+    age?: number,
+    info?: string
   }
 
 export const UserCard = ({name,age,info}:UserType) => {

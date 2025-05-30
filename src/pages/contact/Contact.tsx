@@ -64,7 +64,7 @@ export const Contact: React.FC = () => {
                 <div className="rrss-column">
 
                     <div className="rrss-item">{/* Twitter */}
-                        <Icons name= 'twitter'/>
+                        <Icons name= 'block'/>
                         <div className="icon">@RoomeetApp</div>
                     </div>
 
@@ -74,7 +74,7 @@ export const Contact: React.FC = () => {
                     </div>
 
                     <div className="rrss-item"> {/* YouTube */}
-                        <Icons name = 'youtube'/>
+                        <Icons name = 'block'/>
                         <div className="icon">RoomeetOficial</div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ export const Contact: React.FC = () => {
                 <div className="rrss-column">
 
                     <div className="rrss-item">{/* Instagram */}
-                        <Icons name = 'insta'/>
+                        <Icons name = 'block'/>
                         <div className="icon">@roomeet_life</div>
                     </div>
 
@@ -92,7 +92,7 @@ export const Contact: React.FC = () => {
                     </div>
 
                     <div className="rrss-item">{/* Teléfono */}
-                        <Icons name= 'telephone'/>
+                        <Icons name= 'block'/>
                         <div className="icon">+34 612 345 678</div>
                     </div>
                 </div>
@@ -168,17 +168,17 @@ export const Contact: React.FC = () => {
                 <div className="rrss-column">
 
                     <div className="rrss-item">{/* Twitter */}
-                        <Icons name= 'twitter'/>
+                        <Icons name= 'block'/>
                         <div className="icon">@RoomeetApp</div>
                     </div>
 
                     <div className="rrss-item">{/* Facebook */}
-                        <Icons name= 'facebook'/>
+                        <Icons name= 'block'/>
                         <div className="icon">RoomeetOficial</div>
                     </div>
 
                     <div className="rrss-item"> {/* YouTube */}
-                        <Icons name = 'youtube'/>
+                        <Icons name = 'block'/>
                         <div className="icon">RoomeetOficial</div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@ export const Contact: React.FC = () => {
                 <div className="rrss-column">
 
                     <div className="rrss-item">{/* Instagram */}
-                        <Icons name = 'insta'/>
+                        <Icons name = 'block'/>
                         <div className="icon">@roomeet_life</div>
                     </div>
 
@@ -196,7 +196,7 @@ export const Contact: React.FC = () => {
                     </div>
 
                     <div className="rrss-item">{/* Teléfono */}
-                        <Icons name= 'telephone'/>
+                        <Icons name= 'block'/>
                         <div className="icon">+34 612 345 678</div>
                     </div>
                 </div>

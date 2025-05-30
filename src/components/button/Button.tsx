@@ -5,6 +5,7 @@ interface ButtonType {
   text: string,
   icon?: string,
   color?: "yellow" | "black" | "red" | "disabled" /*El ? significa que no es obligatorio ponerle un color*/
+  onClick?: () => void
 }
 
 export const Button = ({text,color="yellow", onClick, icon }:ButtonType) => {

@@ -14,7 +14,6 @@ import { EditPreview } from "../../components/edit-preview/EditPreview";
 import { ImageGridUploader } from "../../components/profile-grid/ImageGridUploader";
 import { ToastContainer, toast } from 'react-toastify';
 import { TutorialButton } from "../../components/tutorial-buttons/TutorialButton";
-import React from 'react';
 
 
 
@@ -49,13 +48,13 @@ const opciones = [
   // ... más opciones
 ];
 
-const [seleccionados, setSeleccionados] = useState([]);
+const [seleccionados, setSeleccionados] = useState<string[]>([]);
 
 useEffect(() => {
     console.log("Seleccionados actualizados:", seleccionados); //Esto se ejecutará después de que haya un cambio en el array de "seleccionados"
   }, [seleccionados]);
 
-function toggleOpcion(opcion) {
+function toggleOpcion(opcion: string) {
   if (seleccionados.includes(opcion)) {
     setSeleccionados(seleccionados.filter(item => item !== opcion));
   } else {
@@ -86,7 +85,7 @@ function toggleOpcion(opcion) {
             {mostrarB && <ImageGridUploader/>}
             {mostrarC && (
                 <>
-                <UserCard name="María" age="23"/>
+                <UserCard name="María" age={23}/>
                 <p className="profile_preview__user_info_text center_text">Aquí tienes algunos accesos directos para navegar con el teclado</p>
                 <div className="profile_preview__card__tutorial_button">
                 <TutorialButton text="Siguiente foto"/>
@@ -283,8 +282,8 @@ function toggleOpcion(opcion) {
             {mostrarB && <Button onClick={() => {
                 handleSubmit();
                 notify();
-             }} text="Guardar cambios" />}
-             <ToastContainer />
+            }} text="Guardar cambios" />}
+            <ToastContainer />
             {mostrarC && <Button text="Bloquear perfil" color="disabled" icon="yes"/>}
             {mostrarC && <Button text="Denunciar perfil" color="disabled" icon="report"/>}
             

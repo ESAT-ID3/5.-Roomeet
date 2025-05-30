@@ -1,4 +1,4 @@
-import React from "react";
+
 import { MessageHeader } from "../../components/messageHeader/MessageHeader";
 import { SearchBarChats } from "../../components/searchBarChats/SearchBarChats";
 import { ChatMsg } from "../../components/chat-msg/ChatMsg";

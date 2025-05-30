@@ -1,8 +1,10 @@
 import "./PersonalDataTag.css"
 import { Icons } from "../../icons/Icons";
+import type { IconName } from "../../icons/Icons";
+
 interface PersonalDataTagProps {
     text: string;
-    icon: string;
+    icon: IconName;
 }
 
 export const PersonalDataTag = ({text, icon}:PersonalDataTagProps) => {

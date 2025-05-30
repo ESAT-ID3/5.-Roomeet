@@ -1,7 +1,12 @@
 import "./UserTag.css";
-import { Icons } from "../../icons/Icons";
 
-export const UserTag = ({ text, isSelected, onClick }) => {
+interface UserTagProps {
+  text: string;
+  isSelected?: boolean;
+  onClick?: () => void;
+}
+
+export const UserTag:React.FC<UserTagProps> = ({ text, isSelected, onClick }) => {
   return (
     <div
       className={`user_tag_container ${isSelected ? "selected" : ""}`}

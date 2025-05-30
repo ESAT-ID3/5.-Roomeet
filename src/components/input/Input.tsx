@@ -1,7 +1,18 @@
 import "./Input.css"
 import { Icons } from "../icons/Icons";
 
-export const Input = ({name, icon1, icon2="send", viewBox, size, type}) => {
+import type { IconName } from "../icons/Icons";
+
+interface InputProps {
+    name: string;
+    icon1: IconName;
+    icon2?: IconName; // icon2 is optional
+    viewBox?: string;
+    size?: string;
+    type?: string; // type is optional, default is empty string
+}
+
+export const Input: React.FC<InputProps> = ({name, icon1, icon2="send", viewBox, size, type}) => {
 
     return (
         <div className="input__container">

@@ -1,5 +1,5 @@
 import "./PicturesMatch.css"
-import {Icons} from "../Icons/Icons"
+import {Icons} from "../icons/Icons"
 import pic1 from "../../assets/images/pic1.jpg" //Ver como hacer esto para coger las imágenes de una base de datos
 import pic2 from "../../assets/images/pic2.jpg"
 

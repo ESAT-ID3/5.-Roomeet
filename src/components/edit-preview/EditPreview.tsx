@@ -6,7 +6,7 @@ interface ComponenteAProps {
   onMostrarC: () => void;
 }
 
-export const EditPreview: React.FC = ({ onMostrarB, onMostrarC }: ComponenteAProps) => {
+export const EditPreview: React.FC<ComponenteAProps> = ({ onMostrarB, onMostrarC }) => {
   const [active, setActive] = useState<'edit' | 'preview'>('edit');
 
   return (

@@ -2,11 +2,14 @@ import "./LoginPage.css"
 
 import { Button } from "../../components/button/Button";
 import { Icons } from "../../components/icons/Icons";
-import { NavLink } from 'react-router'
-import { Input } from "../../components/input/input";
-import { Social } from "../../components/social/social";
+import { Input } from "../../components/input/Input";
+import { Social } from "../../components/social/Social";
 
-export const LoginPage = ({ onSwitch }) => {
+interface LoginPageProps {
+    onSwitch: () => void; // Function to switch to the registration page
+}
+
+export const LoginPage = ({ onSwitch }:LoginPageProps) => {
     
 
     return (

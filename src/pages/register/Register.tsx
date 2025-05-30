@@ -1,12 +1,14 @@
 import "./Register.css"
 
 import { Button } from "../../components/button/Button";
-import { Icons } from "../../components/icons/Icons";
-import { NavLink } from 'react-router'
-import { Input } from "../../components/input/input";
-import { Social } from "../../components/social/social";
+import { Input } from "../../components/input/Input";
+import { Social } from "../../components/social/Social";
 
-export const Register = ({ onSwitch }) => {
+interface RegisterProps {
+  onSwitch: () => void;  // o el tipo que corresponda
+}
+
+export const Register = ({ onSwitch }: RegisterProps) => {
 
     return (
         <div className="register__page__container">
