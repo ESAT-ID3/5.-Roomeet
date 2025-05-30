@@ -1,5 +1,5 @@
 import "./ProfilePreview.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { UserCard } from "../../components/user-card/UserCard";
 import { AppNav } from "../../components/app-nav/AppNav";
 import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
@@ -13,7 +13,10 @@ import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import { EditPreview } from "../../components/edit-preview/EditPreview";
 import { ImageGridUploader } from "../../components/profile-grid/ImageGridUploader";
 import { ToastContainer, toast } from 'react-toastify';
+import { TutorialButton } from "../../components/tutorial-buttons/TutorialButton";
 import React from 'react';
+
+
 
 export const ProfilePreview = () => {
 const notify = () => toast("Wow so easy!");
@@ -35,24 +38,66 @@ const handleSubmit = () => {
   // Envía a backend o procesa como necesites
 };
 
+const opciones = [
+  "LGTB+",
+  "Vegetariano/a",
+  "Fumador/a",
+  "Ordenado/a",
+  "Tiene mascota",
+  "Prefiere su espacio",
+  "brouston"
+  // ... más opciones
+];
+
+const [seleccionados, setSeleccionados] = useState([]);
+
+useEffect(() => {
+    console.log("Seleccionados actualizados:", seleccionados); //Esto se ejecutará después de que haya un cambio en el array de "seleccionados"
+  }, [seleccionados]);
+
+function toggleOpcion(opcion) {
+  if (seleccionados.includes(opcion)) {
+    setSeleccionados(seleccionados.filter(item => item !== opcion));
+  } else {
+    if (seleccionados.length < 6) {
+      setSeleccionados([...seleccionados, opcion]);
+    } else {
+      alert("Solo puedes seleccionar hasta 6 opciones");
+    }
+  }
+}
+
 
     return (
 <div className="profile_preview__footer">
     <div className="profile_preview__container">
         <DeskNav/>
         <div className="profile_preview__card_container">
-        <SwipeNavHeader icon1="shield" icon2="gear"/>
-        <EditPreview onMostrarB={() => 
-            {setMostrarB(true);
-            setMostrarC(false);
-        }} 
-        onMostrarC={() => {
-            setMostrarC(true);
-            setMostrarB(false);
-        }}
+            <SwipeNavHeader icon1="shield" icon2="gear"/>
+            <EditPreview onMostrarB={() => 
+                {setMostrarB(true);
+                setMostrarC(false);
+            }} 
+            onMostrarC={() => {
+                setMostrarC(true);
+                setMostrarB(false);
+            }}
             />
-        {mostrarB && <ImageGridUploader/>}
-        {mostrarC && <UserCard name="María" age="23"/>}
+            {mostrarB && <ImageGridUploader/>}
+            {mostrarC && (
+                <>
+                <UserCard name="María" age="23"/>
+                <p className="profile_preview__user_info_text center_text">Aquí tienes algunos accesos directos para navegar con el teclado</p>
+                <div className="profile_preview__card__tutorial_button">
+                <TutorialButton text="Siguiente foto"/>
+                <TutorialButton icon="arrow_left" text="Dislike"/>
+                </div>
+                <div className="profile_preview__card__tutorial_button">
+                <TutorialButton icon="arrow_down" text="Ver Perfil"/>
+                <TutorialButton icon="arrow_right" text="Like"/>
+                </div>
+                </>
+                )}
         </div>
         <div className="profile_preview__user_info_container">
             <p className="profile_preview__user_info_title">Detalles Personales</p>
@@ -73,12 +118,6 @@ const handleSubmit = () => {
                     <div 
                     className="profile_preview__identity"
                     style={{ maxWidth: '30rem' }}>
-                    <UserTag text="LGTB+"/>
-                    <UserTag text="Vegetariano/a"/>
-                    <UserTag text="Fumador/a"/>
-                    <UserTag text="Ordenado/a"/>
-                    <UserTag text="Tiene mascota"/> 
-                    <UserTag text="Prefiere su espacio"/>
                     </div>
                 </div>
             )}
@@ -86,12 +125,19 @@ const handleSubmit = () => {
                 <>
             <p className="profile_preview__user_info_title">🏳️‍🌈 Identidad y Valores</p>
             <div className="profile_preview__identity">
-                <UserTag text="LGTB+"/>
-                <UserTag text="Vegetariano/a"/>
-                <UserTag text="Fumador/a"/>
-                <UserTag text="Ordenado/a"/>
-                <UserTag text="Tiene mascota"/> 
-                <UserTag text="Prefiere su espacio"/>
+                {opciones.map((opcion) => (
+      <UserTag
+        key={opcion}
+        text={opcion}
+        isSelected={seleccionados.includes(opcion)}
+        onClick={() => {
+            console.log(opcion)
+            toggleOpcion(opcion)
+            
+            
+    }}
+      />
+    ))}
             </div> {/*Identidad y Valores */}
             <p className="profile_preview__user_info_title">🥦 Estilo de vida</p>
             <div className="profile_preview__identity">
@@ -146,7 +192,7 @@ const handleSubmit = () => {
             {mostrarC && (
                 <>
                     <div className="profile_preview__identity">
-                        <p className="profile_preview__user_info_text">{formData.descripcion}</p>
+                        <p className={formData.descripcion === "" ? "profile_preview__user_info_text profile_preview__user_info_empty" : "profile_preview__user_info_text"}>{formData.descripcion === "" ? "¡No has escrito ninguna descripción! ¿A qué esperas?" : formData.descripcion}</p>
                     </div>
                 </> )}    
                 
@@ -163,7 +209,7 @@ const handleSubmit = () => {
             {mostrarC && (
                 <>
                     <div className="profile_preview__identity">
-                        <p className="profile_preview__user_info_text"> Entre 6 y 12 meses</p>
+                        <p className="profile_preview__user_info_text"> {formData.duracionAlquiler}</p>
                     </div>
                 </> )}      
                 {/*Duración de la estancia */}
@@ -180,7 +226,7 @@ const handleSubmit = () => {
                 {mostrarC && (
                 <>
                     <div className="profile_preview__identity">
-                        <p className="profile_preview__user_info_text"> Cada uno controla y paga sus gastos</p>
+                        <p className="profile_preview__user_info_text"> {formData.gestionGastos}</p>
                     </div>
                 </> )}  {/*¿Cómo prefieres gestionar los gastos? */}
             <p className="profile_preview__user_info_title">🙊 ¿Qué costumbres y hábitos deberían saber de ti a la hora de convivir con otras personas?</p>
@@ -197,7 +243,7 @@ const handleSubmit = () => {
                 {mostrarC && (
                 <>
                     <div className="profile_preview__identity">
-                        <p className="profile_preview__user_info_text"> Suelo madrugar y me gusta que por las noches haya tranquilidad. Cocino bastante, pero siempre dejo todo recogido. Los fines de semana suelo limpiar y me gusta tener la casa ordenada. </p>
+                        <p className={formData.costumbresHabitos === "" ? "profile_preview__user_info_text profile_preview__user_info_empty" : "profile_preview__user_info_text"}> {formData.costumbresHabitos === "" ? "Dejar claras tus costumbres podría evitar futuras discusiones, ¡escribe algo!" : formData.costumbresHabitos} </p>
                     </div>
                 </> )}  {/*¿Qué costumbres y hábitos deberían saber de ti a la hora de convivir con otras personas? */}
             <p className="profile_preview__user_info_title">👀 ¿Qué buscas en una persona con la que compartir piso?</p>
@@ -214,7 +260,7 @@ const handleSubmit = () => {
             {mostrarC && (
                 <>
                     <div className="profile_preview__identity">
-                        <p className="profile_preview__user_info_text"> Alguien respetuoso, tranquilo y con quien haya buen ambiente. No busco una amistad intensa, pero sí alguien con quien compartir alguna charla o cena. Que cuide el espacio común y respete los horarios.</p>
+                        <p className={formData.buscaPersona === "" ? "profile_preview__user_info_text profile_preview__user_info_empty" : "profile_preview__user_info_text"}> {formData.buscaPersona === "" ? "Haz saber a los demás si serían tu compañero/a ideal, ¡qué todos te lean!" : formData.buscaPersona} </p>
                     </div>
                 </> )}   {/*¿Qué buscas en una persona con la que compartir piso? */}
             <p className="profile_preview__user_info_title">❌ ¿Tienes alguna rutina o necesidad especial que te gustaría que respetaran?</p>
@@ -231,7 +277,7 @@ const handleSubmit = () => {
                 {mostrarC && (
                 <>
                     <div className="profile_preview__identity">
-                        <p className="profile_preview__user_info_text"> Trabajo desde casa algunos días, así que valoro un ambiente tranquilo. También hago yoga por las mañanas en el salón, pero puedo adaptarme.</p>
+                        <p className={formData.rutinaNecesidad === "" ? "profile_preview__user_info_text profile_preview__user_info_empty" : "profile_preview__user_info_text"}> {formData.rutinaNecesidad === "" ? "Es importante que dejes claro aquí donde están tus límites, ¡escríbelos!" : formData.rutinaNecesidad} </p>
                     </div>
                 </> )}  {/*¿Tienes alguna rutina o necesidad especial que te gustaría que respetaran? */}
             {mostrarB && <Button onClick={() => {
