@@ -2,6 +2,8 @@ import "./Landing.css"
 import { Button } from "../../components/button/Button";
 import { NavLanding } from "../../components/navLanding/nav-superior-landing/NavLanding";
 import { CarrousselLanding } from '../../components/carrousselLanding/CarrousselLanding'
+import { IdealPartnerLanding } from "../../components/idealPartnerLanding/IdealPartnerLanding";
+import { WhyRoomeet } from "../../components/whyRoomeet/WhyRoomeet";
 
 export const Landing = () => {
 
@@ -20,7 +22,9 @@ export const Landing = () => {
                         Haz match con personas afines a <br />
                         tu estilo de vida y encuentra a tu próximo compañero de piso
                     </p>
-                    <Button text= 'EMPIEZA YA!' color="yellow"/>
+                    <div className="button_start">
+                        <Button text= 'EMPIEZA YA!' color="yellow"/>
+                    </div>
                     <div className="character-illustration" />
                     </div>
                 </div>
@@ -28,6 +32,14 @@ export const Landing = () => {
 
             <section className="carroussel">
                 <CarrousselLanding/>
+            </section>
+
+            <section>
+                <IdealPartnerLanding/>
+            </section>
+
+            <section className="whyRoomeet">
+                <WhyRoomeet/>
             </section>
 
         </>

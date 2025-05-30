@@ -12,11 +12,12 @@
   display: flex;
   flex-wrap: nowrap;
   will-change: transform;
+  width: 100%;
 }
 
 .carousel-image {
   flex: 0 0 auto;
-  width: 25vw;
+  min-width: 20rem;
   height: 70vh;
   margin: 0 1vw;
   background-size: cover;
@@ -24,3 +25,24 @@
   border-radius: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 768px) {
+    .buttons-container {
+      gap: 0;
+      flex-direction: column; /* Los botones se apilan en columnas */
+      align-items: flex-start; /* Alineación de los botones a la izquierda */
+    }
+  
+    /* Ocultar botones en pantallas pequeñas */
+    .contact-button,
+    .faq-button,
+    .login-button {
+      display: none;
+    }
+  
+    /* Mostrar solo el icono del menú en pantallas pequeñas */
+    .menu-icon {
+      display: block; /* Asegura que el SVG se vea en pantallas pequeñas */
+      cursor: pointer;
+    }
+  }

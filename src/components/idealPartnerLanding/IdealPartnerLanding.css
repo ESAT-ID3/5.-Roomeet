@@ -1,0 +1,84 @@
+/* OnboardingSection.css */
+.onboarding-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh 10vw;
+    height: 100vh;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .title h2{
+    font-family: Outfit;
+    font-size: 36px;
+    
+  }
+
+  .non-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: Outfit;
+  }
+
+  .non-title p{
+    font-size: 15px;
+    font-family: Outfit;
+  }
+
+  .non-title h3{
+    font-size: 15px;
+    font-family: Outfit;
+  }
+  
+  
+  .onboarding-text {
+    max-width: 40%;
+    gap: 10px;
+  }
+  
+  
+
+  
+  .onboarding-card {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+ 
+  
+  .onboarding-phones {
+    width: 500px;
+    height: 500px;
+    flex-shrink: 0;
+    background-color: blue;
+  }
+  
+
+  .phone-img {
+    height: 75vh;
+  }
+  
+ 
+  .phone-placeholder {
+    width: 200px;
+    height: 400px;
+    border-radius: 2rem;
+    background-color: red;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+
+  @media (max-width: 768px) {
+    .non-title{
+        flex-direction: column;
+    }
+  }
+  
+  
