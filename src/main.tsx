@@ -19,6 +19,7 @@ import { Settings } from './pages/settings/Settings.tsx';
 import { ChatsPage } from './pages/chatsPage/chatsPage.tsx';
 import { ProfilePreview } from './pages/profile-preview/ProfilePreview.tsx';
 import { Contact } from './pages/contact/Contact.tsx';
+import { RoomProfile } from './pages/room-profile/RoomProfile.tsx';
 
 
 
@@ -36,6 +37,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/privacyPolitics' element={<PrivacyPolitics/>} />
       <Route path='/profile' element={<Profile/>} />
       <Route path='/profile_preview' element={<ProfilePreview/>} />
+      <Route path='/room_profile' element={<RoomProfile/>} />
       <Route path='/register' element={<Register onSwitch={() => { console.log("Switch"); }}/>} />
       <Route path='/loginanimation' element={<AuthSlider/>} />
       <Route path='/seenProfiles' element={<SeenProfiles/>} />

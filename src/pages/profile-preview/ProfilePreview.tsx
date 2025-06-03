@@ -14,11 +14,26 @@ import { EditPreview } from "../../components/edit-preview/EditPreview";
 import { ImageGridUploader } from "../../components/profile-grid/ImageGridUploader";
 import { ToastContainer, toast } from 'react-toastify';
 import { TutorialButton } from "../../components/tutorial-buttons/TutorialButton";
+import { Bounce } from "react-toastify";
+import { RoomCard } from "../../components/room-card/RoomCard";
 
 
 
 export const ProfilePreview = () => {
-const notify = () => toast("Wow so easy!");
+
+const maxOptionError = () => {
+    toast.error('¡Solo puedes seleccionar hasta 6 etiquetas!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce, // Usar la transición Bounce
+    });
+}
 
     const [mostrarB, setMostrarB] = useState(true);
     const [mostrarC, setMostrarC] = useState(false);
@@ -37,16 +52,50 @@ const handleSubmit = () => {
   // Envía a backend o procesa como necesites
 };
 
-const opciones = [
-  "LGTB+",
-  "Vegetariano/a",
-  "Fumador/a",
-  "Ordenado/a",
-  "Tiene mascota",
-  "Prefiere su espacio",
-  "brouston"
+const identity = [
+    "LGTB+",
+    "Fumador/a",
+    "Ordenado/a",
   // ... más opciones
 ];
+
+const lifestyle = [
+    "Vegetariano/a",
+    "Vegano/a",
+    "Omnívoro/a",
+    "Celíaco/a",
+    "Cocino mucho", 
+    "Apenas cocino",
+    "Healthy Lifestyle",
+    "Fan del café",
+  // ... más opciones
+];
+
+const habits = [
+    "Limpieza flexible",
+    "Le gusta compartir cosas",
+    "Prefiere su espacio",
+    "Silencioso/a",
+    "Social",
+    "Noctámbulo/a",
+    "Madrugador/a",
+    "Trabajo desde casa",
+    "Trabajo fuera",
+]
+
+const pets = [
+    "Tiene mascotas",
+    "Le encantan los animales",
+    "Alergia a los animales",
+]
+
+const limits = [
+    "Fumador/a",
+    "No fuma",
+    "No quiere gente fumando",
+    "Bebe alcohol",
+    "No bebe alcohol",
+]
 
 const [seleccionados, setSeleccionados] = useState<string[]>([]);
 
@@ -61,7 +110,7 @@ function toggleOpcion(opcion: string) {
     if (seleccionados.length < 6) {
       setSeleccionados([...seleccionados, opcion]);
     } else {
-      alert("Solo puedes seleccionar hasta 6 opciones");
+        maxOptionError();
     }
   }
 }
@@ -113,18 +162,46 @@ function toggleOpcion(opcion: string) {
             </div> {/*Detalles Personales */}
             {mostrarC && (
                 <div>
+                    <RoomCard/>
                     <p className="profile_preview__user_info_title">Etiquetas</p>
-                    <div 
-                    className="profile_preview__identity"
-                    style={{ maxWidth: '30rem' }}>
+                    {seleccionados.length === 0 ? (
+                        <p className="profile_preview__user_info_text profile_preview__user_info_empty">
+                        ¡No has seleccionado ninguna etiqueta!
+                        </p>
+                    ) : (
+                        <div className="profile_preview__identity" style={{ maxWidth: '30rem' }}>
+                        {seleccionados.map((opcion) => (
+                            <UserTag
+                            key={opcion}
+                            text={opcion}
+                            isSelected={seleccionados.includes(opcion)}
+                            />
+                        ))}
+                        </div>
+                    )}
                     </div>
-                </div>
             )}
             {mostrarB && (
                 <>
-            <p className="profile_preview__user_info_title">🏳️‍🌈 Identidad y Valores</p>
+                    <p className="profile_preview__user_info_title">🏳️‍🌈 Identidad y Valores</p>
+                    <div className="profile_preview__identity">
+                    {identity.map((opcion) => (
+                    <UserTag
+                    key={opcion}
+                    text={opcion}
+                    isSelected={seleccionados.includes(opcion)}
+                    onClick={() => {
+                        console.log(opcion)
+                        toggleOpcion(opcion)
+                        
+                        
+                }}
+                />
+                ))}
+            </div> {/*Identidad y Valores */}
+            <p className="profile_preview__user_info_title">🥦 Estilo de vida</p>
             <div className="profile_preview__identity">
-                {opciones.map((opcion) => (
+                {lifestyle.map((opcion) => (
       <UserTag
         key={opcion}
         text={opcion}
@@ -132,49 +209,51 @@ function toggleOpcion(opcion: string) {
         onClick={() => {
             console.log(opcion)
             toggleOpcion(opcion)
-            
-            
     }}
       />
     ))}
-            </div> {/*Identidad y Valores */}
-            <p className="profile_preview__user_info_title">🥦 Estilo de vida</p>
-            <div className="profile_preview__identity">
-                <UserTag text="Vegetariano/a"/>
-                <UserTag text="Vegano/a"/>
-                <UserTag text="Omnívoro/a"/>
-                <UserTag text="Celíaco/a"/>
-                <UserTag text="Cocino mucho"/> 
-                <UserTag text="Apenas cocino"/>
-                <UserTag text="Healthy Lifestyle"/>
-                <UserTag text="Dan cel café"/>
                 </div> {/*Estilo de Vida */}
             <p className="profile_preview__user_info_title">🧘‍♀️ Convivencia y hábitos</p>
             <div className="profile_preview__identity">
-                <UserTag text="Ordenado/a"/>
-                <UserTag text="Limpieza flexible"/>
-                <UserTag text="Le gusta compartir cosas"/>
-                <UserTag text="Prefiere su espacio"/>
-                <UserTag text="Silencioso/a"/> 
-                <UserTag text="Social"/>
-                <UserTag text="Noctámbulo/a"/>
-                <UserTag text="Madrugador/a"/>
-                <UserTag text="Trabajo desde casa"/>
-                <UserTag text="Trabajo fuera"/>
+                {habits.map((opcion) => (
+      <UserTag
+        key={opcion}
+        text={opcion}
+        isSelected={seleccionados.includes(opcion)}
+        onClick={() => {
+            console.log(opcion)
+            toggleOpcion(opcion)
+    }}
+      />
+    ))}
                 </div> {/*Convivencia y Hábitos */}
                 <p className="profile_preview__user_info_title">🐶 Mascotas</p>
             <div className="profile_preview__identity">
-                <UserTag text="Tiene mascotas"/>
-                <UserTag text="Le encantan los animales"/>
-                <UserTag text="Alergia a los animales"/>
+                {pets.map((opcion) => (
+                <UserTag
+                key={opcion}
+                text={opcion}
+                isSelected={seleccionados.includes(opcion)}
+                onClick={() => {
+                    console.log(opcion)
+                    toggleOpcion(opcion)
+    }}
+      />
+    ))}
             </div> {/*Mascotas */}
             <p className="profile_preview__user_info_title">🚭 Límites y preferencias</p>
             <div className="profile_preview__identity">
-                <UserTag text="Fumador/a"/>
-                <UserTag text="No fuma"/>
-                <UserTag text="No quiere gente fumando"/>
-                <UserTag text="Bebe alcohol"/>
-                <UserTag text="No bebe alcohol"/>
+                {limits.map((opcion) => (
+                <UserTag
+                key={opcion}
+                text={opcion}
+                isSelected={seleccionados.includes(opcion)}
+                onClick={() => {
+                    console.log(opcion)
+                    toggleOpcion(opcion)
+    }}
+      />
+    ))}
             </div>
              </>
             )} {/*Límites y preferencias */}

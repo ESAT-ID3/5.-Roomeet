@@ -18,7 +18,7 @@
     box-sizing: border-box;
     padding-inline: 1rem;
     font-family: Outfit;
-    font-size: 3rem;
+    font-size: clamp(1rem, 5vw, 3rem);
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -43,10 +43,12 @@
 }
 
 .user_title {
+    display: flex;
     width: 100%;
     color: white;
     display: flex;
     gap: 10px;
+    flex: 1;
 }
 
 .user_info {
@@ -62,7 +64,7 @@
 .user_tags {
     display: flex;
     font-family: Outfit;
-    font-size: 14px;
+    font-size: clamp(0.2rem, 5vw, 1rem);
     font-style: normal;
     font-weight: 400;
     line-height: 110%; 
@@ -129,7 +131,7 @@
     border: 1px solid #FBAD37;
 }
 
-@media screen and (width < 1000px){
+@media screen and (width < 900px){
 
 .user_card {
   /* ancho fluido: nunca menos de 20rem, crecerá hasta 80% del contenedor, y como máximo 60rem */
@@ -137,6 +139,7 @@
   /* elimina margin-inline, max-width fijo o margen auto */
   /* si quieres separación vertical, usa margin-block: */
   margin-inline: 2rem;
+  max-width: 90%;
 
   /* si en cambio prefieres un ancho relativo sin clamp, podrías usar:
   width: 90%;
@@ -144,7 +147,7 @@
   */
   
   /* resto de estilos */
-  height: auto;    /* o un % si lo necesitas */
+  height: 50vh;    /* o un % si lo necesitas */
   /* flex: none;  no hace falta salvo que quieras anular el flex-shrink/grow */
 }
 

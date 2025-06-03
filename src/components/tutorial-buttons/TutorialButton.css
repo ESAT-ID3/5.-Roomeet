@@ -33,3 +33,8 @@
     border: 1.5px solid #4d4d4d;
 }
 
+@media screen and (width < 900px){
+    .tutorial_button_container{
+    display: none;
+    }
+}

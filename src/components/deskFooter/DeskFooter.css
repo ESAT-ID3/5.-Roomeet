@@ -68,6 +68,7 @@ main {
 @media (max-width: 768px) {
   .footer {
       padding: 50px 33px; /* Reduce el padding lateral para dispositivos pequeños */
+      padding-bottom: 5rem;
       flex-direction: column; /* Cambia a una columna */
       gap: 1.5rem; /* Añade un espacio entre los bloques */
   }
