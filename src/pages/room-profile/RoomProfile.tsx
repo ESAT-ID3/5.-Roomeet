@@ -1,23 +1,19 @@
 import "./RoomProfile.css"
 import { useState, useEffect } from "react";
-import { UserCard } from "../../components/user-card/UserCard";
 import { AppNav } from "../../components/app-nav/AppNav";
 import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
 import { DeskNav } from "../../components/desktop-nav/DeskNav";
 import { Button } from "../../components/button/Button";
 import { Ads } from "../../components/ads/Ads";
 import { PersonalDataTag } from "../../components/edit-profile/personal-data-tag/PersonalDataTag";
-import { UserTag } from "../../components/edit-profile/user-tags/UserTag";
 import { Select } from "../../components/select/Select";
 import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import { EditPreview } from "../../components/edit-preview/EditPreview";
 import { ToastContainer, toast } from 'react-toastify';
 import { Bounce } from "react-toastify";
-import { RoomCard } from "../../components/room-card/RoomCard";
 import { FlatGrid } from "../../components/flat-grid/FlatGrid";
 import { Counter } from "../../components/counter/Counter";
-import { ItemToCheck } from "../../components/itemToCheck/ItemToCheck";
-
+import { Checkboxes } from "../../components/itemToCheck/checkboxes/Checkboxes";
 
 
 export const RoomProfile = () => {
@@ -163,14 +159,12 @@ const handleSubmit = () => {
                         <Counter/>
                     </div>
                     <p>¿Tiene salón?</p>
-                    <ItemToCheck label={"Sí"}/>
-                    <ItemToCheck label={"No"}/>
+                    <Checkboxes/>
+
                     <p>¿Se permite fumar en el hogar?</p>
-                    <ItemToCheck label={"Sí"}/>
-                    <ItemToCheck label={"No"}/>
+                    <Checkboxes/>
                     <p>¿Está amueblado?</p>
-                    <ItemToCheck label={"Sí"}/>
-                    <ItemToCheck label={"No"}/>
+
 
 
                 </div>

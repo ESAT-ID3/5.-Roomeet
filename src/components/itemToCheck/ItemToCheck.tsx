@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ItemToCheck.css';
 
 interface ItemToCheckProps {
   label: string;
-  defaultChecked?: boolean;
+  value: string; // Un valor único para cada checkbox
+  checked: boolean;
+  onChange: (value: string) => void; // Función que cambia el estado en el componente padre
 }
 
-export const ItemToCheck: React.FC<ItemToCheckProps> = ({ label, defaultChecked = false }) => {
-  const [checked, setChecked] = useState(defaultChecked);
+export const ItemToCheck: React.FC<ItemToCheckProps> = ({ label, value, checked, onChange }) => {
 
-  const toggleCheck = () => setChecked(!checked);
+  const toggleCheck = () => {
+    onChange(value); // Cambia el estado en el componente padre
+  };
 
   return (
     <div className="item-to-check" onClick={toggleCheck}>
@@ -32,5 +35,3 @@ export const ItemToCheck: React.FC<ItemToCheckProps> = ({ label, defaultChecked 
     </div>
   );
 };
-
-
