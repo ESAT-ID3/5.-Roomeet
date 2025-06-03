@@ -1,4 +1,3 @@
-import React from "react";
 import "./SearchBarChats.css";
 
 export const SearchBarChats = () => {

@@ -10,8 +10,11 @@
     margin-top: 1rem;
 }
 
-@media screen and (width < 1000px){
+@media screen and (width < 900px){
     .nav {
         display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 }

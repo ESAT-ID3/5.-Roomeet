@@ -17,7 +17,7 @@ export const Swipe = () => {
         <ChatsPage/>  
         <div className="blur__container">
         </div>
-        <UserCard name="María" age="23"/>
+        <UserCard name="María" age={23}/>
         <div className="ad">
             <Ads/>
         </div>

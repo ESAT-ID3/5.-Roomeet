@@ -1,7 +1,12 @@
 import "./HeaderChat.css";
 import { Icons } from "../icons/Icons";
 
-export const HeaderChat = ({pic1, name}) => {
+interface HeaderChatProps {
+    pic1: string; // URL de la imagen del perfil
+    name: string; // Nombre del usuario
+}
+
+export const HeaderChat = ({pic1, name}:HeaderChatProps) => {
     
     return (
         <div className="header_chat__container">
@@ -11,7 +16,7 @@ export const HeaderChat = ({pic1, name}) => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             }}></div>
-            <h1>Sara</h1>
+            <h1>{name}</h1>
             <Icons name="dots" size="36" color="black" viewBox="0 0 24 24"/>
         </div>
     );

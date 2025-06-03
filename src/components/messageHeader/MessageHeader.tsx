@@ -1,4 +1,3 @@
-import React from "react";
 import "./MessageHeader.css";
 
 export const MessageHeader = () => {

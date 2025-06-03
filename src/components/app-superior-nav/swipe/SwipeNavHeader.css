@@ -25,3 +25,9 @@
     margin-inline: 5rem;
 }
 
+@media screen and (width < 900px){
+    .nav-header {
+    padding-inline: 2rem;
+}
+}
+

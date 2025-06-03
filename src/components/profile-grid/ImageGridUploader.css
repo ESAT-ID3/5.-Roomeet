@@ -20,7 +20,7 @@
   .image-tile {
     position: relative;
     width: 10rem;
-    height: 14rem;
+    height: 100%;
     background-color: #f3f4f6;
     border-radius: 0.5rem;
     overflow: hidden;

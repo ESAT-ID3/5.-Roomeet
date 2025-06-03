@@ -1,6 +1,6 @@
 // MobileCarousel.tsx
 // MobileCarousel.tsx
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './CarrousselLanding.css';
 
 const images: string[] = [

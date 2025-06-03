@@ -1,7 +1,13 @@
-import { div } from "framer-motion/client"
+
 import "./BubbleChat.css"
 
-export const BubbleChat = ({hour, color, text}) => {
+interface BubbleChatProps {
+  hour?: boolean; // Indica si se muestra la hora
+    color: "grey" | "yellow"; // Define el color de la burbuja
+    text: string; // Texto del mensaje
+}
+
+export const BubbleChat = ({hour, color, text}:BubbleChatProps) => {
 
     return (
     <div className={`bubble_container ${color ==="grey" ? 'left' : ''}`}>

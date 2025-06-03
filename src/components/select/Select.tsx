@@ -14,7 +14,6 @@ export const Select = ({ options, value, onChange }: SelectProps) => {
                 <select 
                     value={value}
                     onChange={e => onChange(e.target.value)}
-                    placeholder="Selecciona una opción" name="Genero"
                 >
                 <option value="" disabled selected hidden>Selecciona una opción</option>
                 {options.map((opt, i) => (

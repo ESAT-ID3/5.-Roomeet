@@ -13,12 +13,13 @@ import { Profile } from './pages/profile/Profile.tsx';
 import { Register } from './pages/register/Register.tsx';
 import { SeenProfiles } from './pages/seenProfiles/SeenProfiles.tsx';
 import { Swipe } from './pages/swipe/Swipe.tsx';
-import { Match } from './pages/match/match.tsx';
+import { Match } from './pages/match/Match.tsx';
 import { AuthSlider } from './pages/auth-slider/AuthSlider.tsx';
 import { Settings } from './pages/settings/Settings.tsx';
 import { ChatsPage } from './pages/chatsPage/chatsPage.tsx';
 import { ProfilePreview } from './pages/profile-preview/ProfilePreview.tsx';
 import { Contact } from './pages/contact/Contact.tsx';
+import { RoomProfile } from './pages/room-profile/RoomProfile.tsx';
 
 
 
@@ -27,7 +28,7 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/login" element={<LoginPage/>} />
+      <Route path="/login" element={<LoginPage onSwitch={() => { console.log("Switch"); }}/>} />
       <Route path='/contact' element={<Contact/>} />
       <Route path='/faq' element={<FAQ/>} />
       <Route path='/landing' element={<Landing/>} />
@@ -36,7 +37,8 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/privacyPolitics' element={<PrivacyPolitics/>} />
       <Route path='/profile' element={<Profile/>} />
       <Route path='/profile_preview' element={<ProfilePreview/>} />
-      <Route path='/register' element={<Register/>} />
+      <Route path='/room_profile' element={<RoomProfile/>} />
+      <Route path='/register' element={<Register onSwitch={() => { console.log("Switch"); }}/>} />
       <Route path='/loginanimation' element={<AuthSlider/>} />
       <Route path='/seenProfiles' element={<SeenProfiles/>} />
       <Route path='/swipe' element={<Swipe/>} />

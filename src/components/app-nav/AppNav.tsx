@@ -1,10 +1,14 @@
 import { useState } from "react";
 import "./AppNav.css";
 
-export const AppNav = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+interface Icon {
+    index: number;
+}
 
-  const handleClick = (index) => {
+export const AppNav = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleClick = ({index}:Icon) => {
     setActiveIndex(index === activeIndex ? null : index); // Toggle
   };
 
@@ -40,7 +44,7 @@ export const AppNav = () => {
                 width="28"
                 height="28"
                 viewBox={icon.viewBox}
-                onClick={() => handleClick(index)}
+                onClick={() => handleClick({index})}
                 style={{ cursor: "pointer" }}
             >
             <path

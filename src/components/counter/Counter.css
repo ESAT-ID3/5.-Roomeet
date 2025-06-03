@@ -3,20 +3,20 @@
 .counter-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
+  gap: 1rem;
   font-family: "Outfit", sans-serif;
+  margin-right: 40%;
 }
 
 .counter-button {
-  width: 48px;
-  height: 48px;
+  width: 2rem;
+  height: 2rem;
   background-color: #f4a000;
   color: white;
   font-size: 28px;
   font-weight: 600;
   border: none;
-  border-radius: 12px;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -26,15 +26,15 @@
 }
 
 .counter-value {
-  width: 64px;
-  height: 64px;
-  font-size: 14px;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid #f4a000;
-  border-radius: 16px;
+  border-radius: 0.5rem;
   background-color: white;
 }
