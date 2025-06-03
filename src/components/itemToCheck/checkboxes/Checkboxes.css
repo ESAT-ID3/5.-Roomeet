@@ -1,0 +1,5 @@
+.checkboxes-container {
+    display: flex;
+    gap: 1rem;
+    margin-right: 20%;
+}

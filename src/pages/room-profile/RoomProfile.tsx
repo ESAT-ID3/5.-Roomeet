@@ -14,23 +14,10 @@ import { Bounce } from "react-toastify";
 import { FlatGrid } from "../../components/flat-grid/FlatGrid";
 import { Counter } from "../../components/counter/Counter";
 import { Checkboxes } from "../../components/itemToCheck/checkboxes/Checkboxes";
+import { ImageGridUploader } from "../../components/profile-grid/ImageGridUploader";
 
 
 export const RoomProfile = () => {
-
-const maxOptionError = () => {
-    toast.error('¡Solo puedes seleccionar hasta 6 etiquetas!', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce, // Usar la transición Bounce
-    });
-}
 
     const [mostrarB, setMostrarB] = useState(true);
     const [mostrarC, setMostrarC] = useState(false);
@@ -65,7 +52,7 @@ const handleSubmit = () => {
                 setMostrarB(false);
             }}
             />
-            {mostrarB && <FlatGrid/>}
+            {mostrarB && <ImageGridUploader room="Yes"/>}
             {mostrarC && (
                 <>
                 <FlatGrid/>
@@ -158,15 +145,18 @@ const handleSubmit = () => {
                         <p>Numero de baños</p>
                         <Counter/>
                     </div>
-                    <p>¿Tiene salón?</p>
-                    <Checkboxes/>
-
-                    <p>¿Se permite fumar en el hogar?</p>
-                    <Checkboxes/>
-                    <p>¿Está amueblado?</p>
-
-
-
+                    <div className="room_profile_preview__room_details__flex">
+                        <p>¿Tiene salón?</p>
+                        <Checkboxes/>
+                    </div>
+                    <div className="room_profile_preview__room_details__flex">
+                        <p>¿Se permite fumar?</p>
+                        <Checkboxes/>
+                    </div>
+                    <div className="room_profile_preview__room_details__flex">
+                        <p>¿Está amueblado?</p>
+                        <Checkboxes/>
+                    </div>
                 </div>
             
             {mostrarB && <Button onClick={() => {

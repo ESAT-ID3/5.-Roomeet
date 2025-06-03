@@ -1,3 +1,4 @@
+import "./Checkboxes.css"
 import React, { useState } from 'react';
 import { ItemToCheck } from '../ItemToCheck';
 
@@ -10,19 +11,23 @@ export const Checkboxes = () => {
   };
 
   return (
-    <div>
+    <div className='checkboxes-container'>
+      <div>
+        <ItemToCheck
+          label="Sí"
+          value="option1"
+          checked={selected === 'option1'}
+          onChange={handleCheckChange}
+        />
+      </div>
+      <div>
       <ItemToCheck
-        label="Option 1"
-        value="option1"
-        checked={selected === 'option1'}
-        onChange={handleCheckChange}
-      />
-      <ItemToCheck
-        label="Option 2"
+        label="No"
         value="option2"
         checked={selected === 'option2'}
         onChange={handleCheckChange}
       />
+      </div>
     </div>
   );
 };

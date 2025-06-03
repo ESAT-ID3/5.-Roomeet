@@ -3,9 +3,13 @@ import './ImageGridUploader.css'; // Asegúrate de que la ruta coincida con tu p
 import { Button } from '../button/Button';
 import fallbackImg from "../../assets/images/fallback.png";
 
+interface ImageGridUploaderProps {
+  room?: string;
+}
+
 const MAX_IMAGES = 9;
 
-export const ImageGridUploader: React.FC = () => {
+export const ImageGridUploader: React.FC = ({room}:ImageGridUploaderProps) => {
   const [images, setImages] = useState<(string | null)[]>(Array(MAX_IMAGES).fill(null));
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>, index: number): void => {
@@ -74,9 +78,10 @@ export const ImageGridUploader: React.FC = () => {
         ))}
       </div>
 
-      <p className="helper-text">
+      {!room && <p className="helper-text">
         ¿Tu vibe? ¿Tu día a día? Sube fotos que lo cuenten.
-      </p>
+      </p>}
+      {room && <p className="helper-text">Sube fotos que enseñen las zonas comunes, la habitación libre y esos detalles que hacen especial vuestro piso. ¡Ayuda a que quien lo vea se imagine viviendo allí!</p>}
 
       <Button text="Añade fotos" color='black'/>
     </div>
