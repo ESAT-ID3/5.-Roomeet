@@ -120,8 +120,9 @@ textarea{
     display: flex;
     align-items: center;
     gap: 1rem;
-    flex-wrap: wrap;
-    width: 70%;
+    width: 100%;
+    justify-content: space-between;
+    
 }
 
 @media screen and (width < 900px) { 
@@ -140,6 +141,14 @@ textarea{
     .room_profile_preview__card_container {
     max-height: 200rem;
     height: 100vh;
+}
+
+    .room_profile_preview__room_details__flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    
 }
 
 }
