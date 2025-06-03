@@ -6,7 +6,11 @@ export const Counter: React.FC = () => {
 
   return (
     <div className="counter-container">
-      <button className="counter-button" onClick={() => setCount(count - 1)}>-</button>
+      <button className="counter-button" onClick={() => {
+        if (count === 0) {
+          return;
+        }
+        setCount(count - 1)}}>-</button>
       <div className="counter-value">{count}</div>
       <button className="counter-button" onClick={() => setCount(count + 1)}>+</button>
     </div>

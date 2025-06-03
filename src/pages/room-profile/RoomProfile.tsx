@@ -19,6 +19,20 @@ import { ImageGridUploader } from "../../components/profile-grid/ImageGridUpload
 
 export const RoomProfile = () => {
 
+    const saveChanges = () => {
+    toast.success('¡Cambios guardados con éxito!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce, // Usar la transición Bounce
+    });
+}
+
     const [mostrarB, setMostrarB] = useState(true);
     const [mostrarC, setMostrarC] = useState(false);
 
@@ -159,9 +173,20 @@ const handleSubmit = () => {
                     </div>
                 </div>
             
-            {mostrarB && <Button onClick={() => {
+            {mostrarB && (
+            <>
+                <Button onClick={() => {
                 handleSubmit();
-            }} text="Guardar cambios" />}
+                saveChanges();
+                }} text="Guardar cambios" />
+
+                <Button color="red" onClick={() => {
+                handleSubmit();
+                notify();
+                }} text="Cancelar" />
+            </>
+            )}
+
             <ToastContainer />
             {mostrarC && <Button text="Bloquear perfil" color="disabled" icon="yes"/>}
             {mostrarC && <Button text="Denunciar perfil" color="disabled" icon="report"/>}

@@ -88,4 +88,9 @@ font-weight: 500;
     background-color: #262626;
   }
 
+  @media screen and (width < 900px) {
+    .image-grid-container{
+      margin-bottom: 2rem;
+    }
+  }
   

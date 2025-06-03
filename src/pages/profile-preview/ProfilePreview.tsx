@@ -358,10 +358,20 @@ function toggleOpcion(opcion: string) {
                         <p className={formData.rutinaNecesidad === "" ? "profile_preview__user_info_text profile_preview__user_info_empty" : "profile_preview__user_info_text"}> {formData.rutinaNecesidad === "" ? "Es importante que dejes claro aquí donde están tus límites, ¡escríbelos!" : formData.rutinaNecesidad} </p>
                     </div>
                 </> )}  {/*¿Tienes alguna rutina o necesidad especial que te gustaría que respetaran? */}
-            {mostrarB && <Button onClick={() => {
+            {mostrarB && (
+            <>
+                <Button onClick={() => {
                 handleSubmit();
                 notify();
-            }} text="Guardar cambios" />}
+                }} text="Guardar cambios" />
+
+                <Button color="red" onClick={() => {
+                handleSubmit();
+                notify();
+                }} text="Cancelar" />
+            </>
+            )}
+
             <ToastContainer />
             {mostrarC && <Button text="Bloquear perfil" color="disabled" icon="yes"/>}
             {mostrarC && <Button text="Denunciar perfil" color="disabled" icon="report"/>}
