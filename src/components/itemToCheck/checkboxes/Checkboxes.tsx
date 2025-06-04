@@ -1,32 +1,34 @@
 import "./Checkboxes.css"
-import React, { useState } from 'react';
 import { ItemToCheck } from '../ItemToCheck';
 
-export const Checkboxes = () => {
-  const [selected, setSelected] = useState<string | null>(null); // El estado que guarda el valor del checkbox seleccionado
+interface CheckboxesProps {
+  selected: string | null;  // El valor del checkbox seleccionado
+  onChange: (value: string | null) => void;  // Función para cambiar el valor del estado
+}
 
+export const Checkboxes: React.FC<CheckboxesProps> = ({ selected, onChange }) => {
   const handleCheckChange = (value: string) => {
-    // Si ya está seleccionado, lo deseleccionamos
-    setSelected(selected === value ? null : value);
+    // Cambia el valor de selected o lo deselecciona si ya está marcado
+    onChange(selected === value ? null : value);
   };
 
   return (
-    <div className='checkboxes-container'>
+    <div className="checkboxes-container">
       <div>
         <ItemToCheck
           label="Sí"
-          value="option1"
-          checked={selected === 'option1'}
-          onChange={handleCheckChange}
+          value="Sí"
+          checked={selected === 'Sí'}  // Si es la opción seleccionada
+          onChange={handleCheckChange}     // Llama a la función para cambiar el estado
         />
       </div>
       <div>
-      <ItemToCheck
-        label="No"
-        value="option2"
-        checked={selected === 'option2'}
-        onChange={handleCheckChange}
-      />
+        <ItemToCheck
+          label="No"
+          value="No"
+          checked={selected === 'No'}  // Si es la opción seleccionada
+          onChange={handleCheckChange}     // Llama a la función para cambiar el estado
+        />
       </div>
     </div>
   );

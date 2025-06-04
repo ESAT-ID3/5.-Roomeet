@@ -19,7 +19,6 @@ import { RoomTags } from "../../components/edit-profile/room-tags/RoomTags";
 
 
 export const RoomProfile = () => {
-    const [count, setCount] = useState(0);
 
     const saveChanges = () => {
     toast.success('¡Cambios guardados con éxito!', {
@@ -46,6 +45,28 @@ export const RoomProfile = () => {
   buscaPersona: '',
   rutinaNecesidad: '',
 });
+
+const [counters, setCounters] = useState<number[]>([0, 0]); // Estado para manejar los valores de todos los contadores
+
+  const updateCounter = (index: number, value: number) => {
+    const updatedCounters = [...counters];
+    updatedCounters[index] = value; // Actualiza solo el contador que se está modificando
+    setCounters(updatedCounters); // Establece el estado actualizado
+  };
+
+  const [checkboxStates, setCheckboxStates] = useState({
+    tieneSalon: null,      // Estado para "¿Tiene salón?"
+    sePermiteFumar: null, // Estado para "¿Se permite fumar?"
+    estaAmueblado: null,   // Estado para "¿Está amueblado?"
+  });
+
+  // Función para actualizar el estado del checkbox correspondiente
+  const handleCheckboxChange = (section: string, value: string | null) => {
+    setCheckboxStates((prevState) => ({
+      ...prevState,
+      [section]: value,
+    }));
+  };
 
 const handleSubmit = () => {
   console.log(formData);
@@ -157,30 +178,60 @@ const handleSubmit = () => {
                     <div className="room_profile_preview__room_details room_profile_preview__user_info_title">
                         <div className="room_profile_preview__room_details__flex">
                             <p>Número de habitaciones</p>
-                            <Counter count={count} setCount={setCount}/>
+                            {counters.map((count, index) => {
+                            if (index === 1) return null;  // Si el índice es 1, no renderizamos el componente
+                            return (
+                                <Counter 
+                                key={index} 
+                                count={count} 
+                                onCountChange={(newCount: number) => updateCounter(index, newCount)} 
+                                />
+                            );
+                            })}
                         </div>
                         <div className="room_profile_preview__room_details__flex">
                             <p>Numero de baños</p>
-                            <Counter count={count} setCount={setCount}/>
+                            {counters.map((count, index) => {
+                            if (index === 0) return null;  // Si el índice es 0, no renderizamos el componente
+                            return (
+                                <Counter 
+                                key={index} 
+                                count={count} 
+                                onCountChange={(newCount: number) => updateCounter(index, newCount)} 
+                                />
+                            );
+                            })}
+                            
                         </div>
                         <div className="room_profile_preview__room_details__flex">
                             <p>¿Tiene salón?</p>
-                            <Checkboxes/>
+                            <Checkboxes
+                            selected={checkboxStates.tieneSalon}
+                            onChange={(value) => handleCheckboxChange('tieneSalon', value)}
+                            />
                         </div>
                         <div className="room_profile_preview__room_details__flex">
                             <p>¿Se permite fumar?</p>
-                            <Checkboxes/>
+                            <Checkboxes
+                            selected={checkboxStates.sePermiteFumar}
+                            onChange={(value) => handleCheckboxChange('sePermiteFumar', value)}
+                            />
                         </div>
                         <div className="room_profile_preview__room_details__flex">
                             <p>¿Está amueblado?</p>
-                            <Checkboxes/>
+                            <Checkboxes
+                            selected={checkboxStates.estaAmueblado}
+                            onChange={(value) => handleCheckboxChange('estaAmueblado', value)}
+                            />
                         </div>
                     </div>
                 </>)} 
 
                 {mostrarC && (
                 <>  
-                    <RoomTags count={count} text="Habitaciones"/>
+                    {counters[0] > 0 && <RoomTags count={counters[0]} text="Habitaciones"/>}
+                    {counters[1] > 0 && <RoomTags count={counters[1]} text="Baños"/>}
+                    {checkboxStates.tieneSalon}
                 </>)}   
             
             {mostrarB && (
