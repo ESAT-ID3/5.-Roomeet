@@ -150,28 +150,36 @@ const handleSubmit = () => {
                     </div>
                 </> )}   {/*¿Qué buscas en una persona con la que compartir piso? */}
                 <p className="room_profile_preview__user_info_title">🔑 Detalles del piso</p>
-                <div className="room_profile_preview__room_details room_profile_preview__user_info_title">
-                    <div className="room_profile_preview__room_details__flex">
-                        <p>Número de habitaciones</p>
-                        <Counter/>
+            {mostrarB && (
+                <>  
+                    <div className="room_profile_preview__room_details room_profile_preview__user_info_title">
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>Número de habitaciones</p>
+                            <Counter/>
+                        </div>
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>Numero de baños</p>
+                            <Counter/>
+                        </div>
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>¿Tiene salón?</p>
+                            <Checkboxes/>
+                        </div>
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>¿Se permite fumar?</p>
+                            <Checkboxes/>
+                        </div>
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>¿Está amueblado?</p>
+                            <Checkboxes/>
+                        </div>
                     </div>
-                    <div className="room_profile_preview__room_details__flex">
-                        <p>Numero de baños</p>
-                        <Counter/>
-                    </div>
-                    <div className="room_profile_preview__room_details__flex">
-                        <p>¿Tiene salón?</p>
-                        <Checkboxes/>
-                    </div>
-                    <div className="room_profile_preview__room_details__flex">
-                        <p>¿Se permite fumar?</p>
-                        <Checkboxes/>
-                    </div>
-                    <div className="room_profile_preview__room_details__flex">
-                        <p>¿Está amueblado?</p>
-                        <Checkboxes/>
-                    </div>
-                </div>
+                </>)} 
+
+                {mostrarC && (
+                <>  
+                    
+                </>)}   
             
             {mostrarB && (
             <>
