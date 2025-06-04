@@ -1,19 +1,18 @@
 import "./RoomTags.css";
+import React from 'react';
 
 interface RoomTagsProps {
   text: string;
-  isSelected?: boolean;
-  onClick?: () => void;
+  count: number;
 }
 
-export const RoomTags:React.FC<RoomTagsProps> = ({ text, isSelected, onClick }) => {
+export const RoomTags:React.FC<RoomTagsProps> = ({ text, count }) => {
   return (
     <div
       className={`room_tag_container`}
-      onClick={onClick}
       style={{ cursor: "pointer" }}
     >
-      <p>{text}</p>
+      <p>{count} {text}</p>
     </div>
   );
 };

@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import './Counter.css';
+import React from 'react';
+import "./Counter.css"
 
-export const Counter: React.FC = () => {
-  const [count, setCount] = useState(0);
+interface CounterProps {
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+}
 
+export const Counter: React.FC<CounterProps> = ({ count, setCount }) => {
   return (
     <div className="counter-container">
       <button className="counter-button" onClick={() => {
@@ -16,3 +19,4 @@ export const Counter: React.FC = () => {
     </div>
   );
 };
+

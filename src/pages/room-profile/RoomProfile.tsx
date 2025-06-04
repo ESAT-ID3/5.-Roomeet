@@ -15,9 +15,11 @@ import { FlatGrid } from "../../components/flat-grid/FlatGrid";
 import { Counter } from "../../components/counter/Counter";
 import { Checkboxes } from "../../components/itemToCheck/checkboxes/Checkboxes";
 import { ImageGridUploader } from "../../components/profile-grid/ImageGridUploader";
+import { RoomTags } from "../../components/edit-profile/room-tags/RoomTags";
 
 
 export const RoomProfile = () => {
+    const [count, setCount] = useState(0);
 
     const saveChanges = () => {
     toast.success('¡Cambios guardados con éxito!', {
@@ -155,11 +157,11 @@ const handleSubmit = () => {
                     <div className="room_profile_preview__room_details room_profile_preview__user_info_title">
                         <div className="room_profile_preview__room_details__flex">
                             <p>Número de habitaciones</p>
-                            <Counter/>
+                            <Counter count={count} setCount={setCount}/>
                         </div>
                         <div className="room_profile_preview__room_details__flex">
                             <p>Numero de baños</p>
-                            <Counter/>
+                            <Counter count={count} setCount={setCount}/>
                         </div>
                         <div className="room_profile_preview__room_details__flex">
                             <p>¿Tiene salón?</p>
@@ -178,7 +180,7 @@ const handleSubmit = () => {
 
                 {mostrarC && (
                 <>  
-                    
+                    <RoomTags count={count} text="Habitaciones"/>
                 </>)}   
             
             {mostrarB && (
