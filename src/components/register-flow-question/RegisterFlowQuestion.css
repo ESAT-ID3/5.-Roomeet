@@ -1,0 +1,30 @@
+
+
+.register_flow_question__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: clamp(2rem, 4vw, 4rem);
+}
+
+.register_flow_question__container h2{
+    margin: 0;
+    color: #000;
+    font-feature-settings: 'calt' off;
+    font-family: Outfit;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+
+.register_flow_question__container p{
+    margin: 0;
+    color: var(--Black-Black-200, #4D4D4D);
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
