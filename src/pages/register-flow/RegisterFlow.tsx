@@ -415,7 +415,6 @@ const [checkboxStates, setCheckboxStates] = useState({
                 <div className="register_flow_question">
                 <RegisterFlowQuestion title="¿Cómo prefieres organizar los gastos del piso?" subtitle="No hay una forma única, lo importante es hablarlo desde el principio."/>
                 </div>
-                <ImageGridUploader/>
                 <div className="register_flow_image">
                 </div>
                 <div className="register_flow_btn">
