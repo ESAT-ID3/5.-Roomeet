@@ -3,7 +3,7 @@
 
 
 
-.toggle-container {
+.toggle-container-editPreview {
     display: flex;
     width: fit-content;
     width: 100%;
@@ -11,7 +11,7 @@
     padding-right: 2rem;
   }
   
-  .toggle-button {
+  .toggle-button-editPreview {
     display: flex;
     padding: 12px 63.28px 12px 61.72px;
     justify-content: center;
@@ -29,7 +29,7 @@
     
   }
   
-  .toggle-button.active {
+  .toggle-button-editPreview.active {
     color: #f9a825; /* Texto anaranjado */
   }
   
@@ -38,7 +38,7 @@
   }
 
   @media screen and (width < 900px){
-    .toggle-container{
+    .toggle-container-editPreview{
       padding-right: 0rem;
     }
   }

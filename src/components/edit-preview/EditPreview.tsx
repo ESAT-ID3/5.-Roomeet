@@ -10,9 +10,9 @@ export const EditPreview: React.FC<ComponenteAProps> = ({ onMostrarB, onMostrarC
   const [active, setActive] = useState<'edit' | 'preview'>('edit');
 
   return (
-    <div className="toggle-container">
+    <div className="toggle-container-editPreview">
       <button
-        className={`toggle-button edit_preview__separator ${active === 'edit' ? 'active' : ''}`}
+        className={`toggle-button-editPreview edit_preview__separator ${active === 'edit' ? 'active' : ''}`}
         onClick={() => {
         setActive('edit');
         onMostrarB();
@@ -21,7 +21,7 @@ export const EditPreview: React.FC<ComponenteAProps> = ({ onMostrarB, onMostrarC
         Edit
       </button>
       <button
-        className={`toggle-button ${active === 'preview' ? 'active' : ''}`}
+        className={`toggle-button-editPreview ${active === 'preview' ? 'active' : ''}`}
         onClick={() => {
           setActive('preview');
           onMostrarC();

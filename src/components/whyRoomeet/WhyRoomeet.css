@@ -1,5 +1,84 @@
-.big-card-whyRoomeet{
-    background-color: pink;
-    border-radius: 12px;
-    margin:0px 100px;
+/* OnboardingSection.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+.big-card-whyRoomeet {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #fffaf3 0%, #fdf6ef 100%);
+  border-radius: 2rem;
+  max-width: 1300px;
+  margin: auto;
+  font-family: 'Outfit', sans-serif;
+}
+
+.title-whyRoomeet {
+  text-align: left;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: 0;
+}
+
+.title-whyRoomeet h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.title-whyRoomeet p {
+  font-size: 1.25rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.cards-container-whyRoomeet {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.cards-left-whyRoomeet,
+.cards-right-whyRoomeet {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+  min-width: 300px;
+}
+
+.cards-left-whyRoomeet div,
+.cards-right-whyRoomeet div {
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cards-left-whyRoomeet h2,
+.cards-right-whyRoomeet h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.cards-left-whyRoomeet p,
+.cards-right-whyRoomeet p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .cards-container-whyRoomeet {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-whyRoomeet {
+    text-align: center;
+    margin: 0 auto 3rem auto;
+  }
 }

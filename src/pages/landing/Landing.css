@@ -102,6 +102,33 @@
   .whyRoomeet {
     margin-top: 150px;
   }
+  .premium-landing{
+    margin-top: 150px;
+  }
+
+  .plans-landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+  }
+
+  .reviews-landing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 150px;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-landing{
+      flex-direction: column;
+    }
+  }
+
 
 
   

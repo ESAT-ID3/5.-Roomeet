@@ -4,6 +4,11 @@ import { NavLanding } from "../../components/navLanding/nav-superior-landing/Nav
 import { CarrousselLanding } from '../../components/carrousselLanding/CarrousselLanding'
 import { IdealPartnerLanding } from "../../components/idealPartnerLanding/IdealPartnerLanding";
 import { WhyRoomeet } from "../../components/whyRoomeet/WhyRoomeet";
+import { ToogleAnualMensual } from "../../components/toogle-anual-mensual/ToogleAnualMensual";
+import { PremiumPlan } from "../../components/plans/PremiumPlan";
+import { StarterPlan } from "../../components/plans/StarterPlan";
+import { DeskFooter } from "../../components/deskFooter/DeskFooter";
+import { LandingReview } from "../../components/landing/landing-review/LandingReview";
 
 export const Landing = () => {
 
@@ -42,6 +47,39 @@ export const Landing = () => {
                 <WhyRoomeet/>
             </section>
 
+            <section className="premium-landing">
+                <div className="toogle-landing">
+                    <ToogleAnualMensual/>
+                </div>
+                <div className="plans-landing">
+                    <div className="starterPlan-landing">
+                        <StarterPlan/>
+                    </div>
+                    <div className="premiumPlan-landing">
+                        <PremiumPlan/>
+                    </div>
+                </div>
+            </section>
+
+            <section className="opinions-landing">
+                <div className="reviews-landing">
+                    <div className="review-landing-1">
+                        <LandingReview/>
+                    </div>
+                    <div className="review-landing-2">
+                        <LandingReview/>
+                    </div>
+                    <div className="review-landing-3">
+                        <LandingReview/>
+                    </div>
+                    </div>
+            </section>
+
+            <section className="footer-landing">
+                <DeskFooter/>
+            </section>
+
+    
         </>
     );
 };
