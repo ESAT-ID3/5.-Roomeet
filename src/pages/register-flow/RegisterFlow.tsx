@@ -1,14 +1,8 @@
 import "./RegisterFlow.css"
 import { useState, useEffect } from "react";
-import { AppNav } from "../../components/app-nav/AppNav";
-import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
-import { DeskNav } from "../../components/desktop-nav/DeskNav";
 import { Button } from "../../components/button/Button";
-import { Ads } from "../../components/ads/Ads";
-import { PersonalDataTag } from "../../components/edit-profile/personal-data-tag/PersonalDataTag";
 import { Select } from "../../components/select/Select";
 import { DeskFooter } from "../../components/deskFooter/DeskFooter";
-import { EditPreview } from "../../components/edit-preview/EditPreview";
 import { ToastContainer, toast } from 'react-toastify';
 import { Bounce } from "react-toastify";
 import { Checkboxes } from "../../components/itemToCheck/checkboxes/Checkboxes";
@@ -128,6 +122,7 @@ const [checkboxStates, setCheckboxStates] = useState({
     tieneSalon: null,      // Estado para "¿Tiene salón?"
     sePermiteFumar: null, // Estado para "¿Se permite fumar?"
     estaAmueblado: null,   // Estado para "¿Está amueblado?"
+    tienePiso: null,
   });
 
   // Función para actualizar el estado del checkbox correspondiente
@@ -177,7 +172,7 @@ const [formData, setFormData] = useState({
             transition: "transform 0.5s ease",  // Hace el movimiento suave
             }}>
                 <div className="register_flow_question">
-                <div className="register_flow_question__return"><Icons name=""/></div>
+                <div className="register_flow_question__return"><Icons name="arrow_left"/></div>
                 <RegisterFlowQuestion title="¿Tienes piso actualmente?" subtitle="Si ya tienes piso, podrás crear su perfil para buscar compañeros. Si no, te mostraremos personas con habitaciones libres."/>
                 <Checkboxes
                 selected={checkboxStates.tienePiso}

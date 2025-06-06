@@ -4,12 +4,12 @@ import { Button } from '../button/Button';
 import fallbackImg from "../../assets/images/fallback.png";
 
 interface ImageGridUploaderProps {
-  room?: string;
+  room?: boolean;
 }
 
 const MAX_IMAGES = 9;
 
-export const ImageGridUploader: React.FC = ({room}:ImageGridUploaderProps) => {
+export const ImageGridUploader: React.FC<ImageGridUploaderProps> = ({ room }) => {
   const [images, setImages] = useState<(string | null)[]>(Array(MAX_IMAGES).fill(null));
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>, index: number): void => {

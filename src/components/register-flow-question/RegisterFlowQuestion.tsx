@@ -1,5 +1,4 @@
 import "./RegisterFlowQuestion.css"
-import { Icons } from "../icons/Icons";
 
 interface RegisterFlowQuestionProps {
   title: string;

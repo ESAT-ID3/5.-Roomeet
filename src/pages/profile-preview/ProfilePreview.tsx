@@ -362,12 +362,10 @@ function toggleOpcion(opcion: string) {
             <>
                 <Button onClick={() => {
                 handleSubmit();
-                notify();
                 }} text="Guardar cambios" />
 
                 <Button color="red" onClick={() => {
                 handleSubmit();
-                notify();
                 }} text="Cancelar" />
             </>
             )}

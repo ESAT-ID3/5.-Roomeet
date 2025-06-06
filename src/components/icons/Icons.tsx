@@ -2,7 +2,7 @@ import "./icons.css" //Está pendiente centrar la lupa que no sé cómo
 import React from 'react';
 
 interface IconProps {
-  name: IconName;
+  name?: IconName;
   size?: string;
   color?: string;
   viewBox?: string;
@@ -135,6 +135,6 @@ const icons: Record<IconName, React.ReactElement> = {
   
   export const Icons = ({ name, size = "24", color = "#000", viewBox = "0 0 32 30" }: IconProps) => (
   <svg width={size} height={size} fill={color} viewBox={viewBox}>
-    {icons[name]}
+    {name ? icons[name] : null}
   </svg>
 );
