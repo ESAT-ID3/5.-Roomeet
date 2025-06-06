@@ -10,7 +10,6 @@ export const RegisterFlowQuestion = ({ title, subtitle}: RegisterFlowQuestionPro
 
     return (
         <div className="register_flow_question__container">
-            <div><Icons name="arrow_left"/></div>
             <h2>{title}</h2>
             <p>{subtitle}</p>
 
