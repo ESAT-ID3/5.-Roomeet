@@ -25,6 +25,10 @@ body, p {
     letter-spacing: -0.16px;
 }
 
+input{
+    background-color: #ffffff;
+}
+
 .input__box {
     display: flex;
     align-items: center;
@@ -35,6 +39,7 @@ body, p {
     border-radius: 0.5rem;
     border: 0.1rem solid #A6A6A6;
     gap: 0.5rem;
+    background-color: #ffffff;
 }
 
 .input__box > p {

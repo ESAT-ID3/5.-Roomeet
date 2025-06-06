@@ -208,6 +208,8 @@ const handleSubmit = () => {
                             <Checkboxes
                             selected={checkboxStates.tieneSalon}
                             onChange={(value) => handleCheckboxChange('tieneSalon', value)}
+                            option1="Sí"
+                            option2="No"
                             />
                         </div>
                         <div className="room_profile_preview__room_details__flex">
@@ -215,6 +217,8 @@ const handleSubmit = () => {
                             <Checkboxes
                             selected={checkboxStates.sePermiteFumar}
                             onChange={(value) => handleCheckboxChange('sePermiteFumar', value)}
+                            option1="Sí"
+                            option2="No"
                             />
                         </div>
                         <div className="room_profile_preview__room_details__flex">
@@ -222,6 +226,8 @@ const handleSubmit = () => {
                             <Checkboxes
                             selected={checkboxStates.estaAmueblado}
                             onChange={(value) => handleCheckboxChange('estaAmueblado', value)}
+                            option1="Sí"
+                            option2="No"
                             />
                         </div>
                     </div>
