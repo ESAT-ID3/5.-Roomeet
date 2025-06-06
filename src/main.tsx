@@ -16,7 +16,7 @@ import { Swipe } from './pages/swipe/Swipe.tsx';
 import { Match } from './pages/match/Match.tsx';
 import { AuthSlider } from './pages/auth-slider/AuthSlider.tsx';
 import { Settings } from './pages/settings/Settings.tsx';
-import { ChatsPage } from './pages/chatsPage/chatsPage.tsx';
+import { ChatsPage } from './pages/chatsPage/ChatsPage.tsx';
 import { ProfilePreview } from './pages/profile-preview/ProfilePreview.tsx';
 import { Contact } from './pages/contact/Contact.tsx';
 import { RoomProfile } from './pages/room-profile/RoomProfile.tsx';

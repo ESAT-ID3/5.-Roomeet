@@ -3,7 +3,7 @@ import { UserCard } from "../../components/user-card/UserCard";
 import { AppNav } from "../../components/app-nav/AppNav";
 import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
 import { DeskNav } from "../../components/desktop-nav/DeskNav";
-import { ChatsPage } from "../chatsPage/chatsPage";
+import { ChatsPage } from "../chatsPage/ChatsPage";
 import { Ads } from "../../components/ads/Ads";
 
 export const Swipe = () => {
