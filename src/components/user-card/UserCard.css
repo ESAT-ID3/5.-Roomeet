@@ -30,8 +30,9 @@
     gap: 1.5rem;
     height: 80%;
     flex: 0 1 auto;
-    width: 100%;
-    max-width: 70%;
+    flex-grow: 1;
+    margin: auto;
+    margin-inline: 2rem;
 
 }
 
@@ -139,7 +140,9 @@
   /* elimina margin-inline, max-width fijo o margen auto */
   /* si quieres separación vertical, usa margin-block: */
   margin-inline: 2rem;
-  max-width: 90%;
+  flex-grow: 0;
+  margin: 1rem 1rem 5rem 1rem;
+
 
   /* si en cambio prefieres un ancho relativo sin clamp, podrías usar:
   width: 90%;
@@ -147,7 +150,7 @@
   */
   
   /* resto de estilos */
-  height: 50vh;    /* o un % si lo necesitas */
+  height: 70%;    /* o un % si lo necesitas */
   /* flex: none;  no hace falta salvo que quieras anular el flex-shrink/grow */
 }
 

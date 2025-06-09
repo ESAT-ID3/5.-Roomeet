@@ -25,7 +25,7 @@ body{
 .icons-bottom{
     display: flex;
     flex-direction: column;
-    gap:1.5rem
+    gap: 1.5rem
 }
 
 .icons-top{
@@ -34,7 +34,7 @@ body{
     gap:1.5rem
 }
 
-@media screen and (width < 1000px){
+@media screen and (width < 900px){
     .desk_nav{
         display: none;
     }
