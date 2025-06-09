@@ -1,0 +1,54 @@
+
+
+.auth_slider__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.absolute_right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  transition: transform 0.5s ease;
+}
+
+.absolute_left {
+  position: absolute;
+  right: 100vw;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  transition: transform 0.5s ease;
+
+}
+
+
+.slide-right {
+  transform: translateX(+50vw);
+}
+
+.slide-left {
+  transform: translateX(+50vw);
+}
+
+
+@media screen and (width < 900px) {
+  
+  .absolute_left {
+    display: none;
+    position:static
+  }
+
+  .absolute_right{
+    display: none;
+    position: static;
+    
+  }
+
+  .auth_slider__container{
+    flex-direction: column;
+  }
+}

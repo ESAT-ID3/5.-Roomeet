@@ -20,6 +20,7 @@ body, html{
 .register__page {
     display: flex;
     padding: 2rem;
+    margin: auto;
 }
 
 .register__container {

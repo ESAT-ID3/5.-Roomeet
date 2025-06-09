@@ -35,21 +35,20 @@ export const LoginPage = ({ onSwitch }:LoginPageProps) => {
                     
                 </div>
             </div>
-            <div className="login__page_footer_container">
+            <div className={`login__page_footer_container`}>
                 <div className="login__page_footer_container_mobile">
-                        <span></span>
-                        <h3>¿Aún no tienes cuenta?</h3>
-                        <span></span>
-                </div>
-                <h4>¡Únete a miles de Roomeets más en la búsqueda del compañero de piso perfecto!</h4>
+                <span></span>
+                <h3>¿Ya tienes una cuenta?</h3>
+                <span></span>
+                
                 <Button
-  text="Regístrate"
-  color="black"
-  onClick={() => {
-    console.log("Click en Regístrate");
-    onSwitch();
-  }}
-/>
+                text="Inicia sesión"
+                color="black"
+                onClick={() => {
+                    
+                }}
+                />
+                </div>
             </div>
         </div>
     );
