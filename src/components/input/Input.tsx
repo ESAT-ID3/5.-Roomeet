@@ -21,7 +21,7 @@ export const Input: React.FC<InputProps> = ({name, icon1, icon2="send", placehol
                 <p>{name}</p>
                 <div className={`input__box ${type === "type_2" ? "type2" : ""}`}>
                     {type === "type_2" && <p>Aa</p>}
-                    {type === "" &&<Icons name={icon1} size={size} color="#202020" viewBox={viewBox}/>}
+                    {type === "" && icon1 && <Icons name={icon1} size={size} color="#202020" viewBox={viewBox}/>}
                     <input type="text" placeholder={placeholder} />
                     {icon2 && <Icons name={icon2} size={size} color="#202020" viewBox={viewBox}/>} {/*De esta forma sino le pasamos la propiedad del icon2, React ignorará esta línea y es como si este div no existiera*/}
                 </div>

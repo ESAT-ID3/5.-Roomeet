@@ -5,7 +5,6 @@ import { Button } from "../../components/button/Button";
 import "./AuthSliderV2.css"; // Animaciones aquí
 
 export const AuthSliderV2 = () => {
-  const [isLogin, setIsLogin] = useState(true);
   const [slide, setSlide] = useState(false); // ← nuevo estado
 
   return (
@@ -29,7 +28,7 @@ export const AuthSliderV2 = () => {
             else {
               setSlide(false)
             }
-            setTimeout(() => setIsLogin(false), 500); // cambia vista después de la animación
+            
           }}
         />
       </div>
@@ -52,7 +51,7 @@ export const AuthSliderV2 = () => {
             else {
               setSlide(false)
             }
-            setTimeout(() => setIsLogin(false), 500); // cambia vista después de la animación
+            
           }}
         />
       </div>
@@ -60,11 +59,8 @@ export const AuthSliderV2 = () => {
 
       {/* CONTENEDOR QUE ESTABA DEBAJO */}
       <div className="auth_slider__container">
-        <LoginPage onSwitch={() => {
-          setIsLogin(true);
-          setSlide(false); // resetea posición del div superior si vuelves
-        }} />
-        <Register onSwitch={() => setIsLogin(true)} />
+        <LoginPage/>
+        <Register />
       </div>
     </>
   );

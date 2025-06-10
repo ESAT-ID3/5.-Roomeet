@@ -192,7 +192,7 @@ const [formData, setFormData] = useState({
                 className="register_flow__question_container"
                 >
                     <div className="register_flow_question">
-                    <div className="register_flow_question__return"><Icons name=""/></div>
+                    <div className="register_flow_question__return"></div>
                     <RegisterFlowQuestion title="¿Tienes piso actualmente?" subtitle="Si ya tienes piso, podrás crear su perfil para buscar compañeros. Si no, te mostraremos personas con habitaciones libres."/>
                     <Checkboxes
                     selected={checkboxStates.searchingRoom}

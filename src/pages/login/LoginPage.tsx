@@ -5,11 +5,9 @@ import { Icons } from "../../components/icons/Icons";
 import { Input } from "../../components/input/Input";
 import { Social } from "../../components/social/Social";
 
-interface LoginPageProps {
-    onSwitch: () => void; // Function to switch to the registration page
-}
 
-export const LoginPage = ({ onSwitch }:LoginPageProps) => {
+
+export const LoginPage = () => {
     
 
     return (
@@ -44,9 +42,7 @@ export const LoginPage = ({ onSwitch }:LoginPageProps) => {
                 <Button
                 text="Inicia sesión"
                 color="black"
-                onClick={() => {
-                    
-                }}
+                
                 />
                 </div>
             </div>

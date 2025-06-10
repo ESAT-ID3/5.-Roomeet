@@ -1,5 +1,4 @@
 
-import { MessageHeader } from "../messageHeader/MessageHeader";
 import { SearchBarChats } from "../searchBarChats/SearchBarChats";
 import { ChatMsg } from "../chat-msg/ChatMsg";
 import "./Chats.css";

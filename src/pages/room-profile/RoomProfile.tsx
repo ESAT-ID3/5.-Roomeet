@@ -1,5 +1,5 @@
 import "./RoomProfile.css"
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { AppNav } from "../../components/app-nav/AppNav";
 import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
 import { DeskNav } from "../../components/desktop-nav/DeskNav";
@@ -89,7 +89,7 @@ const handleSubmit = () => {
                 setMostrarB(false);
             }}
             />
-            {mostrarB && <ImageGridUploader room="Yes"/>}
+            {mostrarB && <ImageGridUploader/>}
             {mostrarC && (
                 <>
                 <FlatGrid/>
@@ -249,7 +249,6 @@ const handleSubmit = () => {
 
                 <Button color="red" onClick={() => {
                 handleSubmit();
-                notify();
                 }} text="Cancelar" />
             </>
             )}

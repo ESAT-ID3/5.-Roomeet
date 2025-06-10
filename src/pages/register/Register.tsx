@@ -4,11 +4,9 @@ import { Button } from "../../components/button/Button";
 import { Input } from "../../components/input/Input";
 import { Social } from "../../components/social/Social";
 
-interface RegisterProps {
-  onSwitch: () => void;  // o el tipo que corresponda
-}
 
-export const Register = ({ onSwitch }: RegisterProps) => {
+
+export const Register = () => {
 
     return (
         <div className="register__page__container">
@@ -27,6 +25,12 @@ export const Register = ({ onSwitch }: RegisterProps) => {
                         <Social name="apple"/>
                     </div>
                     <p className="center register__page_text register__page_text--small">Al crear una cuenta en Roomeet aceptas la política de privacidad y términos y condiciones</p>
+                    <p className="center register__page_text register__page_text--small">
+                        ¿Ya tienes una cuenta?{" "}
+                        <button className="register__switch__button" type="button">
+                            Inicia sesión
+                        </button>
+                    </p>
                 </div>
             </div>
             
