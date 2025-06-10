@@ -11,6 +11,7 @@
     max-width: 800px;
     margin: 0 auto; /* Centrado horizontal */
     box-sizing: border-box;
+    margin-top: 2rem;
   }
   
   .searchbar-icon {
@@ -22,7 +23,6 @@
   
   .searchbar-container input {
     flex-grow: 1;
-
     border: none;
     outline: none;
     font-size: 16px;

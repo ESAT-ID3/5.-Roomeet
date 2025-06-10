@@ -17,8 +17,12 @@ body{
     font-style: normal;
     padding: 1rem;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease;
+}
 
+.msg_container:hover {
+    background-color: #e0e0e0;
 }
 
 .img_text{
