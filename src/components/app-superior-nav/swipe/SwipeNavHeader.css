@@ -28,6 +28,7 @@
 @media screen and (width < 900px){
     .nav-header {
     padding-inline: 2rem;
+    border-bottom: 1px solid black;
 }
 }
 

@@ -15,6 +15,13 @@
     overflow: hidden;
 }
 
+.swipe_preview__card{
+    height: 80vh;
+    margin: auto;
+    width: 90%;
+    max-width: 40rem;
+}
+
 
 
 .blur__container{
@@ -50,17 +57,23 @@
     height: 100vh;
 }
 
-.blur__container{
+.swipe__chats_container{
     display: none;
 }
 
+.blur__container{
+    display: none;
+}
 
 .display_logo{
     display: block;
 }
 
-.swipe__screen_chats{
-    display: none
+.swipe_preview__card{
+    height: 80vh;
+    margin: auto;
+    padding-bottom: 5rem;
 }
+
 }
 
