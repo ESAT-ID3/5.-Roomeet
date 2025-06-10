@@ -6,30 +6,17 @@ import { CarrousselLanding } from '../../components/carrousselLanding/Carroussel
 export const Landing = () => {
 
     return (
-        <>
-            <section className="hero-container">
-                <div className="hero-overlay">
-                    <NavLanding/>
-
-                    <div className="hero-content">
-                    <h2 className="hero-title">
-                        Encuentra tu compañero <br />
-                        de piso ideal en un swipe
-                    </h2>
-                    <p className="hero-subtitle">
-                        Haz match con personas afines a <br />
-                        tu estilo de vida y encuentra a tu próximo compañero de piso
-                    </p>
-                    <Button text= 'EMPIEZA YA!' color="yellow"/>
-                    <div className="character-illustration" />
-                    </div>
+        <div className="landing_container">
+            <div className="landing_hero">
+                <h1>Encuentra tu compañero de piso ideal en un swipe</h1>
+                <h2>Haz match con personas afines a tu estilo de vida y encuentra a tu próximo compañero de piso</h2>
+                <div>
+                    <Button/>
                 </div>
-            </section>
+            </div>
 
-            <section className="carroussel">
-                <CarrousselLanding/>
-            </section>
+            
 
-        </>
+        </div>
     );
 };

@@ -26,18 +26,10 @@ export const Register = ({ onSwitch }: RegisterProps) => {
                         <Social name="facebook"/>
                         <Social name="apple"/>
                     </div>
-                    <p className="center register__page_text register__page_text--small">Creandote una cuenta en Roomet aceptas la política de privacidad y términos y condiciones</p>
+                    <p className="center register__page_text register__page_text--small">Al crear una cuenta en Roomeet aceptas la política de privacidad y términos y condiciones</p>
                 </div>
             </div>
-            <div className="register__page_footer_container">
-                <div className="register__page_footer_container_mobile">
-                    <span></span>
-                    <h3>¿Ya tienes una cuenta?</h3>
-                    <span></span>
-                </div>
-                <h4>¡Únete a miles de Roomeets más en la búsqueda del compañero de piso perfecto!</h4>
-                <Button text="Inicia sesión" color="black" onClick={onSwitch}></Button>
-            </div>
+            
         </div>
     );
 };

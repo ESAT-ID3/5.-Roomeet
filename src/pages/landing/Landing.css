@@ -1,91 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.landing_container {
+  width: 100%;
+  padding-inline: 2rem;
+  box-sizing: border-box;
+}
 
-.hero-container {
-    padding-top: 40px;
-    background: url('/path/to/background-image.jpg') center/cover no-repeat;
-    border-radius: 0 50px;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-  
-  .hero-overlay {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: red;
-    padding: 2rem;
-    box-sizing: border-box;
-  }
-  
-  .hero-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
-  }
+.landing_hero {
+  background-image: url('../../assets/images/HeroImage.png'); /* Coloca la ruta correcta */
+  background-size: contain;      /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Mantiene una relación de aspecto de 16:9 */
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 0 8rem 5rem 5rem;
+  font-family: Outfit;
+  color: white;
+  gap: 2rem;
+}
 
-  .nav-menu {
-    display: flex;
-    gap: 59px;
-  }
-  
-  .nav-buttons {
-    display: flex;
-    gap: 50px;
-  }
+.landing_hero h1 {
+  font-size: clamp(3rem, 3vw, 10rem);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 1.16px;
+  margin: 0;
+}
 
-  .nav-btn {
-    background-color: none;
-  }
-
-  .nav-links a {
-    color: #fff;
-    margin-right: 1.5rem;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  .hero-content {
-    margin-top: 8rem;
-    text-align: left;
-    max-width: 600px;
-  }
-  
-  .hero-title {
-    font-size: 3rem;
-    color: #fff;
-    font-weight: 900;
-    color: var(--White-White-500, #D9D9D9);
-    font-family: Outfit;
-    font-style: normal;
-    line-height: 120%; /* 139.2px */
-    letter-spacing: 1.16px;
-  }
-  
-  .hero-subtitle {
-    color: #ddd;
-    margin: 1.5rem 0;
-    font-size: 1.2rem;
-  }
-  
-  .character-illustration {
-    position: absolute;
-    bottom: 2rem;
-    left: 45%;
-    width: 80px;
-    height: 100px;
-    background: url('/path/to/character.png') center/contain no-repeat;
-    z-index: 1;
-  }
-
-
+.landing_hero h2 {
+  font-size: clamp(1rem, 2vw, 3rem);
+  width: 50%;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.24px;
+    margin: 0;
+}
 
   .carroussel {
    margin-top: 70px;

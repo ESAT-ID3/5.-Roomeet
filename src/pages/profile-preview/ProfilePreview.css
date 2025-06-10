@@ -8,6 +8,13 @@
 
 }
 
+.profile_preview__card{
+    height: 80vh;
+    margin: auto;
+    width: 90%;
+    max-width: 40rem;
+}
+
 .profile_preview__footer{
     display: flex;
     flex-direction: column;

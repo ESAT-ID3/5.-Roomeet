@@ -1,10 +1,11 @@
 
+
 .display__chats_page{
     height: 100%;
     display: block;
 }
 
-.swipe__screen_container{
+.chats__screen_container{
     display: flex;
     flex-direction: row;
     height: 100vh;
@@ -12,11 +13,11 @@
     overflow: hidden;
 }
 
-.swipe_preview__card{
+.chats_preview__card{
     height: 80vh;
     margin: auto;
     width: 90%;
-    max-width: 50rem;
+    max-width: 40rem;
 }
 
 
@@ -48,14 +49,11 @@
 }
 
 @media screen and (width < 900px){
-    .swipe__screen_container{
+    .chats__screen_container{
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-}
-
-.swipe__chats_container{
-    display: none;
+    overflow-y: auto;
 }
 
 .blur__container{
@@ -66,10 +64,8 @@
     display: block;
 }
 
-.swipe_preview__card{
-    height: 80vh;
-    margin: auto;
-    padding-bottom: 5rem;
+.chats_preview__card{
+    display: none;
 }
 
 }

@@ -15,8 +15,9 @@ import { SeenProfiles } from './pages/seenProfiles/SeenProfiles.tsx';
 import { Swipe } from './pages/swipe/Swipe.tsx';
 import { Match } from './pages/match/Match.tsx';
 import { AuthSlider } from './pages/auth-slider/AuthSlider.tsx';
+import { AuthSliderV2 } from './pages/auth-slider-v2/AuthSliderV2.tsx';
 import { Settings } from './pages/settings/Settings.tsx';
-import { ChatsPage } from "./pages/chatsPage/chatsPage.tsx"
+import { ChatsPage } from './pages/chats/ChatsPage.tsx';
 import { ProfilePreview } from './pages/profile-preview/ProfilePreview.tsx';
 import { Contact } from './pages/contact/Contact.tsx';
 import { RoomProfile } from './pages/room-profile/RoomProfile.tsx';
@@ -42,6 +43,7 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/register' element={<Register onSwitch={() => { console.log("Switch"); }}/>} />
       <Route path='/register_flow' element={<RegisterFlow/>} />
       <Route path='/loginanimation' element={<AuthSlider/>} />
+      <Route path='/loginanimation2' element={<AuthSliderV2/>} />
       <Route path='/seenProfiles' element={<SeenProfiles/>} />
       <Route path='/swipe' element={<Swipe/>} />
       <Route path='/match' element={<Match/>} /> {/* Provisional hasta que sepamos que hacer */ }

@@ -17,7 +17,12 @@ body{
     font-style: normal;
     padding: 1rem;
     width: 100%;
+    background-color: #f2f2f2;
+    transition: background-color 0.3s ease;
+}
 
+.msg_container:hover {
+    background-color: #e0e0e0;
 }
 
 .img_text{
@@ -31,15 +36,17 @@ body{
     height: 4rem;
 
     border-radius: 50%;
-    background-color: rgb(200, 129, 37);
     aspect-ratio: 1 / 1;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .chat_text {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    text-wrap: nowrap;
+    text-wrap: wrap;
 }
 
 .chat_info {
