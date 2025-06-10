@@ -11,13 +11,17 @@ export const Swipe = () => {
     return (
      <div className="swipe__screen_container">
         <div className="display_logo">
-        <SwipeNavHeader />
+        <SwipeNavHeader icon1="shield" icon2="gear"/>
         </div>
         <DeskNav/>
+        
         <ChatsPage/>  
+        
         <div className="blur__container">
         </div>
+        <div className="profile_preview__card">
         <UserCard name="María" age={23}/>
+        </div>
         <div className="ad">
             <Ads/>
         </div>

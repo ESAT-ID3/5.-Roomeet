@@ -34,8 +34,8 @@ export const RoomProfile = () => {
     });
 }
 
-    const [mostrarB, setMostrarB] = useState(true);
-    const [mostrarC, setMostrarC] = useState(false);
+    const [mostrarB, setMostrarB] = useState(false);
+    const [mostrarC, setMostrarC] = useState(true);
 
     const [formData, setFormData] = useState({
   descripcion: '',

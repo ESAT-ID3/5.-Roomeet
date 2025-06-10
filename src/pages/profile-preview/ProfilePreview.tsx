@@ -16,6 +16,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { TutorialButton } from "../../components/tutorial-buttons/TutorialButton";
 import { Bounce } from "react-toastify";
 import { RoomCard } from "../../components/room-card/RoomCard";
+import { Link } from "react-router";
 
 
 
@@ -35,8 +36,8 @@ const maxOptionError = () => {
     });
 }
 
-    const [mostrarB, setMostrarB] = useState(true);
-    const [mostrarC, setMostrarC] = useState(false);
+    const [mostrarB, setMostrarB] = useState(false);
+    const [mostrarC, setMostrarC] = useState(true);
 
     const [formData, setFormData] = useState({
   descripcion: '',
@@ -134,7 +135,9 @@ function toggleOpcion(opcion: string) {
             {mostrarB && <ImageGridUploader/>}
             {mostrarC && (
                 <>
+                <div className="profile_preview__card">
                 <UserCard name="María" age={23}/>
+                </div>
                 <p className="profile_preview__user_info_text center_text">Aquí tienes algunos accesos directos para navegar con el teclado</p>
                 <div className="profile_preview__card__tutorial_button">
                 <TutorialButton text="Siguiente foto"/>
@@ -162,7 +165,9 @@ function toggleOpcion(opcion: string) {
             </div> {/*Detalles Personales */}
             {mostrarC && (
                 <div>
+                    <Link to="/room_profile">
                     <RoomCard/>
+                    </Link>
                     <p className="profile_preview__user_info_title">Etiquetas</p>
                     {seleccionados.length === 0 ? (
                         <p className="profile_preview__user_info_text profile_preview__user_info_empty">

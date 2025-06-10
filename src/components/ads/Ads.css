@@ -45,7 +45,7 @@ body {
 
 
 
-@media screen and (width < 1250px){
+@media screen and (width < 1500px){
     .ads__container2{
         display: none;
     }

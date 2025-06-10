@@ -12,7 +12,10 @@
     flex-direction: row;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
+
+
 
 .blur__container{
     position: absolute;
@@ -51,12 +54,13 @@
     display: none;
 }
 
-.nav-header{
-    display: none;
-}
 
 .display_logo{
     display: block;
+}
+
+.swipe__screen_chats{
+    display: none
 }
 }
 

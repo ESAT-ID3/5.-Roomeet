@@ -1,13 +1,45 @@
-.chats-container{
+.chats_container{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 1rem;
     background-color: white;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+.chats__screen_container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.chats_preview {
+    padding-bottom: 4rem;
 }
 
 @media screen and (width < 900px){
     .chats-page{
         display: none;
     }
+
+    .chats__screen_container{
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.blur__container{
+    display: none;
+}
+
+.display_logo{
+    display: block;
+}
+
+.swipe__screen_chats{
+    display: none
+}
 }

@@ -28,11 +28,12 @@
     justify-content: flex-end;
     align-items: center;
     gap: 1.5rem;
-    height: 80%;
+    height: 100%;
     flex: 0 1 auto;
     flex-grow: 1;
     margin: auto;
     margin-inline: 2rem;
+    
 
 }
 
@@ -150,7 +151,7 @@
   */
   
   /* resto de estilos */
-  height: 70%;    /* o un % si lo necesitas */
+  height: 100%;    /* o un % si lo necesitas */
   /* flex: none;  no hace falta salvo que quieras anular el flex-shrink/grow */
 }
 

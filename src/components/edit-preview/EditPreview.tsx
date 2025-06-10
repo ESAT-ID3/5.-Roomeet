@@ -7,7 +7,7 @@ interface ComponenteAProps {
 }
 
 export const EditPreview: React.FC<ComponenteAProps> = ({ onMostrarB, onMostrarC }) => {
-  const [active, setActive] = useState<'edit' | 'preview'>('edit');
+  const [active, setActive] = useState<'edit' | 'preview'>('preview');
 
   return (
     <div className="toggle-container">

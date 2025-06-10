@@ -1,14 +1,15 @@
 import { JSX } from "react";
 import "./ChatMsg.css";
-import { img } from "framer-motion/client";
 
 interface ChatMsgProps {
   name: string;
   message: string;
-  img: string
+  img: string;
+  time: string;
+  notifications: number;
 }
 
-export const ChatMsg = ({ name, message, img }: ChatMsgProps): JSX.Element => {
+export const ChatMsg = ({ name, message, img, time, notifications}: ChatMsgProps): JSX.Element => {
   return (
     <div className="msg_container">
       <div className="img_text">
@@ -19,9 +20,9 @@ export const ChatMsg = ({ name, message, img }: ChatMsgProps): JSX.Element => {
         </div>
       </div> 
       <div className="chat_info"> 
-        <p style={{ fontWeight: 300, color: "#ADAFBB" }}>23 min</p>
+        <p style={{ fontWeight: 300, color: "#ADAFBB" }}>{time}</p>
         <div>
-          <p style={{ fontWeight: 700 }}>1</p>
+          <p style={{ fontWeight: 700 }}>{notifications}</p>
         </div>
       </div> 
     </div>
