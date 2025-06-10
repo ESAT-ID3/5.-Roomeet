@@ -6,18 +6,20 @@
   display: flex;
   align-items: center;
   background-color: none;
+padding-block: 2rem;
 }
 
 .carousel-track {
   display: flex;
   flex-wrap: nowrap;
+  will-change: transform;
   height: 34rem;
 }
 
 .carousel-image {
   width: 18rem;
   height: 30rem;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   transition: all 0.3s ease; /* ← animación suave */
@@ -25,7 +27,6 @@
 }
 
 .carousel-image:hover {
-  width: 20rem;
-  height: 28rem;
+  transform: scale(1.05);
 
 }
