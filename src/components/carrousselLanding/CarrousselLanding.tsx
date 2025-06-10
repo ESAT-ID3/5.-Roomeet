@@ -1,14 +1,18 @@
-// MobileCarousel.tsx
-// MobileCarousel.tsx
+
 import { useEffect, useRef } from 'react';
 import './CarrousselLanding.css';
+import img1 from "../../assets/images/carrousel1.png";
+import img2 from "../../assets/images/carrousel2.png";
+import img3 from "../../assets/images/carrousel3.png";
+import img4 from "../../assets/images/carrousel4.png";
+import img5 from "../../assets/images/carrousel5.png";
 
 const images: string[] = [
-  '/img1.jpg',
-  '/img2.jpg',
-  '/img3.jpg',
-  '/img4.jpg',
-  '/img5.jpg'
+  `${img1}`,
+  `${img2}`,
+  `${img3}`,
+  `${img4}`,
+  `${img5}`,
 ];
 
 export const CarrousselLanding = () => {

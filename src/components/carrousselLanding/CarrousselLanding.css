@@ -1,7 +1,7 @@
 /* MobileCarousel.css */
 .carousel-wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -11,16 +11,21 @@
 .carousel-track {
   display: flex;
   flex-wrap: nowrap;
-  will-change: transform;
+  height: 34rem;
 }
 
 .carousel-image {
-  flex: 0 0 auto;
-  width: 25vw;
-  height: 70vh;
-  margin: 0 1vw;
-  background-size: cover;
+  width: 18rem;
+  height: 30rem;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
-  border-radius: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease; /* ← animación suave */
+
+}
+
+.carousel-image:hover {
+  width: 20rem;
+  height: 28rem;
+
 }
