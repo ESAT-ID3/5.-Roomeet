@@ -3,6 +3,7 @@ import "./Register.css"
 import { Button } from "../../components/button/Button";
 import { Input } from "../../components/input/Input";
 import { Social } from "../../components/social/Social";
+import { Link } from "react-router";
 
 
 
@@ -17,7 +18,9 @@ export const Register = () => {
                     <Input name="Nombre" icon1="user" size="24" viewBox="0 0 24 24"/>
                     <Input name="Email" icon1="email" viewBox="0 0 20 16" size="24"/>
                     <Input name="Contraseña" icon1="lock" icon2="eye" size="24" viewBox="0 0 24 24"/>
+                    <Link to="/register_flow" className="register__page_button">
                     <Button text="Continuar"></Button>
+                    </Link>
                     <p className="center register__page_text">o inicia sesión con</p>
                     <div className="register__social">
                         <Social name="google"/>
@@ -25,12 +28,7 @@ export const Register = () => {
                         <Social name="apple"/>
                     </div>
                     <p className="center register__page_text register__page_text--small">Al crear una cuenta en Roomeet aceptas la política de privacidad y términos y condiciones</p>
-                    <p className="center register__page_text register__page_text--small">
-                        ¿Ya tienes una cuenta?{" "}
-                        <button className="register__switch__button" type="button">
-                            Inicia sesión
-                        </button>
-                    </p>
+                    
                 </div>
             </div>
             

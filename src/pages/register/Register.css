@@ -126,6 +126,10 @@ body, html{
     display: block;
 }
 
+.register__page_button{
+    text-decoration: none;
+}
+
 @media screen and (width > 900px){
     .register__page__container{
         display: flex;

@@ -33,6 +33,7 @@ export const LoginPage = () => {
                     
                 </div>
             </div>
+            {/*
             <div className={`login__page_footer_container`}>
                 <div className="login__page_footer_container_mobile">
                 <span></span>
@@ -46,6 +47,7 @@ export const LoginPage = () => {
                 />
                 </div>
             </div>
+            */}
         </div>
     );
 };
