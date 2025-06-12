@@ -1,9 +1,9 @@
-.toggle-wrapper {
+.toggle_wrapper {
   max-width: 300px;
   margin: 0 auto;
 }
 
-.toggle-container {
+.toggle_container {
   position: relative;
   display: flex;
   background-color: #d4d4d4; /* gris claro */
@@ -12,12 +12,12 @@
   transition: all 0.3s ease;
 }
 
-.toggle-button {
+.toggle_button {
   flex: 1;
   border: none;
   background: transparent;
-  padding: 13px 0; /* antes 12px */
-  font-size: 15px; /* antes 14px */
+  padding: 0.5rem 0; /* antes 12px */
+  font-size: 1rem; /* antes 14px */
   font-weight: 600;
   color: #4b5563;
   cursor: pointer;
@@ -25,11 +25,11 @@
   transition: color 0.2s ease;
 }
 
-.toggle-button.active {
+.toggle_button.active {
   color: #111827;
 }
 
-.toggle-slider {
+.toggle_slider {
   position: absolute;
   top: 7px;    /* antes 6px */
   bottom: 7px; /* antes 6px */
@@ -39,12 +39,34 @@
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   z-index: 0;
+  box-sizing: border-box;
 }
 
-.toggle-slider.left {
+.toggle_slider.left {
   left: 7px; /* igual que el padding */
 }
 
-.toggle-slider.right {
-  left: 50%;
+.toggle_slider.right {
+  left: 48%;
+}
+
+.toggle_wrapper p {
+  color: var(--Blue-Blue-700, #2C84B2);
+  text-align: center;
+  font-family: Outfit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 115%; /* 16.1px */
+  letter-spacing: -0.42px;
+  margin-block: 0.5rem;
+}
+
+.toggle_wrapper button{
+  color: var(--Black-Black-500, #202020);
+  text-align: center;
+  font-family: Outfit;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 500;
 }
