@@ -39,6 +39,7 @@ export type IconName =
   | "report"
   | "briefcase"
   | "location"
+  | "burger"
 
 const icons: Record<IconName, React.ReactElement> = {
     home: (
@@ -130,6 +131,9 @@ const icons: Record<IconName, React.ReactElement> = {
     ),
     location:(
       <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+    ),
+    burger:(
+      <path d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z"/>
     )
   };
   

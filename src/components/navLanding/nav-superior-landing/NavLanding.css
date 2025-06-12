@@ -95,7 +95,7 @@
     }
   }
 
-  @media screen and (1401px < width < 1600px){
+  @media screen and (1400px < width < 1600px){
 
     .nav_landing_container {
     padding-top: 1rem
@@ -107,4 +107,10 @@
     .nav_landing_container {
     padding-top: 0rem
   }
+  }
+
+  @media screen and (width < 1000px) {
+    .nav_landing_container{
+      display: none;
+    }
   }

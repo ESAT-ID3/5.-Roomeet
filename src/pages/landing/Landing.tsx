@@ -1,5 +1,5 @@
 import "./Landing.css"
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "../../components/button/Button";
 import { NavLanding } from "../../components/navLanding/nav-superior-landing/NavLanding";
 import { CarrousselLanding } from "../../components/carrousselLanding/CarrousselLanding";
@@ -12,6 +12,7 @@ import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import reviewImg1 from "../../assets/images/reviewImg1.png";
 import reviewImg2 from "../../assets/images/reviewImg2.png";
 import reviewImg3 from "../../assets/images/reviewImg3.png";
+import { Icons } from "../../components/icons/Icons";
 
 type PaymentOption = 'Mensual' | 'Anual';
 
@@ -19,20 +20,60 @@ export const Landing = () => {
 
     const [selectedOption, setSelectedOption] = useState<PaymentOption>('Mensual');
 
+   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const blurRef = useRef<HTMLDivElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  useEffect(() => {
+    if (blurRef.current) {
+      blurRef.current.style.opacity = isHovering ? '1' : '0';
+    }
+  }, [isHovering]);
+
     return (
         <>
         <div className="landing_container">
+            <div className="landing_sticky_nav">
+                <div className="logo_container"></div>
+                <div className={`navbar__burger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+                <span></span>
+                <span></span>
+                <span></span>
+                </div>
+            </div>
+            {/* Menú a pantalla completa */}
+      {menuOpen && (
+        <div className={`fullscreen_menu ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(false)}>
+          <ul>
+            <li><Link className="fullscreen_menu_links" to="/loginanimation2">Login / Sign Up</Link></li>
+            <li><Link className="fullscreen_menu_links" to="/contact">Contacto</Link></li>
+            <li><Link className="fullscreen_menu_links" to="/faq">Preguntas Frecuentes</Link></li>
+          </ul>
+        </div>
+      )}
             <div className="landing_hero">
                 <div>
                     <NavLanding />
                 </div>
                 <div className="landing_hero__text">
                     <h1>Encuentra tu compañero de piso ideal en un <span>Swipe</span></h1>
-                    <h2>Haz match con personas afines a tu estilo de vida y encuentra a tu próximo compañero de piso</h2>
-                    <div>
-                        <Link to="/loginanimation2" className="landing_hero__button">
-                        <Button text="¡Vamos allá!"/>
-                        </Link>
+                    <div className="landing_hero__text_button">
+                        <h2>Haz match con personas afines a tu estilo de vida y encuentra a tu próximo compañero de piso</h2>
+                        <div >
+                            <Link to="/loginanimation2" className="landing_hero__button">
+                            <Button text="¡Vamos allá!"/>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,8 +88,10 @@ export const Landing = () => {
                 <h3>Descubre a tu próximo/a compañero/a ideal</h3>
             </div>
             <div className="landing_app_info__content">
+                <div className="landing_app_info__images">
                 <div className="landing_app_info__image1"></div>
                 <div className="landing_app_info__image2"></div>
+                </div>
                 <div className="landing_app_info__text">
                     <div className="landing_app_info__text_content">
                         <h4 className="underline">Sin complicaciones</h4>
@@ -70,8 +113,23 @@ export const Landing = () => {
                 </div>
             </div>
         </div>
-
-        <div className="landing_app_details">
+                    <div className="landing_app_details__image_mobile">    
+                    </div>
+        <div className="landing_app_details hover_container"
+        
+            onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+        >
+            <div
+        ref={blurRef}
+        className="blur_circle"
+        style={{
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+        }}
+      />
+      
                 <div className="landing_app_details__upper_content">
                     <div className="landing_app_details__text">
                         <h3>¿Por qué elegir Roomeet? 👀</h3>
