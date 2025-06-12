@@ -125,7 +125,7 @@ export const Landing = () => {
             <div className="landing_app_reviews">
             <LandingReview text="Nunca imaginé que encontrar un compañero de piso fuera tan fácil. Gracias a Roomeet pude acceder a perfiles verificados y conocer a personas afines antes de tomar una decisión. ¡Definitivamente lo recomendaré!" name="Lucía" age={23} job="Freelance" img={reviewImg1}/>
             <LandingReview text="¡Roomeet me ayudó a encontrar el compañero de piso perfecto! La plataforma es súper fácil de usar y me permitió filtrar a personas con intereses similares. ¡Ahora comparto un piso con alguien que realmente entiendo y me llevo genial!" name="Ana María" age={26} job="Estudiante" img={reviewImg2}/>
-            <LandingReview text="Llevaba tiempo buscando compañeros con los que pudiera compartir más que solo los gastos, ¡y lo encontré en Roomeet! La opción de Roomeet me ayudó a encontrar a alguien con quien realmente conecté, tanto a nivel de horarios como de estilo de vida." name="Carlos" age={32} job="Profesor" img={reviewImg3}/>
+            <LandingReview text="Llevaba tiempo buscando compañeros con los que pudiera compartir más que solo los gastos. La opción de Roomeet me ayudó a encontrar a alguien con quien realmente conecté, tanto a nivel de horarios como de estilo de vida." name="Carlos" age={32} job="Profesor" img={reviewImg3}/>
             </div>
             <Link to="/loginanimation2" className="landing_app_reviews__button">
             <Button text="¡EMPIEZA YA!"/>

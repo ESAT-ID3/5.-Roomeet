@@ -256,6 +256,7 @@ font-weight: 400;
     display: flex;
     height: fit-content;
     gap: 2rem;
+    margin: auto;
   }
 
   .landing_app_reviews__button{
