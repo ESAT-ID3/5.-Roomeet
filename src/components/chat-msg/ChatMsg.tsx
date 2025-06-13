@@ -1,17 +1,18 @@
 import { JSX } from "react";
 import "./ChatMsg.css";
 
-interface ChatMsgProps {
+type ChatMsgProps = {
   name: string;
   message: string;
   img: string;
   time: string;
   notifications: number;
-}
+  onClick?: () => void;
+};
 
-export const ChatMsg = ({ name, message, img, time, notifications}: ChatMsgProps): JSX.Element => {
+export const ChatMsg = ({ name, message, img, time, notifications, onClick}: ChatMsgProps): JSX.Element => {
   return (
-    <div className="msg_container">
+    <div className="msg_container" onClick={onClick}>
       <div className="img_text">
         <div className="chat_img" style={{backgroundImage: `url(${img})`}}></div> 
         <div className="chat_text"> 

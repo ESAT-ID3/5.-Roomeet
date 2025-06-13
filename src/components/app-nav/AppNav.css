@@ -9,6 +9,14 @@
     margin-top: 1rem;
 }
 
+.active {
+    fill: #FDDC87
+}
+
+.inactive {
+    fill: #d9d9d9
+}
+
 @media screen and (width < 900px){
     .nav {
         display: flex;

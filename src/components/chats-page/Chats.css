@@ -1,11 +1,16 @@
-.chats_container{
+.chats_container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 1rem;
     background-color: #f2f2f2;
-    max-height: 100vh;
-    height: 100vh;
+
+    /* Elimina estas dos líneas problemáticas */
+    /* max-height: 100vh; */
+    /* height: 100vh; */
+
+    min-height: 100vh;
+    overflow-x: hidden; /* previene scroll lateral global */
 }
 
 .chats_preview {

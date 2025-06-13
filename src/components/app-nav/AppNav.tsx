@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import "./AppNav.css";
 
 interface Icon {
@@ -9,11 +9,7 @@ interface Icon {
 const routes = ["/swipe", "/chats", "/premium", "/profile_preview"];
 
 export const AppNav = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const handleClick = ({index}:Icon) => {
-    setActiveIndex(index === activeIndex ? null : index); // Toggle
-  };
+  const [isActive, setIsActive] = useState<number | null>(null);
 
   const icons = [
     {
@@ -40,21 +36,23 @@ export const AppNav = () => {
     return (
     <div className="nav">
         {icons.map((icon, index) => (
-            <Link to={routes[index]} key={index} >
+        <NavLink
+            to={routes[index]}
+            key={index}
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+        >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="28"
                 height="28"
                 viewBox={icon.viewBox}
-                onClick={() => handleClick({index})}
                 style={{ cursor: "pointer" }}
             >
-            <path
-                d={icon.d}
-                fill={activeIndex === index ? "#FDDC87" : "#D9D9D9"} // Cambia a color activo
-            />
-        </svg>
-        </Link>
+                <path
+                    d={icon.d}
+                />
+            </svg>
+        </NavLink>
         ))}
     </div>
     );

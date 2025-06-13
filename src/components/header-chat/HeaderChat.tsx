@@ -2,8 +2,8 @@ import "./HeaderChat.css";
 import { Icons } from "../icons/Icons";
 
 interface HeaderChatProps {
-    pic1: string; // URL de la imagen del perfil
-    name: string; // Nombre del usuario
+    pic1?: string; // URL de la imagen del perfil
+    name?: string; // Nombre del usuario
 }
 
 export const HeaderChat = ({pic1, name}:HeaderChatProps) => {

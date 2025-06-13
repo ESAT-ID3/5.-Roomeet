@@ -11,7 +11,7 @@
     max-width: 800px;
     margin: 0 auto; /* Centrado horizontal */
     box-sizing: border-box;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   
   .searchbar-icon {

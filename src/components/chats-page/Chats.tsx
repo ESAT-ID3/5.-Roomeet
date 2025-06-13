@@ -1,9 +1,15 @@
 
 import { SearchBarChats } from "../searchBarChats/SearchBarChats";
 import { ChatMsg } from "../chat-msg/ChatMsg";
+import { CarrouselMatches } from "../carrousel-matches/CarrouselMatches";
+import { useState } from "react";
 import "./Chats.css";
+import { HeaderChat } from "../header-chat/HeaderChat";
+import { ChatInput } from "../chatInput/ChatInput";
 
 export const Chats = () => {
+
+  const [activeChat, setActiveChat] = useState(false);
 
 const people = [
   { name: "Sara", message: "¡Hola! ¿Cómo estás? 🥰", img:"https://content.semana.es/medio/2024/01/08/sara-salamo_00000000_240305124008_800x450.jpg", time:"2 min", notifications:2 },
@@ -20,13 +26,43 @@ const people = [
 
   return (
     <div className="chats_container">
+
+      {activeChat && (
+      <>
+      <div className="carroussel_matches__container">
+      <HeaderChat name="Sara" />
+      </div>
+      <ChatInput/>
+      <div className="chats_preview">
+      {people.map((user, index) => (
+        <ChatMsg key={index} name={user.name} message ={user.message} img = {user.img} time={user.time} notifications={user.notifications} 
+        onClick={() => {
+          setActiveChat(true);
+          console.log("bruh");
+        }}/>
+      ))}
+      </div>
+      </> 
+      )}
+
+      {!activeChat && (
+      <>
+      <div className="carroussel_matches__container">
+      <CarrouselMatches />
+      </div>
+      
       <SearchBarChats />
       <div className="chats_preview">
       {people.map((user, index) => (
-        <ChatMsg key={index} name={user.name} message ={user.message} img = {user.img} time={user.time} notifications={user.notifications} />
+        <ChatMsg key={index} name={user.name} message ={user.message} img = {user.img} time={user.time} notifications={user.notifications} 
+        onClick={() => {
+          setActiveChat(true);
+          console.log("bruh");
+        }}/>
       ))}
       </div>
-      
+      </> 
+      )}
     </div>
   );
 };
