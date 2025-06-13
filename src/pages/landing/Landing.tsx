@@ -12,7 +12,6 @@ import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import reviewImg1 from "../../assets/images/reviewImg1.png";
 import reviewImg2 from "../../assets/images/reviewImg2.png";
 import reviewImg3 from "../../assets/images/reviewImg3.png";
-import { Icons } from "../../components/icons/Icons";
 
 type PaymentOption = 'Mensual' | 'Anual';
 
