@@ -5,14 +5,34 @@
     gap: 1rem;
     background-color: #f2f2f2;
 
-    /* Elimina estas dos líneas problemáticas */
-    /* max-height: 100vh; */
-    /* height: 100vh; */
-
     min-height: 100vh;
     overflow-x: hidden; /* previene scroll lateral global */
 }
 
 .chats_preview {
     padding-bottom: 4rem;
+}
+
+.inside_chat__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+}
+
+.inside_chat__text_input{
+    position: fixed;
+    width: 100%;
+    bottom: 4rem;
+}
+
+@media screen and (width > 900px) {
+    .inside_chat__text_input {
+        position: static;
+        bottom: 0;
+
+    }
+
+   
+    
 }

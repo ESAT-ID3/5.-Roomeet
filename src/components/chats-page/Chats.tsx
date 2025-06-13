@@ -29,18 +29,14 @@ const people = [
 
       {activeChat && (
       <>
-      <div className="carroussel_matches__container">
-      <HeaderChat name="Sara" />
-      </div>
-      <ChatInput/>
-      <div className="chats_preview">
-      {people.map((user, index) => (
-        <ChatMsg key={index} name={user.name} message ={user.message} img = {user.img} time={user.time} notifications={user.notifications} 
-        onClick={() => {
-          setActiveChat(true);
-          console.log("bruh");
-        }}/>
-      ))}
+      <div className="inside_chat__container">
+        <div>
+          <HeaderChat name="Sara" pic1="https://content.semana.es/medio/2024/01/08/sara-salamo_00000000_240305124008_800x450.jpg" onCloseChat={() => setActiveChat(false)}/>
+        </div>
+        <div className="inside_chat__text_input">
+          <ChatInput/>
+        </div>
+        
       </div>
       </> 
       )}
@@ -57,7 +53,6 @@ const people = [
         <ChatMsg key={index} name={user.name} message ={user.message} img = {user.img} time={user.time} notifications={user.notifications} 
         onClick={() => {
           setActiveChat(true);
-          console.log("bruh");
         }}/>
       ))}
       </div>
