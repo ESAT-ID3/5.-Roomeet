@@ -25,6 +25,10 @@
 
 }
 
+.login__page_footer_container_mobile_button {
+  width: 60%;
+  max-width: 460px;
+}
 
 .slide-right {
   transform: translateX(+50vw);

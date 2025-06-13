@@ -17,20 +17,22 @@ export const AuthSliderV2 = () => {
           <span></span>
         </div>
         <h4>¡Únete a miles de Roomeets más en la búsqueda del compañero de piso perfecto!</h4>
-        <Button
-          text="Regístrate"
-          color="black"
-          onClick={() => {
-            console.log("Click en Regístrate");
-            if (!slide){
-            setSlide(true); // activa la animación
-            }
-            else {
-              setSlide(false)
-            }
-            
-          }}
-        />
+        <div className="login__page_footer_container_mobile_button">
+          <Button
+            text="Regístrate"
+            color="black"
+            onClick={() => {
+              console.log("Click en Regístrate");
+              if (!slide){
+              setSlide(true); // activa la animación
+              }
+              else {
+                setSlide(false)
+              }
+              
+            }}
+          />
+        </div>
       </div>
 
       <div className={`login__page_footer_container absolute_left ${slide ? 'slide-left' : ''}`}>
@@ -40,6 +42,7 @@ export const AuthSliderV2 = () => {
           <span></span>
         </div>
         <h4>¡Tú próximo compañero/a de piso perfecto está a la vuelta de la esquina!</h4>
+        <div className="login__page_footer_container_mobile_button">
         <Button
           text="Inicia sesión"
           color="black"
@@ -54,6 +57,7 @@ export const AuthSliderV2 = () => {
             
           }}
         />
+        </div>
       </div>
 
 

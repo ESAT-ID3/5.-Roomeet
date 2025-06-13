@@ -11,9 +11,7 @@ export const ChatsPage = () => {
 
   return (
     <div className="chats__screen_container">
-        <div className="display_logo">
-        <SwipeNavHeader icon1="shield" icon2="gear"/>
-        </div>
+        
         <DeskNav/>
         <div className="chats__chats_container">
         <SwipeNavHeader icon1="shield" icon2="gear"/>

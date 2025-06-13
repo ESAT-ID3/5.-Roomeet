@@ -4,10 +4,17 @@ import { Button } from "../../components/button/Button";
 import { Input } from "../../components/input/Input";
 import { Social } from "../../components/social/Social";
 import { Link } from "react-router";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 
 
 export const Register = () => {
+
+    const [emptyInput, setEmptyInput] = useState("");
+    const [emptyInputMessage, setEmptyInputMessage] = useState(false);
+
+    const navigate = useNavigate();
 
     return (
         <div className="register__page__container">
@@ -15,12 +22,14 @@ export const Register = () => {
                 <div className="register__container">
                     <h1>Regístrate</h1>
                     <h2>Ponte cómodo, ¡estás en tu casa!</h2>
-                    <Input name="Nombre" icon1="user" size="24" viewBox="0 0 24 24"/>
-                    <Input name="Email" icon1="email" viewBox="0 0 20 16" size="24"/>
-                    <Input name="Contraseña" icon1="lock" icon2="eye" size="24" viewBox="0 0 24 24"/>
-                    <Link to="/register_flow" className="register__page_button">
-                    <Button text="Continuar"></Button>
-                    </Link>
+                    <Input name="Nombre" icon2="user" size="24" viewBox="0 0 24 24" value={emptyInput} text
+        onChange={(e) => setEmptyInput(e.target.value)}/>
+                    <Input name="Email" icon2="email" viewBox="0 0 20 16" size="20" email/>
+                    <Input name="Contraseña" icon1="lock" icon2="eye" size="24" viewBox="0 0 24 24" password/>
+                    {emptyInputMessage && <p className="empty_input_message">¡Usuario y/o contraseña incorrectos!</p>}
+                    <Button text="Continuar" onClick={() => {
+                            emptyInput === "" ? setEmptyInputMessage(true) : navigate("/register_flow");
+                            }}></Button>
                     <p className="center register__page_text">o inicia sesión con</p>
                     <div className="register__social">
                         <Social name="google"/>
