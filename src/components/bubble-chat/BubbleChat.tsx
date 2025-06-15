@@ -2,7 +2,7 @@
 import "./BubbleChat.css"
 
 interface BubbleChatProps {
-  hour?: boolean; // Indica si se muestra la hora
+  hour?: string; // Indica si se muestra la hora
     color: "grey" | "yellow"; // Define el color de la burbuja
     text: string; // Texto del mensaje
 }
@@ -14,7 +14,7 @@ export const BubbleChat = ({hour, color, text}:BubbleChatProps) => {
         <div className={`${color ==="grey" ? 'bubble_grey' : 'bubble_yellow'}`}>
             <p>{text}</p>
         </div>
-        {hour && <p className="bubble_time">00:00</p>}
+        {hour && <p className="bubble_time">{hour}</p>}
     </div>
     );
   };

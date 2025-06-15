@@ -6,13 +6,14 @@ import { useState } from "react";
 import "./Chats.css";
 import { HeaderChat } from "../header-chat/HeaderChat";
 import { ChatInput } from "../chatInput/ChatInput";
+import { BubbleChat } from "../bubble-chat/BubbleChat";
 
 export const Chats = () => {
 
   const [activeChat, setActiveChat] = useState(false);
 
 const people = [
-  { name: "Sara", message: "¡Hola! ¿Cómo estás? 🥰", img:"https://content.semana.es/medio/2024/01/08/sara-salamo_00000000_240305124008_800x450.jpg", time:"2 min", notifications:2 },
+  { name: "Sara", message: "¡Estás buscando por la zona del Cabañal? 😋", img:"https://content.semana.es/medio/2024/01/08/sara-salamo_00000000_240305124008_800x450.jpg", time:"2 min", notifications:2 },
   { name: "Lucas", message: "¿Qué tal va todo? 😊", img:"https://purodiseno.lat/wp-content/uploads/2021/06/LUCA-DESTACADA.png", time:"23 min", notifications:6 },
   { name: "Aitana", message: "He visto que también estás buscando piso por Malvarrosa, ¿no? 🏠", img:"https://d30gl8nkrjm6kp.cloudfront.net/articulos/articulos-1669872.jpg", time:"54 min", notifications:1 },
   { name: "Idel", message: "Abrimos los apuntes de Wordpress por la página 1052 🔥", img:"https://cdn.discordapp.com/avatars/1194355408668737608/27edafc7cbb8347b3b5d7e2010f8dc1b.webp?size=240", time:"7 min", notifications:9 },
@@ -24,17 +25,34 @@ const people = [
   
 ];
 
+const handleSendMessage = (message: string) => {
+    console.log("Mensaje enviado:", message);
+    setMessage(message);
+    // Aquí puedes actualizar el estado de la conversación o enviarlo a Firebase, etc.
+  };
+
+  const [message, setMessage] = useState("");
+
   return (
     <div className="chats_container">
+
+      
 
       {activeChat && (
       <>
       <div className="inside_chat__container">
         <div>
           <HeaderChat name="Sara" pic1="https://content.semana.es/medio/2024/01/08/sara-salamo_00000000_240305124008_800x450.jpg" onCloseChat={() => setActiveChat(false)}/>
+          <div>
+          <BubbleChat text="Holaa, soy Ruperto, ¡encantado!" color="yellow" hour="17:02"/>
+          <BubbleChat text="Hey!" color="grey" hour="17:12"/>
+          <BubbleChat text="¿Estás buscando por la zona del Cabañal? 😋 " color="grey" hour="17:13"/>
+          {message && <BubbleChat text={message} color="yellow" hour="17:13"/>}
+          </div>
         </div>
+        
         <div className="inside_chat__text_input">
-          <ChatInput/>
+          <ChatInput onSend={handleSendMessage}/>
         </div>
         
       </div>
