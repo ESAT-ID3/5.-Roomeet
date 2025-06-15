@@ -13,6 +13,10 @@
     padding-bottom: 4rem;
 }
 
+.first_bubble {
+    margin-top: 5rem;
+}
+
 .inside_chat__container{
     display: flex;
     flex-direction: column;
@@ -28,8 +32,9 @@
 
 @media screen and (width > 900px) {
     .inside_chat__text_input {
-        position: static;
+        position: absolute;
         bottom: 0;
+        width: 35%;
 
     }
 

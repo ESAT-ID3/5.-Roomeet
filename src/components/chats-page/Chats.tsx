@@ -2,11 +2,16 @@
 import { SearchBarChats } from "../searchBarChats/SearchBarChats";
 import { ChatMsg } from "../chat-msg/ChatMsg";
 import { CarrouselMatches } from "../carrousel-matches/CarrouselMatches";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import "./Chats.css";
 import { HeaderChat } from "../header-chat/HeaderChat";
 import { ChatInput } from "../chatInput/ChatInput";
 import { BubbleChat } from "../bubble-chat/BubbleChat";
+
+interface ChatMessage {
+  text: string;
+  hour: string;
+}
 
 export const Chats = () => {
 
@@ -29,9 +34,17 @@ const handleSendMessage = (message: string) => {
     console.log("Mensaje enviado:", message);
     setMessage(message);
     // Aquí puedes actualizar el estado de la conversación o enviarlo a Firebase, etc.
+    
   };
 
   const [message, setMessage] = useState("");
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+
+  useEffect(() => {
+  if (message !== "") {
+    setMessages(prev => [...prev, message]);
+  }
+}, [message]);
 
   return (
     <div className="chats_container">
@@ -43,11 +56,18 @@ const handleSendMessage = (message: string) => {
       <div className="inside_chat__container">
         <div>
           <HeaderChat name="Sara" pic1="https://content.semana.es/medio/2024/01/08/sara-salamo_00000000_240305124008_800x450.jpg" onCloseChat={() => setActiveChat(false)}/>
-          <div>
+          <div className="first_bubble">
           <BubbleChat text="Holaa, soy Ruperto, ¡encantado!" color="yellow" hour="17:02"/>
           <BubbleChat text="Hey!" color="grey" hour="17:12"/>
           <BubbleChat text="¿Estás buscando por la zona del Cabañal? 😋 " color="grey" hour="17:13"/>
-          {message && <BubbleChat text={message} color="yellow" hour="17:13"/>}
+          {messages.map((msg, index) => (
+          <BubbleChat
+            key={index}
+            text={msg}
+            color="yellow"
+            hour="17:13" // Aquí puedes luego poner la hora real si quieres
+          />
+        ))}
           </div>
         </div>
         
