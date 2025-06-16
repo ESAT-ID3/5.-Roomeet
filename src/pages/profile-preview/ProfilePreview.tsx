@@ -9,7 +9,6 @@ import { Ads } from "../../components/ads/Ads";
 import { PersonalDataTag } from "../../components/edit-profile/personal-data-tag/PersonalDataTag";
 import { UserTag } from "../../components/edit-profile/user-tags/UserTag";
 import { Select } from "../../components/select/Select";
-import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import { EditPreview } from "../../components/edit-preview/EditPreview";
 import { ImageGridUploader } from "../../components/profile-grid/ImageGridUploader";
 import { ToastContainer, toast } from 'react-toastify';
