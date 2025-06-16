@@ -152,12 +152,12 @@ function toggleOpcion(opcion: string) {
             <p className="profile_preview__user_info_title">Detalles Personales</p>
             <div className="profile_preview__personal_data">
                 <div className="profile_preview__personal_data__column">
-                    <PersonalDataTag text="Mujer (ella)" icon="gender"/> {/*Poner texto e icono según lo que haya indicado el usuario*/}
-                    <PersonalDataTag text="Abogada" icon="gender"/>
+                    <PersonalDataTag text="Mujer (ella)" icon="gender" /> {/*Poner texto e icono según lo que haya indicado el usuario*/}
+                    <PersonalDataTag text="Abogada" icon="briefcase" viewBox="0 0 16 16"/>
                 </div>
                 <div className="profile_preview__personal_data__column">
-                    <PersonalDataTag text="Mislata, Valencia" icon="gender"/>
-                    <PersonalDataTag text="180€/mes" icon="gender"/>
+                    <PersonalDataTag text="Mislata, Valencia" icon="location" viewBox="0 0 18 18"/>
+                    <PersonalDataTag text="180€/mes" icon="budget" viewBox="0 0 24 24"/>
                 </div>
                 
             </div> {/*Detalles Personales */}
