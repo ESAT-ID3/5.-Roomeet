@@ -5,7 +5,7 @@ import { NavLink } from "react-router";
 export const DeskNav = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const routes = ["/swipe", "/premium", "/profile_preview"];
+  const routes = ["/swipe", "/premiumpage", "/profile_preview"];
 
   const handleClick = (index: number) => {
     setActiveIndex(index === activeIndex ? null : index);

@@ -6,7 +6,7 @@ interface Icon {
     index: number;
 }
 
-const routes = ["/swipe", "/chats", "/premium", "/profile_preview"];
+const routes = ["/swipe", "/chats", "/premiumpage", "/profile_preview"];
 
 export const AppNav = () => {
   const [isActive, setIsActive] = useState<number | null>(null);
