@@ -3,7 +3,6 @@ import "./Contact.css";
 import { Icons } from "../../components/icons/Icons";
 import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import { NavLanding } from "../../components/navLanding/nav-superior-landing/NavLanding";
-import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
 import { Link } from "react-router";  
 
 export const Contact: React.FC = () => {
