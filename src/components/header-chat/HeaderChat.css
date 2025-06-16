@@ -54,6 +54,7 @@ body{
     .header_chat__container{
     position: absolute;
     width: 100%;
+    top: 122px
 }
     
 }

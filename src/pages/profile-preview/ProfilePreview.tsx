@@ -91,7 +91,6 @@ const pets = [
 ]
 
 const limits = [
-    "Fumador/a",
     "No fuma",
     "No quiere gente fumando",
     "Bebe alcohol",
@@ -387,7 +386,7 @@ function toggleOpcion(opcion: string) {
         </div>
         <AppNav/>
     </div>
-    <DeskFooter/>
+    
 </div>
     );
 };

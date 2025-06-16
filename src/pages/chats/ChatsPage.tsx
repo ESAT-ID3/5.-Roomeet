@@ -32,8 +32,12 @@ export const ChatsPage = () => {
         
         <DeskNav/>
         <div className="chats__chats_container">
+          <div className="fixed">
         <SwipeNavHeader icon1="shield" icon2="gear"/>
-        <Chats/>  
+        </div>
+        <div className="padding_top_chats">
+        <Chats/> 
+        </div> 
         </div>
         <div className="blur__container">
         </div>

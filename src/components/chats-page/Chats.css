@@ -14,7 +14,7 @@
 }
 
 .first_bubble {
-    margin-top: 5rem;
+    margin-top: 8rem;
 }
 
 .inside_chat__container{
@@ -37,6 +37,10 @@
         width: 35%;
 
     }
+
+    .first_bubble {
+    margin-top: 5rem;
+}
 
    
     
