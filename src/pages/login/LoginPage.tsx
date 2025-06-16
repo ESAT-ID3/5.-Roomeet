@@ -4,13 +4,21 @@ import { Button } from "../../components/button/Button";
 import { Icons } from "../../components/icons/Icons";
 import { Input } from "../../components/input/Input";
 import { Social } from "../../components/social/Social";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
-interface LoginPageProps {
-    onSwitch: () => void; // Function to switch to the registration page
+interface LoginProps {
+  onButtonClick?: () => void;
 }
 
-export const LoginPage = ({ onSwitch }:LoginPageProps) => {
+export const LoginPage: React.FC<LoginProps> = ({ onButtonClick }) => {
     
+const [emptyInput, setEmptyInput] = useState("");
+const [emptyInputMessage, setEmptyInputMessage] = useState(false);
+
+const navigate = useNavigate();
+
+
 
     return (
         <div className="login__page__container">
@@ -18,13 +26,18 @@ export const LoginPage = ({ onSwitch }:LoginPageProps) => {
                 <div className="login__container">
                     <h1>Bienvenido/a</h1>
                     <h2>¡Estamos encantados de tenerte de vuelta!</h2>
-                    <Input name="Nombre" icon1="user"></Input>
-                    <Input name="Contraseña" icon1="lock" icon2="eye"></Input>
+                    <Input name="Nombre" icon2="user" viewBox="0 0 24 24" value={emptyInput} text
+                        onChange={(e) => setEmptyInput(e.target.value)}></Input>
+                    <Input name="Contraseña" icon2="eye" viewBox="0 0 24 24" password></Input>
                     <span className="login__remember_pass">
                         <p>Recordar contraseña</p>
                         <Icons name="toggle" size="36" color="#A6A6A6" viewBox="0 0 24 24"/>
                     </span>
-                    <Button text="Continuar"></Button>
+                    {emptyInputMessage && <p className="empty_input_message">¡Usuario y/o contraseña incorrectos!</p>}
+                        <Button text="Continuar" onClick={() => {
+                            emptyInput === "" ? setEmptyInputMessage(true) : navigate("/swipe");
+                            }}>
+                        </Button>
                     <p className="center login__page_text">o inicia sesión con</p>
                     <div className="login__social">
                     <Social name="google"/>
@@ -35,22 +48,24 @@ export const LoginPage = ({ onSwitch }:LoginPageProps) => {
                     
                 </div>
             </div>
-            <div className="login__page_footer_container">
+            
+            <div className={`login__page_footer_container footer_display`}>
                 <div className="login__page_footer_container_mobile">
-                        <span></span>
-                        <h3>¿Aún no tienes cuenta?</h3>
-                        <span></span>
+                <div>
+                    <span></span>
+                    <h3>¿Aún no tienes cuenta?</h3>
+                    <span></span>
                 </div>
-                <h4>¡Únete a miles de Roomeets más en la búsqueda del compañero de piso perfecto!</h4>
+                
                 <Button
-  text="Regístrate"
-  color="black"
-  onClick={() => {
-    console.log("Click en Regístrate");
-    onSwitch();
-  }}
-/>
+                text="Regístrate"
+                color="black"
+                onClick={onButtonClick}
+                
+                />
+                </div>
             </div>
+            
         </div>
     );
 };

@@ -1,0 +1,43 @@
+.chats_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    background-color: #f2f2f2;
+
+    min-height: 100vh;
+    overflow-x: hidden; /* previene scroll lateral global */
+}
+
+.chats_preview {
+    padding-bottom: 4rem;
+}
+
+.first_bubble {
+    margin-top: 5rem;
+}
+
+.inside_chat__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+}
+
+.inside_chat__text_input{
+    position: fixed;
+    width: 100%;
+    bottom: 4rem;
+}
+
+@media screen and (width > 900px) {
+    .inside_chat__text_input {
+        position: absolute;
+        bottom: 0;
+        width: 35%;
+
+    }
+
+   
+    
+}

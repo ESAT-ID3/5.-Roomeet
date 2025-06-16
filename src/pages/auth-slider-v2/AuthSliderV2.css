@@ -1,0 +1,86 @@
+
+
+.auth_slider__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.absolute_right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  transition: transform 0.5s ease;
+}
+
+.absolute_left {
+  position: absolute;
+  right: 100vw;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  transition: transform 0.5s ease;
+
+}
+
+.login__page_footer_container_mobile_button {
+  width: 60%;
+  max-width: 460px;
+}
+
+.slide-right {
+  transform: translateX(+50vw);
+}
+
+.slide-left {
+  transform: translateX(+50vw);
+}
+
+.auth_slider__container_mobile{
+    display: none;
+  }
+
+
+@media screen and (width < 900px) {
+  
+  .absolute_left {
+    display: none;
+    position:static
+  }
+
+  .absolute_right{
+    display: none;
+    position: static;
+    
+  }
+
+  .auth_slider__container {
+    display: none;
+  }
+
+  .auth_slider__container_mobile{
+    display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.auth_slider__container_mobile_wrapper{
+  display: flex;
+  width: 200vw;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;}
+
+    .login__page__container{
+      min-width: 100vw;
+    }
+
+    .register__page__container{
+      min-width: 100vw;
+    }
+  
+}

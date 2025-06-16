@@ -7,15 +7,26 @@ body{
     padding: 0;
 }
 
+
+
 .header_chat__container{
-    display: flex;
-    height: 4rem;
+    height: fit-content;
     background-color: white;
+    border: 1px solid var(--White-White-500, #D9D9D9);
+    margin-bottom: 1rem;
+    width: 35%;
+    position: absolute;
+}
+
+.header_chat__content{
+    display: flex;
+    gap: 1.2rem;
+    border: 1px solid var(--White-White-500, #D9D9D9);
+    width: 100%;
+    padding: 0.8rem;
     align-items: center;
     justify-content: space-between;
-    gap: 1.2rem;
-    padding: 1rem;
-    border: 1px solid var(--White-White-500, #D9D9D9);
+
 }
 
 .header_chat_picture {
@@ -36,4 +47,13 @@ body{
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+@media screen and (width < 900px) {
+
+    .header_chat__container{
+    position: absolute;
+    width: 100%;
+}
+    
 }

@@ -36,7 +36,10 @@ export type IconName =
   | "arrow_left"
   | "arrow_down"
   | "arrow_right"
-  | "report";
+  | "report"
+  | "briefcase"
+  | "location"
+  | "burger"
 
 const icons: Record<IconName, React.ReactElement> = {
     home: (
@@ -123,7 +126,15 @@ const icons: Record<IconName, React.ReactElement> = {
     report:(
       <path d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"/>
     ),
-    
+    briefcase:(
+  <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"/>
+    ),
+    location:(
+      <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+    ),
+    burger:(
+      <path d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z"/>
+    )
   };
   
   export const Icons = ({ name, size = "24", color = "#000", viewBox = "0 0 32 30" }: IconProps) => (

@@ -8,6 +8,14 @@
 
 }
 
+.profile_preview__card{
+    height: 80vh;
+    margin: auto;
+    width: 100%;
+    max-width: 40rem;
+    position: relative;
+}
+
 .profile_preview__footer{
     display: flex;
     flex-direction: column;
@@ -121,6 +129,12 @@ textarea{
     .profile_preview__card_container {
     max-height: 200rem;
     height: 100vh;
+}
+
+.profile_preview__card{
+    position: relative;
+    margin-top: 3rem;
+    width: 90%;
 }
 
 }

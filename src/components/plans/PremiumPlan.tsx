@@ -2,18 +2,22 @@ import "./PremiumPlan.css"
 import { Icons } from "../icons/Icons";
 import { Button } from "../button/Button";
 
-export const PremiumPlan = () => {
+interface PremiumPlanProps {
+    price?: number;
+}
+
+export const PremiumPlan: React.FC<PremiumPlanProps> = ({ price=9 }) => {
 
     return (
     <div className="card_container">
         <div className="card_plan_premium__border">
-            <p className="card_plan_premium__title3">LA MEJOR ELECCIÓN</p>
+            <p className="card_plan_premium__title">LA MEJOR ELECCIÓN</p>
             <div className="card_plan_premium">
-                <h1 className="card_plan_premium__title">Premium+</h1>
-                <h2 className="card_plan_premium__subtitle">Para los que quieren ir al siguiente nivel</h2>
+                <h1>Premium+</h1>
+                <h2>Para los que quieren ir al siguiente nivel</h2>
                 <div className="card_plan_premium__title2_flex">
-                    <h3 className="card_plan_premium__title2">€15</h3>
-                    <h3 className="card_plan_premium__title2 card_plan_premium__title2--small">/por usuario</h3>
+                    <h3>{price} €</h3>
+                    <p className="card_plan_premium__title2--small">/por usuario</p>
                 </div>
                 <div className="card_plan_premium__description">
                     <div className="card_plan_premium__feature">
@@ -41,7 +45,7 @@ export const PremiumPlan = () => {
                         <h4>Soporte prioritario</h4>
                     </div>    
                 </div>
-                <Button color="black" text="Elige tu plan"></Button>
+                <Button color="black" text="Pasarme a Premium+"></Button>
             </div>
             
         </div>

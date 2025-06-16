@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./DeskNav.css";
+import { NavLink } from "react-router";
 
 export const DeskNav = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const routes = ["/swipe", "/premium", "/profile_preview"];
 
   const handleClick = (index: number) => {
     setActiveIndex(index === activeIndex ? null : index);
@@ -10,17 +13,14 @@ export const DeskNav = () => {
     
     const iconsTop = [
     {
-      d: "M20 2H4V4L9.81 8.36C6.14 9.57 4.14 13.53 5.35 17.2C6.56 20.87 10.5 22.87 14.19 21.66C17.86 20.45 19.86 16.5 18.65 12.82C17.95 10.71 16.3 9.05 14.19 8.36L20 4V2ZM14.94 19.5L12 17.78L9.06 19.5L9.84 16.17L7.25 13.93L10.66 13.64L12 10.5L13.34 13.64L16.75 13.93L14.16 16.17L14.94 19.5Z",
-      viewBox: "0 0 24 24"
-    },
-    {
-      d: "M2 3H22C23.05 3 24 3.95 24 5V19C24 20.05 23.05 21 22 21H2C0.95 21 0 20.05 0 19V5C0 3.95 0.95 3 2 3ZM14 6V7H22V6H14ZM14 8V9H21.5H22V8H14ZM14 10V11H21V10H14ZM8 13.91C6 13.91 2 15 2 17V18H14V17C14 15 10 13.91 8 13.91ZM8 6C7.20435 6 6.44129 6.31607 5.87868 6.87868C5.31607 7.44129 5 8.20435 5 9C5 9.79565 5.31607 10.5587 5.87868 11.1213C6.44129 11.6839 7.20435 12 8 12C8.79565 12 9.55871 11.6839 10.1213 11.1213C10.6839 10.5587 11 9.79565 11 9C11 8.20435 10.6839 7.44129 10.1213 6.87868C9.55871 6.31607 8.79565 6 8 6Z",
-      viewBox: "0 0 24 24"
-    },
-    {
       d: "M15 1.25L11.25 11.25L1.25 15L11.25 18.75L15 28.75L18.75 18.75L28.75 15L18.75 11.25L15 1.25Z",
       viewBox: "0 0 30 30"
     },
+    {
+      d: "M20 2H4V4L9.81 8.36C6.14 9.57 4.14 13.53 5.35 17.2C6.56 20.87 10.5 22.87 14.19 21.66C17.86 20.45 19.86 16.5 18.65 12.82C17.95 10.71 16.3 9.05 14.19 8.36L20 4V2ZM14.94 19.5L12 17.78L9.06 19.5L9.84 16.17L7.25 13.93L10.66 13.64L12 10.5L13.34 13.64L16.75 13.93L14.16 16.17L14.94 19.5Z",
+      viewBox: "0 0 24 24"
+    },
+    
     {
       d: "M12 4C13.0609 4 14.0783 4.42143 14.8284 5.17157C15.5786 5.92172 16 6.93913 16 8C16 9.06087 15.5786 10.0783 14.8284 10.8284C14.0783 11.5786 13.0609 12 12 12C10.9391 12 9.92172 11.5786 9.17157 10.8284C8.42143 10.0783 8 9.06087 8 8C8 6.93913 8.42143 5.92172 9.17157 5.17157C9.92172 4.42143 10.9391 4 12 4ZM12 14C16.42 14 20 15.79 20 18V20H4V18C4 15.79 7.58 14 12 14Z",
       viewBox: "0 0 24 24"
@@ -31,20 +31,24 @@ export const DeskNav = () => {
     <div className="desk_nav">
       <div className="icons-top">
         {iconsTop.map((icon, index) => (
+          <NavLink
+                      to={routes[index]}
+                      key={index}
+                      className={({ isActive }) => (isActive ? "active" : "inactive")}
+                  >
           <svg
             key={index}
             xmlns="http://www.w3.org/2000/svg"
             width="28"
             height="28"
             viewBox={icon.viewBox}
-            onClick={() => handleClick(index)}
             style={{ cursor: "pointer" }}
           >
             <path
               d={icon.d}
-              fill={activeIndex === index ? "#FDDC87" : "#D9D9D9"}
             />
           </svg>
+          </NavLink>
         ))}
       </div>
 

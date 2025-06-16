@@ -1,4 +1,4 @@
-import "./match.css"
+import "./Match.css"
 import { PicturesMatch } from "../../components/pictures-match/PicturesMatch";
 import { Button } from "../../components/button/Button";
 

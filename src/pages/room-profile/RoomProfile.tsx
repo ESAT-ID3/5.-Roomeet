@@ -1,5 +1,5 @@
 import "./RoomProfile.css"
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { AppNav } from "../../components/app-nav/AppNav";
 import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
 import { DeskNav } from "../../components/desktop-nav/DeskNav";
@@ -14,12 +14,14 @@ import { Bounce } from "react-toastify";
 import { FlatGrid } from "../../components/flat-grid/FlatGrid";
 import { Counter } from "../../components/counter/Counter";
 import { Checkboxes } from "../../components/itemToCheck/checkboxes/Checkboxes";
+import { ImageGridUploader } from "../../components/profile-grid/ImageGridUploader";
+import { RoomTags } from "../../components/edit-profile/room-tags/RoomTags";
 
 
 export const RoomProfile = () => {
 
-const maxOptionError = () => {
-    toast.error('¡Solo puedes seleccionar hasta 6 etiquetas!', {
+    const saveChanges = () => {
+    toast.success('¡Cambios guardados con éxito!', {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -32,8 +34,8 @@ const maxOptionError = () => {
     });
 }
 
-    const [mostrarB, setMostrarB] = useState(true);
-    const [mostrarC, setMostrarC] = useState(false);
+    const [mostrarB, setMostrarB] = useState(false);
+    const [mostrarC, setMostrarC] = useState(true);
 
     const [formData, setFormData] = useState({
   descripcion: '',
@@ -43,6 +45,28 @@ const maxOptionError = () => {
   buscaPersona: '',
   rutinaNecesidad: '',
 });
+
+const [counters, setCounters] = useState<number[]>([0, 0]); // Estado para manejar los valores de todos los contadores
+
+  const updateCounter = (index: number, value: number) => {
+    const updatedCounters = [...counters];
+    updatedCounters[index] = value; // Actualiza solo el contador que se está modificando
+    setCounters(updatedCounters); // Establece el estado actualizado
+  };
+
+  const [checkboxStates, setCheckboxStates] = useState({
+    tieneSalon: null,      // Estado para "¿Tiene salón?"
+    sePermiteFumar: null, // Estado para "¿Se permite fumar?"
+    estaAmueblado: null,   // Estado para "¿Está amueblado?"
+  });
+
+  // Función para actualizar el estado del checkbox correspondiente
+  const handleCheckboxChange = (section: string, value: string | null) => {
+    setCheckboxStates((prevState) => ({
+      ...prevState,
+      [section]: value,
+    }));
+  };
 
 const handleSubmit = () => {
   console.log(formData);
@@ -65,7 +89,7 @@ const handleSubmit = () => {
                 setMostrarB(false);
             }}
             />
-            {mostrarB && <FlatGrid/>}
+            {mostrarB && <ImageGridUploader/>}
             {mostrarC && (
                 <>
                 <FlatGrid/>
@@ -149,29 +173,86 @@ const handleSubmit = () => {
                     </div>
                 </> )}   {/*¿Qué buscas en una persona con la que compartir piso? */}
                 <p className="room_profile_preview__user_info_title">🔑 Detalles del piso</p>
-                <div className="room_profile_preview__room_details room_profile_preview__user_info_title">
-                    <div className="room_profile_preview__room_details__flex">
-                        <p>Número de habitaciones</p>
-                        <Counter/>
+            {mostrarB && (
+                <>  
+                    <div className="room_profile_preview__room_details room_profile_preview__user_info_title">
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>Número de habitaciones</p>
+                            {counters.map((count, index) => {
+                            if (index === 1) return null;  // Si el índice es 1, no renderizamos el componente
+                            return (
+                                <Counter 
+                                key={index} 
+                                count={count} 
+                                onCountChange={(newCount: number) => updateCounter(index, newCount)} 
+                                />
+                            );
+                            })}
+                        </div>
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>Numero de baños</p>
+                            {counters.map((count, index) => {
+                            if (index === 0) return null;  // Si el índice es 0, no renderizamos el componente
+                            return (
+                                <Counter 
+                                key={index} 
+                                count={count} 
+                                onCountChange={(newCount: number) => updateCounter(index, newCount)} 
+                                />
+                            );
+                            })}
+                            
+                        </div>
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>¿Tiene salón?</p>
+                            <Checkboxes
+                            selected={checkboxStates.tieneSalon}
+                            onChange={(value) => handleCheckboxChange('tieneSalon', value)}
+                            option1="Sí"
+                            option2="No"
+                            />
+                        </div>
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>¿Se permite fumar?</p>
+                            <Checkboxes
+                            selected={checkboxStates.sePermiteFumar}
+                            onChange={(value) => handleCheckboxChange('sePermiteFumar', value)}
+                            option1="Sí"
+                            option2="No"
+                            />
+                        </div>
+                        <div className="room_profile_preview__room_details__flex">
+                            <p>¿Está amueblado?</p>
+                            <Checkboxes
+                            selected={checkboxStates.estaAmueblado}
+                            onChange={(value) => handleCheckboxChange('estaAmueblado', value)}
+                            option1="Sí"
+                            option2="No"
+                            />
+                        </div>
                     </div>
-                    <div className="room_profile_preview__room_details__flex">
-                        <p>Numero de baños</p>
-                        <Counter/>
-                    </div>
-                    <p>¿Tiene salón?</p>
-                    <Checkboxes/>
+                </>)} 
 
-                    <p>¿Se permite fumar en el hogar?</p>
-                    <Checkboxes/>
-                    <p>¿Está amueblado?</p>
-
-
-
-                </div>
+                {mostrarC && (
+                <>  
+                    {counters[0] > 0 && <RoomTags count={counters[0]} text="Habitaciones"/>}
+                    {counters[1] > 0 && <RoomTags count={counters[1]} text="Baños"/>}
+                    {checkboxStates.tieneSalon}
+                </>)}   
             
-            {mostrarB && <Button onClick={() => {
+            {mostrarB && (
+            <>
+                <Button onClick={() => {
                 handleSubmit();
-            }} text="Guardar cambios" />}
+                saveChanges();
+                }} text="Guardar cambios" />
+
+                <Button color="red" onClick={() => {
+                handleSubmit();
+                }} text="Cancelar" />
+            </>
+            )}
+
             <ToastContainer />
             {mostrarC && <Button text="Bloquear perfil" color="disabled" icon="yes"/>}
             {mostrarC && <Button text="Denunciar perfil" color="disabled" icon="report"/>}

@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
-    box-sizing: border-box;
-}
 
 
 .user_card {
 
     background-image: 
-    linear-gradient(to top, rgba(0,0,0,0.8), transparent),
-    url(https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=);    /* Mantiene proporciones */
+    linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,12 +24,22 @@
     justify-content: flex-end;
     align-items: center;
     gap: 1.5rem;
-    height: 80%;
+    height: 100%;
     flex: 0 1 auto;
+    flex-grow: 1;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 70%;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 2;
+    max-width: 80%;
+    margin-left: 4rem;
+    
 
 }
+
 
 .user_description {
     width: 100%;
@@ -131,6 +137,41 @@
     border: 1px solid #FBAD37;
 }
 
+.user_card.swipe-right {
+  animation: swipeRight 0.5s ease forwards;
+}
+
+@keyframes swipeRight {
+  to {
+    transform: translateX(150%) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+.user_card.swipe-left {
+  animation: swipeLeft 0.5s ease forwards;
+}
+
+@keyframes swipeLeft {
+  to {
+    transform: translateX(-150%) rotate(-20deg);
+    opacity: 0;
+  }
+}
+
+.swipe_preview__card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  height: 100%;
+}
+
+.static {
+    position: static;
+}
+
+
 @media screen and (width < 900px){
 
 .user_card {
@@ -139,7 +180,9 @@
   /* elimina margin-inline, max-width fijo o margen auto */
   /* si quieres separación vertical, usa margin-block: */
   margin-inline: 2rem;
-  max-width: 90%;
+  flex-grow: 0;
+  margin: 1rem 1rem 5rem 1rem;
+
 
   /* si en cambio prefieres un ancho relativo sin clamp, podrías usar:
   width: 90%;
@@ -147,11 +190,16 @@
   */
   
   /* resto de estilos */
-  height: 50vh;    /* o un % si lo necesitas */
+  height: 100%;    /* o un % si lo necesitas */
   /* flex: none;  no hace falta salvo que quieras anular el flex-shrink/grow */
 }
 
 .swipe_buttons {
     gap: 0.1rem; 
+}
+
+.user_card {
+  position: static;
+
 }
 }

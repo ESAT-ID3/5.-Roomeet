@@ -3,11 +3,18 @@
     box-sizing: border-box;
     width: auto;
     background-color: #202020;
-    box-sizing: border-box;
     justify-content: space-around;
     padding-inline: 1rem;
     padding-block: 1rem;
     margin-top: 1rem;
+}
+
+.active {
+    fill: #FDDC87
+}
+
+.inactive {
+    fill: #d9d9d9
 }
 
 @media screen and (width < 900px){
@@ -16,5 +23,6 @@
         position: fixed;
         bottom: 0;
         width: 100%;
+        z-index: 100;
     }
 }
