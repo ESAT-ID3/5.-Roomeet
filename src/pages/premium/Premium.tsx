@@ -1,25 +1,35 @@
-import "./Premium.css";
-import { UserCard } from "../../components/user-card/UserCard";
+import "./Premium.css"
 import { AppNav } from "../../components/app-nav/AppNav";
 import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
 import { DeskNav } from "../../components/desktop-nav/DeskNav";
-import { Chats } from "../../components/chats-page/Chats";
+import { Button } from "../../components/button/Button";
 import { Ads } from "../../components/ads/Ads";
-
+import { PremiumPlan } from "../../components/plans/PremiumPlan";
+import { StarterPlan } from "../../components/plans/StarterPlan";
 export const Premium = () => {
 
-  return (
-    <div className="chats__screen_container">
-        
+
+    return (
+     <div className="premium_container">
         <DeskNav/>
-        <div className="chats__chats_container">
+        <div className="premium_sidebar_container">
         <SwipeNavHeader icon1="shield" icon2="gear"/>
-        <Chats/>  
+        <div className="premium__profiles_container">
+          <div className="premium__profiles_text">
+          <p>Perfiles que has visto</p>
+          <p>¿Te gustaría volver a revisar algún perfil que dejaste pasar?</p>
+          <div className="premium__profiles_blur__mobile"></div>
+          <Button text="Pásate a Premium ya"/>
+          </div>
+          
+          <div className="premium__profiles_blur"></div>
+        </div> 
+        
         </div>
-        <div className="blur__container">
-        </div>
-        <div className="chats_preview__card">
-        <UserCard name="María" age={23}/>
+        <div className="premium_plan">
+          <StarterPlan/>
+          <PremiumPlan/>
+
         </div>
         <div className="ad">
             <Ads/>
@@ -29,5 +39,5 @@ export const Premium = () => {
 
         
     </div>
-  );
+    );
 };
