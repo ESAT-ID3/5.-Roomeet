@@ -17,7 +17,7 @@ import { TutorialButton } from "../../components/tutorial-buttons/TutorialButton
 import { Bounce } from "react-toastify";
 import { RoomCard } from "../../components/room-card/RoomCard";
 import { Link } from "react-router";
-
+import profileImg from "../../assets/images/profileImg.jpg";
 
 
 export const ProfilePreview = () => {
@@ -136,7 +136,7 @@ function toggleOpcion(opcion: string) {
             {mostrarC && (
                 <>
                 <div className="profile_preview__card">
-                <UserCard name="María" age={23}/>
+                <UserCard name="Javi" age={26} img={profileImg} tags={['Programador', 'Ordenado', 'Omnívoro', 'Videojuegos']}/>
                 </div>
                 <p className="profile_preview__user_info_text center_text">Aquí tienes algunos accesos directos para navegar con el teclado</p>
                 <div className="profile_preview__card__tutorial_button">

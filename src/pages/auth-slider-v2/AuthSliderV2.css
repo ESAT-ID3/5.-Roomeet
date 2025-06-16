@@ -38,6 +38,10 @@
   transform: translateX(+50vw);
 }
 
+.auth_slider__container_mobile{
+    display: none;
+  }
+
 
 @media screen and (width < 900px) {
   
@@ -52,7 +56,31 @@
     
   }
 
-  .auth_slider__container{
-    flex-direction: column;
+  .auth_slider__container {
+    display: none;
   }
+
+  .auth_slider__container_mobile{
+    display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.auth_slider__container_mobile_wrapper{
+  display: flex;
+  width: 200vw;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;}
+
+    .login__page__container{
+      min-width: 100vw;
+    }
+
+    .register__page__container{
+      min-width: 100vw;
+    }
+  
 }

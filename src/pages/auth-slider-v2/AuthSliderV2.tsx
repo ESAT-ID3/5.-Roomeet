@@ -6,6 +6,11 @@ import "./AuthSliderV2.css"; // Animaciones aquí
 
 export const AuthSliderV2 = () => {
   const [slide, setSlide] = useState(false); // ← nuevo estado
+  const [slideMobile, setSlideMobile] = useState(false); // ← nuevo estado
+
+  const handleChildClick = () => {
+    slideMobile ? setSlideMobile(false) : setSlideMobile(true);
+  };
 
   return (
     <>
@@ -64,7 +69,13 @@ export const AuthSliderV2 = () => {
       {/* CONTENEDOR QUE ESTABA DEBAJO */}
       <div className="auth_slider__container">
         <LoginPage/>
-        <Register />
+        <Register/>
+      </div>
+      <div className="auth_slider__container_mobile">
+        <div className="auth_slider__container_mobile_wrapper" style={{ transform: `translateX(${slideMobile ? '-100vw' : '0vw'})` }}>
+          <LoginPage onButtonClick={handleChildClick}/>
+          <Register onButtonClick={handleChildClick}/>
+        </div>
       </div>
     </>
   );

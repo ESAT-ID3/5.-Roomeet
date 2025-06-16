@@ -7,9 +7,11 @@ import { Link } from "react-router";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
+interface RegisterProps {
+  onButtonClick?: () => void;
+}
 
-
-export const Register = () => {
+export const Register: React.FC<RegisterProps> = ({ onButtonClick }) => {
 
     const [emptyInput, setEmptyInput] = useState("");
     const [emptyInputMessage, setEmptyInputMessage] = useState(false);
@@ -41,6 +43,23 @@ export const Register = () => {
                 </div>
             </div>
             
+
+            <div className={`login__page_footer_container footer_display`}>
+                <div className="login__page_footer_container_mobile">
+                <div>
+                    <span></span>
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <span></span>
+                </div>
+                
+                <Button
+                text="Inicia sesión"
+                color="black"
+                onClick={onButtonClick}
+                
+                />
+                </div>
+            </div>
         </div>
     );
 };

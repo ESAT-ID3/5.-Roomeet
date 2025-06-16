@@ -213,7 +213,6 @@ const [formData, setFormData] = useState({
                             nextSlide();
                             } else {
                             noSelectedRoom();
-                            console.log("bruh")
                             }}
                         }
                         />

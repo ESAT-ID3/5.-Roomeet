@@ -7,13 +7,18 @@ import { Social } from "../../components/social/Social";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
+interface LoginProps {
+  onButtonClick?: () => void;
+}
 
-export const LoginPage = () => {
+export const LoginPage: React.FC<LoginProps> = ({ onButtonClick }) => {
     
 const [emptyInput, setEmptyInput] = useState("");
 const [emptyInputMessage, setEmptyInputMessage] = useState(false);
 
 const navigate = useNavigate();
+
+
 
     return (
         <div className="login__page__container">
@@ -43,21 +48,24 @@ const navigate = useNavigate();
                     
                 </div>
             </div>
-            {/*
-            <div className={`login__page_footer_container`}>
+            
+            <div className={`login__page_footer_container footer_display`}>
                 <div className="login__page_footer_container_mobile">
-                <span></span>
-                <h3>¿Ya tienes una cuenta?</h3>
-                <span></span>
+                <div>
+                    <span></span>
+                    <h3>¿Aún no tienes cuenta?</h3>
+                    <span></span>
+                </div>
                 
                 <Button
-                text="Inicia sesión"
+                text="Regístrate"
                 color="black"
+                onClick={onButtonClick}
                 
                 />
                 </div>
             </div>
-            */}
+            
         </div>
     );
 };

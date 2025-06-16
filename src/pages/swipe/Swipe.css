@@ -13,10 +13,14 @@
 }
 
 .swipe_preview__card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     height: 80vh;
-    margin: auto;
     width: 90%;
     max-width: 50rem;
+    
 }
 
 .swipe__chats_container{
@@ -55,6 +59,25 @@
     display: none;
 }
 
+.no_users {
+    
+    width: 60%;
+    height: fit-content;
+    border-radius: 2rem;
+    background-color: aliceblue;
+    padding: 2rem;
+    min-width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.no_users p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+}
+
 @media screen and (width < 900px){
     .swipe__screen_container{
     flex-direction: column;
@@ -75,9 +98,23 @@
 }
 
 .swipe_preview__card{
-    height: 80vh;
-    margin: auto;
-    padding-bottom: 5rem;
+     position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 68vh;
+}
+
+.user_card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%); /* centrado real */
+  width: 100%;
+  max-width: 100vw;
+  max-height: 80vh; /* importante en móvil */
+  margin: 0;
 }
 
 }

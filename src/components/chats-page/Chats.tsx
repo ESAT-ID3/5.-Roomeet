@@ -31,7 +31,11 @@ const people = [
 ];
 
 const handleSendMessage = (message: string) => {
-    console.log("Mensaje enviado:", message);
+  const now = new Date();
+  const hour = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  const newMessage: ChatMessage = { text: message, hour };
+  setMessages(prev => [...prev, newMessage]);
     setMessage(message);
     // Aquí puedes actualizar el estado de la conversación o enviarlo a Firebase, etc.
     
@@ -43,6 +47,7 @@ const handleSendMessage = (message: string) => {
   useEffect(() => {
   if (message !== "") {
     setMessages(prev => [...prev, message]);
+    console.log(messages);
   }
 }, [message]);
 
@@ -60,12 +65,12 @@ const handleSendMessage = (message: string) => {
           <BubbleChat text="Holaa, soy Ruperto, ¡encantado!" color="yellow" hour="17:02"/>
           <BubbleChat text="Hey!" color="grey" hour="17:12"/>
           <BubbleChat text="¿Estás buscando por la zona del Cabañal? 😋 " color="grey" hour="17:13"/>
-          {messages.map((msg, index) => (
+          {messages.filter(msg => msg && typeof msg.text === "string" && msg.text.trim() !== "").map((msg, index) => (
           <BubbleChat
             key={index}
-            text={msg}
+            text={msg.text}
             color="yellow"
-            hour="17:13" // Aquí puedes luego poner la hora real si quieres
+            hour={msg.hour}
           />
         ))}
           </div>
