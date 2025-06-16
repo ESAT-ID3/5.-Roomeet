@@ -1,6 +1,5 @@
 import "./Input.css"
 import { Icons } from "../icons/Icons";
-import { useState } from "react";
 
 import type { IconName } from "../icons/Icons";
 
@@ -21,9 +20,6 @@ interface InputProps {
 
 export const Input: React.FC<InputProps> = ({name, icon1, icon2="send", placeholder, viewBox, size, type, password, value, email, text, onChange}) => {
 
-    const [inputValue, setInputValue] = useState("");
-
-  
 
     return (
         <div className="input__container">

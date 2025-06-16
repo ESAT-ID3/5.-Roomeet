@@ -3,7 +3,6 @@ import "./Register.css"
 import { Button } from "../../components/button/Button";
 import { Input } from "../../components/input/Input";
 import { Social } from "../../components/social/Social";
-import { Link } from "react-router";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 

@@ -46,7 +46,7 @@ const handleSendMessage = (message: string) => {
 
   useEffect(() => {
   if (message !== "") {
-    setMessages(prev => [...prev, message]);
+    
     console.log(messages);
   }
 }, [message]);

@@ -1,6 +1,5 @@
 import "./HeaderChat.css";
 import { Icons } from "../icons/Icons";
-import { useState } from "react";
 
 interface HeaderChatProps {
     pic1?: string; // URL de la imagen del perfil

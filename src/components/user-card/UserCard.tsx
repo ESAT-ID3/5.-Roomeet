@@ -6,7 +6,7 @@ interface UserType {
     age?: number,
     tags?: string[],
     onSwipe?: () => void;
-    img: string; // Añadido para la imagen del usuario
+    img?: string; // Añadido para la imagen del usuario
   }
 
 export const UserCard = ({name,age,tags, onSwipe, img = "https://img.freepik.com/foto-gratis/feliz-mujer-pie-jardin-flores_23-2148029561.jpg?t=st=1750031813~exp=1750035413~hmac=be55e7ee41a6fe399b56bd9f89f1c7d231542b7352cf76064511ff98fec52230&w=2000"}:UserType) => {

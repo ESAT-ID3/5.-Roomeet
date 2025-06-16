@@ -1,15 +1,12 @@
-import { useState } from "react";
+
 import { NavLink } from "react-router";
 import "./AppNav.css";
 
-interface Icon {
-    index: number;
-}
+
 
 const routes = ["/swipe", "/chats", "/premiumpage", "/profile_preview"];
 
 export const AppNav = () => {
-  const [isActive, setIsActive] = useState<number | null>(null);
 
   const icons = [
     {

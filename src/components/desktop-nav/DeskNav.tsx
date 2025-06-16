@@ -1,15 +1,11 @@
-import { useState } from "react";
+
 import "./DeskNav.css";
 import { NavLink } from "react-router";
 
 export const DeskNav = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const routes = ["/swipe", "/premiumpage", "/profile_preview"];
 
-  const handleClick = (index: number) => {
-    setActiveIndex(index === activeIndex ? null : index);
-  };
     
     const iconsTop = [
     {

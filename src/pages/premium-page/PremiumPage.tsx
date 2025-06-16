@@ -6,7 +6,6 @@ import { Button } from "../../components/button/Button";
 import { Ads } from "../../components/ads/Ads";
 import { PremiumPlan } from "../../components/plans/PremiumPlan";
 import { StarterPlan } from "../../components/plans/StarterPlan";
-import img from "../../assets/images/premiumGallery.png"
 
 export const PremiumPage = () => {
 
