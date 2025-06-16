@@ -166,22 +166,7 @@ function toggleOpcion(opcion: string) {
                     <Link to="/room_profile">
                     <RoomCard/>
                     </Link>
-                    <p className="profile_preview__user_info_title">Etiquetas</p>
-                    {seleccionados.length === 0 ? (
-                        <p className="profile_preview__user_info_text profile_preview__user_info_empty">
-                        ¡No has seleccionado ninguna etiqueta!
-                        </p>
-                    ) : (
-                        <div className="profile_preview__identity" style={{ maxWidth: '30rem' }}>
-                        {seleccionados.map((opcion) => (
-                            <UserTag
-                            key={opcion}
-                            text={opcion}
-                            isSelected={seleccionados.includes(opcion)}
-                            />
-                        ))}
-                        </div>
-                    )}
+                    
                     </div>
             )}
             {mostrarB && (
@@ -260,6 +245,22 @@ function toggleOpcion(opcion: string) {
             </div>
              </>
             )} {/*Límites y preferencias */}
+            <p className="profile_preview__user_info_title">Etiquetas</p>
+                    {seleccionados.length === 0 ? (
+                        <p className="profile_preview__user_info_text profile_preview__user_info_empty">
+                        ¡No has seleccionado ninguna etiqueta!
+                        </p>
+                    ) : (
+                        <div className="profile_preview__identity" style={{ maxWidth: '30rem' }}>
+                        {seleccionados.map((opcion) => (
+                            <UserTag
+                            key={opcion}
+                            text={opcion}
+                            isSelected={seleccionados.includes(opcion)}
+                            />
+                        ))}
+                        </div>
+                    )}
             <p className="profile_preview__user_info_title">❤️ Sobre mí</p>
             {mostrarB && (
                 <>
@@ -280,14 +281,28 @@ function toggleOpcion(opcion: string) {
                 {/*Sobre mí */}
             <p className="profile_preview__user_info_title">🕑 Duración del alquiler</p>
             {mostrarB && (
-                <>
-                    <div className="profile_preview__identity">
-                        <Select options={["Menos de 3 meses","Entre 3 y 6 meses","Entre 6 y 12 meses", "Más de 1 año", "Aún no lo sé"]}
-                        value={formData.duracionAlquiler}
-                        onChange={value => setFormData({...formData, duracionAlquiler: value})}/>
-                    </div>
-                </> )} 
-            {mostrarC && (
+                            <>
+            <div className="profile_preview__identity">
+                <Select
+                options={[
+                    "Menos de 3 meses",
+                    "Entre 3 y 6 meses",
+                    "Entre 6 y 12 meses",
+                    "Más de 1 año",
+                    "Aún no lo sé",
+                ]}
+                value={formData.duracionAlquiler}
+                onChange={(value) =>
+                    setFormData({ ...formData, duracionAlquiler: value })
+                }
+                />
+                </div>
+            </> )}
+            {mostrarC && !formData.duracionAlquiler && (
+                <p className="profile_preview__user_info_text profile_preview__user_info_empty">Por favor, selecciona una opción.</p>
+                )}
+
+            {mostrarC && formData.duracionAlquiler && (
                 <>
                     <div className="profile_preview__identity">
                         <p className="profile_preview__user_info_text"> {formData.duracionAlquiler}</p>
@@ -303,8 +318,12 @@ function toggleOpcion(opcion: string) {
                         onChange={value => setFormData({...formData, gestionGastos: value})}/>
                     </div>
                 </> )}
+
+                {mostrarC && !formData.gestionGastos && (
+                <p className="profile_preview__user_info_text profile_preview__user_info_empty">Por favor, selecciona una opción.</p>
+                )}
                 
-                {mostrarC && (
+                {mostrarC && formData.gestionGastos && (
                 <>
                     <div className="profile_preview__identity">
                         <p className="profile_preview__user_info_text"> {formData.gestionGastos}</p>
