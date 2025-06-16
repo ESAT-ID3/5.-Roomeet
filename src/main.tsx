@@ -7,6 +7,7 @@ import { FAQ } from './pages/faq/FAQ.tsx';
 import { Landing } from './pages/landing/Landing.tsx';
 import { NotFound } from './pages/notFound/NotFound.tsx';
 import { Premium } from './pages/premium/Premium.tsx';
+import { PremiumPage } from './pages/premium-page/PremiumPage.tsx';
 import { PrivacyPolitics } from './pages/privacyPolitics/PrivacyPolitics.tsx';
 import { Profile } from './pages/profile/Profile.tsx';
 import { Register } from './pages/register/Register.tsx';
@@ -33,7 +34,8 @@ createRoot(document.getElementById('root')!).render(
       <Route path='/faq' element={<FAQ/>} />
       <Route path='/landing' element={<Landing/>} />
       <Route path='/notFound' element={<NotFound/>} />
-      <Route path='/premium' element={<Premium/>} />
+      <Route path='/premium' element={<Premium/>} /> {/* Bug tremendo: Si borro UserCard o cambio esta ruta, UserCard peta toda la web */}
+      <Route path='/premiumpage' element={<PremiumPage/>} />
       <Route path='/privacyPolitics' element={<PrivacyPolitics/>} />
       <Route path='/profile' element={<Profile/>} />
       <Route path='/profile_preview' element={<ProfilePreview/>} />

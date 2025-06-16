@@ -1,4 +1,4 @@
-import "./Premium.css";
+
 import { UserCard } from "../../components/user-card/UserCard";
 import { AppNav } from "../../components/app-nav/AppNav";
 import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
