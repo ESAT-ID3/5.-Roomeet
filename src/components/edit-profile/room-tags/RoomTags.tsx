@@ -3,7 +3,7 @@ import React from 'react';
 
 interface RoomTagsProps {
   text: string;
-  count: number;
+  count?: number;
 }
 
 export const RoomTags:React.FC<RoomTagsProps> = ({ text, count }) => {

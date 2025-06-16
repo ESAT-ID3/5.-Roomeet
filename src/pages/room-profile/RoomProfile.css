@@ -125,6 +125,12 @@ textarea{
     
 }
 
+.room_profile_preview__room_details__tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
 @media screen and (width < 900px) { 
     
     .room_profile_preview__container{
@@ -132,7 +138,7 @@ textarea{
     }
 
     .room_profile_preview__user_info_container{
-    margin-block: 1rem;
+    margin-block: 5rem;
 }
 
     .center_text{

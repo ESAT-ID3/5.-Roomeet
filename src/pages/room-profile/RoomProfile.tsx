@@ -7,7 +7,6 @@ import { Button } from "../../components/button/Button";
 import { Ads } from "../../components/ads/Ads";
 import { PersonalDataTag } from "../../components/edit-profile/personal-data-tag/PersonalDataTag";
 import { Select } from "../../components/select/Select";
-import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import { EditPreview } from "../../components/edit-preview/EditPreview";
 import { ToastContainer, toast } from 'react-toastify';
 import { Bounce } from "react-toastify";
@@ -97,10 +96,10 @@ const handleSubmit = () => {
                 )}
         </div>
         <div className="room_profile_preview__user_info_container">
-            <p className="room_profile_preview__user_info_title">Detalles Personales</p>
+            <p className="room_profile_preview__user_info_title">Detalles del piso</p>
             <div className="room_profile_preview__personal_data">
-                    <PersonalDataTag text="Mislata, Valencia" icon="gender"/>
-                    <PersonalDataTag text="180€/mes" icon="gender"/>
+                    <PersonalDataTag text="Mislata, Valencia" icon="location" viewBox="0 0 18 18"/>
+                    <PersonalDataTag text="180€/mes" icon="budget" viewBox="0 0 24 24"/>
             </div> {/*Detalles Personales */}
             
             <p className="room_profile_preview__user_info_title">🏡 Descripción </p>
@@ -130,7 +129,12 @@ const handleSubmit = () => {
                         onChange={value => setFormData({...formData, duracionAlquiler: value})}/>
                     </div>
                 </> )} 
-            {mostrarC && (
+
+                {mostrarC && !formData.duracionAlquiler && (
+                <p className="profile_preview__user_info_text profile_preview__user_info_empty">Por favor, selecciona una opción.</p>
+                )}
+
+            {mostrarC && formData.duracionAlquiler && (
                 <>
                     <div className="profile_preview__identity">
                         <p className="profile_preview__user_info_text"> {formData.duracionAlquiler}</p>
@@ -235,9 +239,20 @@ const handleSubmit = () => {
 
                 {mostrarC && (
                 <>  
+                <div className="room_profile_preview__room_details__tags">
+                    {(
+  counters[0] === 0 &&
+  counters[1] === 0 &&
+  checkboxStates.tieneSalon === null &&
+  checkboxStates.sePermiteFumar === null &&
+  checkboxStates.estaAmueblado === null
+) && (<p className="profile_preview__user_info_text profile_preview__user_info_empty">¡No has añadido ningún detalle del piso! ¿A qué esperas?</p>)}
                     {counters[0] > 0 && <RoomTags count={counters[0]} text="Habitaciones"/>}
                     {counters[1] > 0 && <RoomTags count={counters[1]} text="Baños"/>}
-                    {checkboxStates.tieneSalon}
+                    {checkboxStates.tieneSalon && <RoomTags text={checkboxStates.tieneSalon === "Sí" ? "Tiene salón" : "No tiene salón"}/>}
+                    {checkboxStates.sePermiteFumar && <RoomTags text={checkboxStates.sePermiteFumar === "Sí" ? "Se permite fumar" : "No se permite fumar"}/>}
+                    {checkboxStates.estaAmueblado && <RoomTags text={checkboxStates.estaAmueblado === "Sí" ? "Está amueblado" : "No está amueblado"}/>}
+                </div>
                 </>)}   
             
             {mostrarB && (
@@ -265,7 +280,7 @@ const handleSubmit = () => {
         </div>
         <AppNav/>
     </div>
-    <DeskFooter/>
+    
 </div>
     );
 };
