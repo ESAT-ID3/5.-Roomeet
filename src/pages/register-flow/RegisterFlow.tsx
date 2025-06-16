@@ -52,7 +52,6 @@ const pets = [
 ]
 
 const limits = [
-    "Fumador/a",
     "No fuma",
     "No quiere gente fumando",
     "Bebe alcohol",
@@ -275,7 +274,7 @@ const [formData, setFormData] = useState({
                     onClick={prevSlide}><Icons name="arrow_left"/></div>
                     <RegisterFlowQuestion title="¿A qué te dedicas?" subtitle="Ayuda a otros a conocerte un poco más."/>
                     <div className="budget_input_container">
-                    <Input icon2="briefcase" placeholder="Soy..." size="16" viewBox="0 0 16 16"/>
+                    <Input icon2="briefcase" placeholder="Soy..." text size="16" viewBox="0 0 16 16"/>
                     </div>
                     </div>
                     <div className="register_flow_image">
@@ -295,7 +294,7 @@ const [formData, setFormData] = useState({
                         <div className="register_flow_question__return"
                     onClick={prevSlide}><Icons name="arrow_left"/></div>
                     <RegisterFlowQuestion title="¿En qué ciudad estás buscando o vives actualmente?" subtitle="Esto nos ayuda a mostrarte personas cerca de ti."/>
-                    <Input icon2="location" placeholder="Busco / Estoy en..." size="16" viewBox="0 0 16 16"/>
+                    <Input icon2="location" placeholder="Busco / Estoy en..." text size="16" viewBox="0 0 16 16"/>
                     </div>
                     <div className="register_flow_image">
                     </div>
@@ -677,7 +676,7 @@ const [formData, setFormData] = useState({
                                                 />
                                             </div>
                                             <div className="room_profile_preview__room_details__flex">
-                                                <p>Precio mensual del aquiler por persona</p>
+                                                <p>Precio mensual del alquiler por persona</p>
                                                 <div className="budget_input_container">
                                                 <input type="number" min="0" placeholder="Presupuesto (€)" className="budget_input" />
                                                 </div>

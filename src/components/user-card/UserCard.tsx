@@ -7,9 +7,10 @@ interface UserType {
     tags?: string[],
     onSwipe?: () => void;
     img?: string; // Añadido para la imagen del usuario
+    onCardClick?: () => void;
   }
 
-export const UserCard = ({name,age,tags, onSwipe, img = "https://img.freepik.com/foto-gratis/feliz-mujer-pie-jardin-flores_23-2148029561.jpg?t=st=1750031813~exp=1750035413~hmac=be55e7ee41a6fe399b56bd9f89f1c7d231542b7352cf76064511ff98fec52230&w=2000"}:UserType) => {
+export const UserCard = ({name,age,tags, onCardClick, onSwipe, img = "https://img.freepik.com/foto-gratis/feliz-mujer-pie-jardin-flores_23-2148029561.jpg?t=st=1750031813~exp=1750035413~hmac=be55e7ee41a6fe399b56bd9f89f1c7d231542b7352cf76064511ff98fec52230&w=2000"}:UserType) => {
 
   const [swipeRight, setSwipeRight] = useState(false);
   const [swipeLeft, setSwipeLeft] = useState(false);
@@ -28,6 +29,7 @@ const handleSwipeLeft = () => {
   return (
 
       <div className={`user_card ${swipeRight ? "swipe-right" : ""} ${swipeLeft ? "swipe-left" : ""}`}
+      onClick={onCardClick}
       style={{ backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.8), transparent), url(${img})` }}>
         <div className="user_description">
             <div className="user_title">{name} · {age}
@@ -51,7 +53,13 @@ const handleSwipeLeft = () => {
                 <path d="M25.0002 12.5462V17.5462H13.7502L18.1252 21.9212L15.1002 24.9462L5.2002 15.0462L15.1002 5.14624L18.1252 8.17124L13.7502 12.5462H25.0002Z" fill="#7B64D4"/>
                 </svg>
                 </button>
-                <button className="red_btn" onClick={handleSwipeLeft}>
+                <button
+  className="red_btn"
+  onClick={(e) => {
+    e.stopPropagation(); // ⛔ evita la propagación hacia el Link
+    handleSwipeLeft();
+  }}
+>
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="35" viewBox="0 0 36 35" fill="none">
                 <path d="M30.0335 10.077L25.7898 5.83325L18.3669 13.2562L10.9439 5.83325L6.7002 10.077L14.1231 17.4999L6.7002 24.9228L10.9439 29.1666L18.3669 21.7437L25.7898 29.1666L30.0335 24.9228L22.6106 17.4999L30.0335 10.077Z" fill="#F74B4B"/>
                 </svg>
@@ -61,7 +69,13 @@ const handleSwipeLeft = () => {
                 <path d="M18.3255 25.2316L27.338 30.6712L24.9464 20.4191L32.9089 13.5212L22.4234 12.6171L18.3255 2.96289L14.2276 12.6171L3.74219 13.5212L11.6901 20.4191L9.31302 30.6712L18.3255 25.2316Z" fill="#58C0FD"/>
                 </svg>
                 </button>
-                <button className="yellow_btn" onClick={handleSwipeRight}>
+                <button
+  className="yellow_btn"
+  onClick={(e) => {
+    e.stopPropagation();
+    handleSwipeRight();
+  }}
+>
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
                 <path d="M17.4998 31.1354L15.3853 29.2104C7.87484 22.4 2.9165 17.8938 2.9165 12.3958C2.9165 7.88958 6.44567 4.375 10.9373 4.375C13.4748 4.375 15.9103 5.55625 17.4998 7.40833C19.0894 5.55625 21.5248 4.375 24.0623 4.375C28.554 4.375 32.0832 7.88958 32.0832 12.3958C32.0832 17.8938 27.1248 22.4 19.6144 29.2104L17.4998 31.1354Z" fill="#FBAD37"/>
                 </svg>
