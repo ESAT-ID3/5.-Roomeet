@@ -449,6 +449,7 @@ font-weight: 400;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh; /* Ajusta la altura al 100% de la ventana */
+  max-width: 100vw;
 }
 
 .landing_hero__text{
