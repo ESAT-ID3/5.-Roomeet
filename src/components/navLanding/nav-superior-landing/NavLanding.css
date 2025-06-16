@@ -4,14 +4,13 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 2rem 3rem 0 3rem
   }
   
   /* Contenedor del logo */
   .logo_container {
   background-image: url('../../../assets/images/Logo.png');
   width: clamp(8rem, 15vw, 15rem);   /* Se adapta entre 8rem y 20rem */
-  aspect-ratio: 4 / 1;               /* Asegura forma del logo horizontal */
+  aspect-ratio: 2 / 1;               /* Asegura forma del logo horizontal */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

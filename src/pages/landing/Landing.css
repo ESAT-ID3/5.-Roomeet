@@ -349,6 +349,11 @@ font-weight: 400;
   height: 26rem;
 }
 
+.landing_hero {
+
+  gap: 7rem;
+}
+
 }
   
 
@@ -398,9 +403,24 @@ font-weight: 400;
     margin-top: 5rem;
   }
 
+  .landing_hero {
+
+
+  padding-top: 2rem;
+}
+
   }
 
-   @media screen and (width < 1000px){
+  @media screen and (1130px < width < 1300px){
+
+    .landing_hero {
+
+  padding-top: 2rem;
+}
+
+  }
+
+   @media screen and (width <= 1000px){
 
 .landing_sticky_nav{
   display: block;
