@@ -47,7 +47,9 @@ export const Contact: React.FC = () => {
   return (
     <div className="contact-page">
       <div className="landing_sticky_nav">
+                <Link to="/">
                 <div className="logo_container"></div>
+                </Link>
                 <div className={`navbar__burger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
                 <span></span>
                 <span></span>
