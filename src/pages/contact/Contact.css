@@ -1,3 +1,20 @@
+.contact-page{
+  width: 100%;
+  height: 100vh;
+}
+
+
+.contact-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh /* Ajusta según la altura de tu header */
+}
+
+.nav_contact_container{
+  border-bottom: 1px solid #686868;
+}
+
 .contact-container {
     display: flex;
     justify-content: space-between;
@@ -5,6 +22,7 @@
     font-family: 'Arial', sans-serif;
     background-color: #f2f2f2;
     gap: 40px;
+    padding-top: 8rem;
   }
   
   .contact-info {
@@ -147,7 +165,10 @@
     background-color: #e3911a;
   }
   
-
+.footer-container{
+  position: relative;
+  top: 0;
+}
   
   /* Responsive: vista móvil */
 @media (max-width: 768px) {
@@ -163,6 +184,10 @@
   
     .contact-form {
       margin-top: 30px;
+    }
+
+    .contact-flex{
+      padding-top: 5rem;
     }
   }
 
@@ -184,6 +209,14 @@
   
     .rrss.mobile {
       display: block;
+    }
+
+    .contact-flex{
+  height: 100vh
+}
+
+.contact-flex{
+      padding-top: 5rem;
     }
   }
   

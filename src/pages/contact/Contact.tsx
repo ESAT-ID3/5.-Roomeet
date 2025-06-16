@@ -3,6 +3,8 @@ import "./Contact.css";
 import { Icons } from "../../components/icons/Icons";
 import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import { NavLanding } from "../../components/navLanding/nav-superior-landing/NavLanding";
+import { SwipeNavHeader } from "../../components/app-superior-nav/swipe/SwipeNavHeader";
+import { Link } from "react-router";  
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +19,8 @@ export const Contact: React.FC = () => {
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+
+   
 
     
     if (e.target instanceof HTMLInputElement && e.target.type === "checkbox") {
@@ -33,7 +37,7 @@ export const Contact: React.FC = () => {
     }
   };
   
-  
+   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -42,173 +46,198 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <>
-
-    <NavLanding/>
-
-     <div className="contact-container">
-      <div className="contact-info">
-        <div className="title">
-            <h1>¡Contáctanos!</h1>
-
-            <p>
-                ¿Tienes dudas, sugerencias o simplemente quieres decir hola?<br />
-                Estamos encantados de escucharte. Escríbenos a través del formulario o conéctate con nosotros en redes sociales.
-            </p>
-        </div>
-
-
-        <div className="rrss desktop">
-             <div className="rrss-columns">
-
-                <div className="rrss-column">
-
-                    <div className="rrss-item">{/* Twitter */}
-                        <Icons name= 'block'/>
-                        <div className="icon">@RoomeetApp</div>
-                    </div>
-
-                    <div className="rrss-item">{/* Facebook */}
-                        <Icons name= 'facebook'/>
-                        <div className="icon">RoomeetOficial</div>
-                    </div>
-
-                    <div className="rrss-item"> {/* YouTube */}
-                        <Icons name = 'block'/>
-                        <div className="icon">RoomeetOficial</div>
-                    </div>
+    <div className="contact-page">
+      <div className="landing_sticky_nav">
+                <div className="logo_container"></div>
+                <div className={`navbar__burger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
+                <span></span>
+                <span></span>
+                <span></span>
                 </div>
+            </div>
+            {/* Menú a pantalla completa */}
+      {menuOpen && (
+        <div className={`fullscreen_menu ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(false)}>
+          <ul>
+            <li><Link className="fullscreen_menu_links" to="/loginanimation2">Login / Sign Up</Link></li>
+            <li><Link className="fullscreen_menu_links" to="/contact">Contacto</Link></li>
+            <li><Link className="fullscreen_menu_links" to="/faq">Preguntas Frecuentes</Link></li>
+          </ul>
+        </div>
+      )}
+      <div className="contact-flex">
+        <div>
+          <div className="nav_contact_container">
+          <NavLanding color/>
+          </div>
+        
+          <div className="contact-container">
+            <div className="contact-info">
+              <div className="title">
+                <h1>¡Contáctanos!</h1>
 
-                <div className="rrss-column">
+                <p>
+                    ¿Tienes dudas, sugerencias o simplemente quieres decir hola?<br />
+                    Estamos encantados de escucharte. Escríbenos a través del formulario o conéctate con nosotros en redes sociales.
+                </p>
+            </div>
 
-                    <div className="rrss-item">{/* Instagram */}
-                        <Icons name = 'block'/>
-                        <div className="icon">@roomeet_life</div>
+
+            <div className="rrss desktop">
+                <div className="rrss-columns">
+
+                    <div className="rrss-column">
+
+                        <div className="rrss-item">{/* Twitter */}
+                            <Icons name= 'block'/>
+                            <div className="icon">@RoomeetApp</div>
+                        </div>
+
+                        <div className="rrss-item">{/* Facebook */}
+                            <Icons name= 'facebook'/>
+                            <div className="icon">RoomeetOficial</div>
+                        </div>
+
+                        <div className="rrss-item"> {/* YouTube */}
+                            <Icons name = 'block'/>
+                            <div className="icon">RoomeetOficial</div>
+                        </div>
                     </div>
 
-                    <div className="rrss-item">{/* Email */}
-                        <Icons name = 'email'/>
-                        <div className="icon">contacto@roomeet.com</div>
-                    </div>
+                    <div className="rrss-column">
 
-                    <div className="rrss-item">{/* Teléfono */}
-                        <Icons name= 'block'/>
-                        <div className="icon">+34 612 345 678</div>
+                        <div className="rrss-item">{/* Instagram */}
+                            <Icons name = 'block'/>
+                            <div className="icon">@roomeet_life</div>
+                        </div>
+
+                        <div className="rrss-item">{/* Email */}
+                            <Icons name = 'email'/>
+                            <div className="icon">contacto@roomeet.com</div>
+                        </div>
+
+                        <div className="rrss-item">{/* Teléfono */}
+                            <Icons name= 'block'/>
+                            <div className="icon">+34 612 345 678</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-      </div>
+          </div>
 
 
 
 
 
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <label htmlFor="nombre">Nombre *</label>
-        <input
-          id="nombre"
-          name="nombre"
-          type="text"
-          required
-          value={formData.nombre}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="email">Email *</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="asunto">Asunto *</label>
-        <input
-          id="asunto"
-          name="asunto"
-          type="text"
-          required
-          value={formData.asunto}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="mensaje">Mensaje *</label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          required
-          maxLength={800}
-          value={formData.mensaje}
-          onChange={handleChange}
-          placeholder="Escribe tu mensaje aquí"
-        />
-        <div className="char-count">{formData.mensaje.length}/800</div>
-
-        <div className="notifications">
-          <label htmlFor="notificaciones">¿Te gustaría recibir notificaciones?</label>
-          <input
-            id="notificaciones"
-            name="notificaciones"
-            type="checkbox"
-            checked={formData.notificaciones}
-            onChange={handleChange}
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <label htmlFor="nombre">Nombre *</label>
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              required
+              value={formData.nombre}
+              onChange={handleChange}
             />
 
-        </div>
+            <label htmlFor="email">Email *</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
 
-        <button type="submit">Enviar mensaje</button>
-      </form>
+            <label htmlFor="asunto">Asunto *</label>
+            <input
+              id="asunto"
+              name="asunto"
+              type="text"
+              required
+              value={formData.asunto}
+              onChange={handleChange}
+            />
 
-      <div className="rrss mobile">
-             <div className="rrss-columns">
+            <label htmlFor="mensaje">Mensaje *</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              required
+              maxLength={800}
+              value={formData.mensaje}
+              onChange={handleChange}
+              placeholder="Escribe tu mensaje aquí"
+            />
+            <div className="char-count">{formData.mensaje.length}/800</div>
 
-                <div className="rrss-column">
+            <div className="notifications">
+              <label htmlFor="notificaciones">¿Te gustaría recibir notificaciones?</label>
+              <input
+                id="notificaciones"
+                name="notificaciones"
+                type="checkbox"
+                checked={formData.notificaciones}
+                onChange={handleChange}
+                />
 
-                    <div className="rrss-item">{/* Twitter */}
-                        <Icons name= 'block'/>
-                        <div className="icon">@RoomeetApp</div>
+            </div>
+
+            <button type="submit">Enviar mensaje</button>
+          </form>
+
+          <div className="rrss mobile">
+                <div className="rrss-columns">
+
+                    <div className="rrss-column">
+
+                        <div className="rrss-item">{/* Twitter */}
+                            <Icons name= 'block'/>
+                            <div className="icon">@RoomeetApp</div>
+                        </div>
+
+                        <div className="rrss-item">{/* Facebook */}
+                            <Icons name= 'block'/>
+                            <div className="icon">RoomeetOficial</div>
+                        </div>
+
+                        <div className="rrss-item"> {/* YouTube */}
+                            <Icons name = 'block'/>
+                            <div className="icon">RoomeetOficial</div>
+                        </div>
                     </div>
 
-                    <div className="rrss-item">{/* Facebook */}
-                        <Icons name= 'block'/>
-                        <div className="icon">RoomeetOficial</div>
-                    </div>
+                    <div className="rrss-column">
 
-                    <div className="rrss-item"> {/* YouTube */}
-                        <Icons name = 'block'/>
-                        <div className="icon">RoomeetOficial</div>
-                    </div>
-                </div>
+                        <div className="rrss-item">{/* Instagram */}
+                            <Icons name = 'block'/>
+                            <div className="icon">@roomeet_life</div>
+                        </div>
 
-                <div className="rrss-column">
+                        <div className="rrss-item">{/* Email */}
+                            <Icons name = 'email'/>
+                            <div className="icon">contacto@roomeet.com</div>
+                        </div>
 
-                    <div className="rrss-item">{/* Instagram */}
-                        <Icons name = 'block'/>
-                        <div className="icon">@roomeet_life</div>
-                    </div>
-
-                    <div className="rrss-item">{/* Email */}
-                        <Icons name = 'email'/>
-                        <div className="icon">contacto@roomeet.com</div>
-                    </div>
-
-                    <div className="rrss-item">{/* Teléfono */}
-                        <Icons name= 'block'/>
-                        <div className="icon">+34 612 345 678</div>
+                        <div className="rrss-item">{/* Teléfono */}
+                            <Icons name= 'block'/>
+                            <div className="icon">+34 612 345 678</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+          </div>
         </div>
+        <div className="footer-container">
+          <DeskFooter/>
+        </div> 
+      </div>
+         
     </div>
-
-        <DeskFooter/>
-         </>
    
-    
-    
   );
 };
 

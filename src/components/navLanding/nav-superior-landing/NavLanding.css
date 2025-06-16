@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-top: 2rem
+    padding: 2rem 3rem 0 3rem
   }
   
   /* Contenedor del logo */
@@ -31,7 +31,6 @@
   /* Botón "Preguntas frecuentes" */
 .faq-button {
     background: none;
-    color: var(--Black-Black-500, #202020); /* Color de texto */
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     line-height: 24px;
@@ -43,6 +42,8 @@
     color: white;
     font-size: 1rem;
   }
+
+
   
   
   /* Botón "Log in" */
@@ -63,15 +64,19 @@
     cursor: pointer;
   }
   
-  /* Efecto al hacer hover en los botones */
   .contact-button:hover,
   .faq-button:hover {
     text-decoration: underline;
   }
-  
-  .login-button:hover {
-    background: #333333; /* Un poco más oscuro al hacer hover */
-  }
+
+
+ .buttons_link{
+  text-decoration: none;
+ }
+
+ .buttons_link:hover{
+  text-decoration: underline;
+ }
   
   /* Media query para pantallas pequeñas (móviles) */
   @media (max-width: 768px) {
@@ -97,17 +102,8 @@
 
   @media screen and (1400px < width < 1600px){
 
-    .nav_landing_container {
-    padding-top: 1rem
-  }
   }
   
-  @media screen and (width < 1400px){
-
-    .nav_landing_container {
-    padding-top: 0rem
-  }
-  }
 
   @media screen and (width < 1000px) {
     .nav_landing_container{
