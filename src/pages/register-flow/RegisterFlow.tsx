@@ -707,7 +707,7 @@ const [formData, setFormData] = useState({
                     onClick={prevSlide}><Icons name="arrow_left"/></div>
                     <RegisterFlowQuestion title="¡Has completado el registro!" subtitle="¡Comienza a buscar a tus próximos compañeros/as de piso en el apartado Swipe!"/>
                     </div>
-                    <div className="register_flow_image">
+                    <div className="register_flow_final_image">
                     </div>
                     <Link to="/swipe" className="register_flow_btn">
                         <Button 

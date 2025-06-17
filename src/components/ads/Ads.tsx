@@ -6,7 +6,7 @@ export const Ads = () => {
     <div className="ads__container_flex">
         <div className="ads__container2">
             <p>Advertisement</p>
-            <div className="ads_image"></div>
+            <a href="https://www.esat.es/estudios/postgrado-especializado-en-diseno-y-desarrollo-web-front-end/" className="ads_image"></a>
         </div>
     </div>
     );

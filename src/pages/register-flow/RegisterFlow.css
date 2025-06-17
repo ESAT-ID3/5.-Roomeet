@@ -66,15 +66,22 @@
   padding-top: 2rem;
 }
 
-.register_flow_image {
+.register_flow_image, .register_flow_final_image {
   box-sizing: border-box;
-  background-image: url("../../assets/images/sitting.png");
+  background-image: url("../../assets/images/(4).png");
   background-size: contain; /* Ajusta la imagen al tamaño del div */
   background-position: center; /* Centra la imagen dentro del div */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   width: 20rem;
   height: 20rem;
   margin: auto;
+}
+
+.register_flow_final_image{
+background-image: url("../../assets/images/(7).png");
+width: 40rem;
+max-width: 100vw;
+  height: 30rem;
 }
 
 .overflow {

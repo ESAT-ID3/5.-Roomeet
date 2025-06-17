@@ -16,6 +16,7 @@ import chillImg from "../../assets/images/(3).png";
 import lookImg from "../../assets/images/(8).png";
 import landingImg1 from "../../assets/images/(1).png";
 import landingImg2 from "../../assets/images/(5).png";
+import grabbingMobileImg from "../../assets/images/(4).png";
 
 type PaymentOption = 'Mensual' | 'Anual';
 
@@ -139,6 +140,11 @@ export const Landing = () => {
                     src={chillImg}
                     alt="Decoración derecha"
                     className="landing_app_info__image_absolute"
+                    />
+                    <img
+                    src={grabbingMobileImg}
+                    alt="Decoración izquierda"
+                    className="landing_app_info__image2_absolute"
                     />
             </div>
         </div>
