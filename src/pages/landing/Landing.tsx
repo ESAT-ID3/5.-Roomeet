@@ -14,6 +14,8 @@ import reviewImg2 from "../../assets/images/reviewImg2.png";
 import reviewImg3 from "../../assets/images/reviewImg3.png";
 import chillImg from "../../assets/images/(3).png";
 import lookImg from "../../assets/images/(8).png";
+import landingImg1 from "../../assets/images/(1).png";
+import landingImg2 from "../../assets/images/(5).png";
 
 type PaymentOption = 'Mensual' | 'Anual';
 
@@ -43,7 +45,17 @@ export const Landing = () => {
     return (
         <>
         <div className="landing_container">
-            <div className="landing_sticky_nav">
+            <img
+                src={landingImg1}
+                alt="Decoración izquierda"
+                className="landing_container__image1_absolute"
+                />
+                <img
+                src={landingImg2}
+                alt="Decoración Derecha"
+                className="landing_container__image2_absolute"
+                />
+                        <div className="landing_sticky_nav">
                 <div className="logo_container"></div>
                 <div className={`navbar__burger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
                 <span></span>
@@ -67,6 +79,7 @@ export const Landing = () => {
                     <NavLanding />
                 </div>
                 <div className="landing_hero__text">
+                    
                     <h1>Encuentra tu compañero de piso ideal en un <span>Swipe</span></h1>
                     <div className="landing_hero__text_button">
                         <h2>Haz match con personas afines a tu estilo de vida y encuentra a tu próximo compañero de piso</h2>
@@ -85,6 +98,16 @@ export const Landing = () => {
         </div>
 
         <div className="landing_app_info">
+            <img
+                src={landingImg1}
+                alt="Decoración izquierda"
+                className="landing_app_container__image1_absolute"
+                />
+                <img
+                src={landingImg2}
+                alt="Decoración Derecha"
+                className="landing_app_container__image2_absolute"
+                />
             <div>
                 <h3>Descubre a tu próximo/a compañero/a ideal</h3>
             </div>
@@ -186,9 +209,7 @@ export const Landing = () => {
       className="landing_app_premium_container__image_absolute"
     />
     </div>
-        <div className="landing_app_img_separator_container">
-            <div className="landing_app_img_separator"></div>
-        </div>
+        
 
         <div className="landing_app_reviews_container">
             <div className="landing_app_reviews">
@@ -200,7 +221,9 @@ export const Landing = () => {
             <Button text="¡EMPIEZA YA!"/>
             </Link>
         </div>
-
+<div className="landing_app_img_separator_container">
+            <div className="landing_app_img_separator"></div>
+        </div>
         <DeskFooter/>
         </>
     );
