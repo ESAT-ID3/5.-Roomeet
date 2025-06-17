@@ -5,7 +5,7 @@ body {
 }
 
 .landing_container {
-  width: 80%;
+  width: 100%;
   box-sizing: border-box;
   margin: auto;
   
@@ -21,13 +21,14 @@ body {
 }
 
 .landing_hero {
-  background-image: url('../../assets/images/HeroImage.png'); /* Coloca la ruta correcta */
-  background-size: contain;      /* Ajusta la imagen para cubrir todo el contenedor */
+  background-image: url('../../assets/images/HeroImage.png');
+  background-size: contain;      
   background-repeat: no-repeat;
   background-position: center bottom;
+  width: 80%;
   max-width: 1600px;
   margin: auto;
-  aspect-ratio: 16 / 9; /* Mantiene una relación de aspecto de 16:9 */
+  aspect-ratio: 16 / 9; 
   display: flex;
   justify-content: space-between;
   padding: 3rem;
@@ -38,8 +39,8 @@ body {
 }
 
 .landing_hero__nav_mobile{
-  background-image: url('../../assets/images/Logo.png'); /* Coloca la ruta correcta */
-  background-size: contain;      /* Ajusta la imagen para cubrir todo el contenedor */
+  background-image: url('../../assets/images/Logo.png'); 
+  background-size: contain;     
   background-repeat: no-repeat;
   background-position: center bottom;
   height: 2rem;
@@ -96,11 +97,29 @@ body {
 
 
   .landing_app_info{
+    position: relative;
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 80%;
+    width: 100%;
     margin: auto;
+  }
+
+  .landing_app_info__image_absolute{
+    display: none;
+  }
+
+  @media screen and (width > 1000px){
+
+  .landing_app_info__image_absolute { /*Imagen*/
+    display: block;
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  width: 120px; 
+  z-index: 1;
+  pointer-events: none;
+}
   }
 
   .hover_container {
@@ -125,7 +144,31 @@ body {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-  
+
+.landing_app_premium_container {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+.landing_app_premium_container__image_absolute{
+  display: none;
+}
+
+@media screen and (width > 1260px) {
+
+.landing_app_premium_container__image_absolute { /*Imagen*/
+  display: block;
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-10%);
+  width: 150px; 
+  z-index: 1;
+  pointer-events: none;
+
+}
+}
 
   .landing_app_info h3, .landing_app_details__upper_content h3, .landing_app_details__grid__box h4, .landing_app_premium h3 {
     color: var(--Black-Black-400, #2A2A2A);
@@ -162,7 +205,7 @@ body {
 
   .landing_app_info__content{
     display: flex;
-    max-width: 80%;
+    max-width: 70%;
     margin: auto;
     gap: 1rem;
   }
@@ -238,7 +281,7 @@ font-weight: 400;
   .landing_app_details__image {
     min-width: 10rem;
     height: 12rem;
-    background-image: url('../../assets/images/whyRoomeet.png'); /* Coloca la ruta correcta */
+    background-image: url('../../assets/images/(6).png'); /* Coloca la ruta correcta */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -300,7 +343,7 @@ font-weight: 400;
   .landing_app_img_separator{
     min-width: 10rem;
     height: 12rem;
-    background-image: url('../../assets/images/imgSeparator.png'); /* Coloca la ruta correcta */
+    background-image: url('../../assets/images/imgSeparator.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -450,6 +493,7 @@ font-weight: 400;
   background-position: center;
   height: 100vh; /* Ajusta la altura al 100% de la ventana */
   max-width: 100vw;
+  width: 100%;
 }
 
 .landing_hero__text{
@@ -566,7 +610,7 @@ font-size: 0.8rem;
     display: block;
     min-width: 10rem;
     height: 12rem;
-    background-image: url('../../assets/images/whyRoomeet.png'); /* Coloca la ruta correcta */
+    background-image: url('../../assets/images/(3).png'); /* Coloca la ruta correcta */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

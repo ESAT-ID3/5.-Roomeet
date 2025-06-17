@@ -12,6 +12,8 @@ import { DeskFooter } from "../../components/deskFooter/DeskFooter";
 import reviewImg1 from "../../assets/images/reviewImg1.png";
 import reviewImg2 from "../../assets/images/reviewImg2.png";
 import reviewImg3 from "../../assets/images/reviewImg3.png";
+import chillImg from "../../assets/images/(3).png";
+import lookImg from "../../assets/images/(8).png";
 
 type PaymentOption = 'Mensual' | 'Anual';
 
@@ -101,7 +103,7 @@ export const Landing = () => {
                         <p>No es solo es una app, es una comunidad. Miles de personas ya están encontrando compañeros afines para compartir no solo gastos, sino también buenos momentos.</p>
                     </div>
                     <div className="landing_app_info__text_content">
-                        <h4 className="underline">Porque compartir piso no es ninguna broma</h4>
+                        <h4 className="underline">Para estar chill de coj*nes</h4>
                         <p>¿Te gusta la tranquilidad o prefieres planes espontáneos? ¿Eres más de madrugar o de trasnochar? Aquí no solo buscas piso, encuentras personas con las que realmente encajas.</p>
                     </div>
                     <div>
@@ -110,6 +112,11 @@ export const Landing = () => {
                         </Link>
                     </div>
                 </div>
+                    <img
+                    src={chillImg}
+                    alt="Decoración derecha"
+                    className="landing_app_info__image_absolute"
+                    />
             </div>
         </div>
                     <div className="landing_app_details__image_mobile">    
@@ -162,7 +169,7 @@ export const Landing = () => {
                 </div>
             </div>
 
-
+    <div className="landing_app_premium_container">    
         <div className="landing_app_premium">
             <h3>Niveles de suscripción</h3>
             <div><ToogleAnualMensual selected={selectedOption} setSelected={setSelectedOption}/></div>
@@ -173,7 +180,12 @@ export const Landing = () => {
                 
             </div>
         </div>
-
+        <img
+      src={lookImg}
+      alt="Decoración izquierda"
+      className="landing_app_premium_container__image_absolute"
+    />
+    </div>
         <div className="landing_app_img_separator_container">
             <div className="landing_app_img_separator"></div>
         </div>
